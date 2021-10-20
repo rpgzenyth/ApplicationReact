@@ -1,9 +1,26 @@
-import { StyledHeader } from "./styled"
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Redirect
+  } from "react-router-dom";
+import Header from "../components/header";
+import Login from "../components/screens/login";
 
 
-const Route = () => {
-    <StyledHeader/>
+const Routes = () => {
+    return(
+    <Router>
+        <Header/>
+        <Switch>
+            <Route exact path="/">
+                <Login></Login>
+            </Route>
+            <Redirect to="/" ></Redirect>
+        </Switch>
+    </Router>
+    )
 }
 
 
-export default Route
+export default Routes
