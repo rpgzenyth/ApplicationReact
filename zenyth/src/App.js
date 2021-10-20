@@ -1,14 +1,10 @@
 import React from 'react';
-import Header from './components/header';
-
-import './App.css';
+import Route from './config/route';
 
 
 function App() {
   return (
-    <div className="App">
-      <Header></Header>
-    </div>
+    <Route/>
   );
 }
 
