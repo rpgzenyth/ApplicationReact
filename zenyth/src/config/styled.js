@@ -7,13 +7,24 @@ const StyledHeader = styled.header`
 
 const HeaderImg = styled.img`
     max-width: 100%;
+    margin-top: 5em;
+    margin-bottom: 3em;
 `
-const LinkNewGame = styled.button`
+const Link = styled.a`
     background-color: #BFBFBF;
     border: 1px solid black;
     border-radius: 5px;
     padding: 0.5em 1em;
+    font-size: 24px;
+    display: block;
+    max-width: 8em;
+    margin: auto;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 1em;
+    font-family: "Metal Mania";
 `
 
 
-export {StyledHeader, HeaderImg, LinkNewGame}
+export {StyledHeader, HeaderImg, Link}

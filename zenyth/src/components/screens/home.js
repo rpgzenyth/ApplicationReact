@@ -1,5 +1,5 @@
 import React from 'react';
-import {HeaderImg, LinkNewGame} from '../../config/styled'
+import {HeaderImg, Link} from '../../config/styled'
 import logo from '../../logo.png';
 
 const Home = () => {
@@ -7,7 +7,11 @@ const Home = () => {
     return (
         <div>
             <HeaderImg src={logo}></HeaderImg>
-            <LinkNewGame>Nouvelle Partie</LinkNewGame>
+            <div>
+                <Link href="#">Nouvelle Partie</Link>
+                <Link href="#">Charger Parties</Link>
+                <Link href="#">Paramètres</Link>
+            </div>
         </div>
     );
 };
