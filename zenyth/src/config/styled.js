@@ -8,7 +8,12 @@ const StyledHeader = styled.header`
 const HeaderImg = styled.img`
     max-width: 100%;
 `
+const LinkNewGame = styled.button`
+    background-color: #BFBFBF;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+`
 
 
-
-export {StyledHeader, HeaderImg}
+export {StyledHeader, HeaderImg, LinkNewGame}
