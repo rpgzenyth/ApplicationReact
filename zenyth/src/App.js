@@ -4,7 +4,7 @@ import Routes from './config/route';
 
 function App() {
   return (
-    <Routes/>
+    <Routes />
   );
 }
 
