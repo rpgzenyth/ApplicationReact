@@ -4,7 +4,7 @@ const Login = () => {
 
     return(
         <div>
-            <p>Test</p>
+            <p>Login</p>
         </div>
     )
 

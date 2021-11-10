@@ -16,7 +16,7 @@ const Routes = () => {
             <Route exact path="/">
                 <Login></Login>
             </Route>
-            <Redirect to="/" ></Redirect>
+            <Redirect to="/"/>
         </Switch>
     </Router>
     )
