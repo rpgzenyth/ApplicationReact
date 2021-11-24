@@ -10,8 +10,13 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     margin: 0;
+    padding: 0;
+    overscroll-behavior: none;
 }
 
+p {
+    margin: 0;
+}
 
 `
 

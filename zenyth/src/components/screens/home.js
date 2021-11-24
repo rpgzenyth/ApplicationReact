@@ -1,16 +1,19 @@
 import React from 'react';
 import {HeaderImg, Link} from '../../config/styled'
 import logo from '../../logo.png';
+import { useHistory } from 'react-router';
+
 
 const Home = () => {
+    const history = useHistory()
 
     return (
         <div>
             <HeaderImg src={logo}></HeaderImg>
             <div>
-                <Link href="#">Nouvelle Partie</Link>
-                <Link href="#">Charger Parties</Link>
-                <Link href="#">Paramètres</Link>
+                <Link onClick={ () => history.push(`/new-game`)}>Nouvelle Partie</Link>
+                <Link onClick={ () => history.push(`/load-game`)}>Charger Parties</Link>
+                <Link onClick={ () => history.push(`/parameters`)}>Paramètres</Link>
             </div>
         </div>
     );
