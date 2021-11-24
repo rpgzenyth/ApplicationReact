@@ -12,6 +12,7 @@ import Login from "../components/screens/login";
 import NewGame from "../components/screens/newGame";
 import Parameters from "../components/screens/parameters";
 import GlobalStyle from "./globalStyle";
+import Createperso from "../components/screens/createperso";
 
 
 const Routes = () => {
@@ -35,6 +36,9 @@ const Routes = () => {
             <Route exact path="/parameters">
                 <Parameters></Parameters>
             </Route>
+            <Route exact path="/createperso">
++                <Createperso></Createperso>
++            </Route>
             <Redirect to="/"/>
         </Switch>
         <Footer/>
