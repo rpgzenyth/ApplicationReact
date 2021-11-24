@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyledFooter, ImgLink } from '../../config/styled'
+import {StyledFooter, ImgLink, FooterDiv } from '../../config/styled'
 import { useHistory } from 'react-router';
 import dice from '../../images/dice.png';
 import bag from '../../images/bag.png';
@@ -15,12 +15,24 @@ const Footer = () => {
     return (
       <div>
         <StyledFooter>
-            <ImgLink src={dice} onClick={ () => history.push(`/new-game`)}></ImgLink>
-            <ImgLink src={bag} onClick={ () => history.push(`/load-game`)}></ImgLink>
-            <ImgLink src={tools} onClick={ () => history.push(`/parameters`)}></ImgLink>
-            <ImgLink src={potion} onClick={ () => history.push(`/parameters`)}></ImgLink>
-            <ImgLink src={sword} onClick={ () => history.push(`/parameters`)}></ImgLink>
-            <ImgLink src={description} onClick={ () => history.push(`/parameters`)}></ImgLink>
+            <FooterDiv onClick={ () => history.push(`/`)}>
+                <ImgLink src={dice}></ImgLink>
+            </FooterDiv>
+            <FooterDiv onClick={ () => history.push(`/`)}>
+                <ImgLink src={bag}></ImgLink>
+            </FooterDiv>
+            <FooterDiv onClick={ () => history.push(`/`)}>
+                <ImgLink src={tools}></ImgLink>
+            </FooterDiv>
+            <FooterDiv onClick={ () => history.push(`/`)}>
+                <ImgLink src={potion}></ImgLink>
+            </FooterDiv>
+            <FooterDiv onClick={ () => history.push(`/`)}>
+                <ImgLink src={sword}></ImgLink>
+            </FooterDiv>
+            <FooterDiv onClick={ () => history.push(`/`)}>
+                <ImgLink src={description}></ImgLink>
+            </FooterDiv>
         </StyledFooter>
       </div>
     )

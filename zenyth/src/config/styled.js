@@ -17,6 +17,7 @@ const StyledFooter = styled.footer`
     bottom 0;
     display: flex;
     justify-content: space-around;
+    padding: 3px 0;
 `
 
 
@@ -26,6 +27,7 @@ const Titre = styled.p`
     font-size: 32px;
     padding: 0.2em 0;
     font-weight: normal;
+    cursor: pointer;
 `
 
 const HeaderImg = styled.img`
@@ -35,6 +37,10 @@ const HeaderImg = styled.img`
     display: block;
     margin-left: auto;
     margin-right: auto;
+    @media (min-width: 600px) {
+        max-width: 30em;
+        margin-top: 1em;
+    }
 `
 const Link = styled.p`
     background-color: #BFBFBF;
@@ -56,5 +62,11 @@ const ImgLink = styled.img`
     padding: 0.5em;
 `
 
+const FooterDiv = styled.div`
+    display: flex;
+    background: white;
+    border-radius: 50%;
+`
 
-export {StyledHeader, StyledFooter, HeaderImg, Link, Titre, ImgLink}
+
+export {StyledHeader, StyledFooter, HeaderImg, Link, Titre, ImgLink, FooterDiv}
