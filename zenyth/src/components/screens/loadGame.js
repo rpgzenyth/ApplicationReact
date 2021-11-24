@@ -1,8 +1,9 @@
 import React from 'react';
 
 const LoadGame = () => {
+
     return (
-        <div>
+        <div className='page'>
             <h1>LoadGame</h1>
         </div>
     );
