@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-const StyledHeader = styled.header`
+export const StyledHeader = styled.header`
     width: 100%;
     text-align: center;
     background-color: #4D4D4D;
@@ -8,7 +8,7 @@ const StyledHeader = styled.header`
     position: relative;
 `
 
-const StyledFooter = styled.footer`
+export const StyledFooter = styled.footer`
     width: 100%;
     text-align: center;
     background-color: #9D9C9D;
@@ -21,7 +21,7 @@ const StyledFooter = styled.footer`
 `
 
 
-const Titre = styled.p`
+export const Titre = styled.p`
     font-family: "Metal Mania";
     color: white;
     font-size: 32px;
@@ -30,7 +30,7 @@ const Titre = styled.p`
     cursor: pointer;
 `
 
-const HeaderImg = styled.img`
+export const HeaderImg = styled.img`
     max-width: 100%;
     margin-top: 5em;
     margin-bottom: 3em;
@@ -42,7 +42,7 @@ const HeaderImg = styled.img`
         margin-top: 1em;
     }
 `
-const Link = styled.p`
+export const Link = styled.p`
     background-color: #BFBFBF;
     border: 1px solid black;
     border-radius: 5px;
@@ -57,16 +57,13 @@ const Link = styled.p`
     margin-bottom: 1em;
     font-family: "Metal Mania";
 `
-const ImgLink = styled.img`
+export const ImgLink = styled.img`
     max-width: 2em;
     padding: 0.5em;
 `
 
-const FooterDiv = styled.div`
+export const FooterDiv = styled.div`
     display: flex;
     background: white;
     border-radius: 50%;
 `
-
-
-export {StyledHeader, StyledFooter, HeaderImg, Link, Titre, ImgLink, FooterDiv}
