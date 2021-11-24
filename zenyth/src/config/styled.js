@@ -8,6 +8,18 @@ const StyledHeader = styled.header`
     position: relative;
 `
 
+const StyledFooter = styled.footer`
+    width: 100%;
+    text-align: center;
+    background-color: #9D9C9D;
+    border-top: 2px solid white;
+    position: fixed;
+    bottom 0;
+    display: flex;
+    justify-content: space-around;
+`
+
+
 const Titre = styled.p`
     font-family: "Metal Mania";
     color: white;
@@ -39,6 +51,10 @@ const Link = styled.p`
     margin-bottom: 1em;
     font-family: "Metal Mania";
 `
+const ImgLink = styled.img`
+    max-width: 2em;
+    padding: 0.5em;
+`
 
 
-export {StyledHeader, HeaderImg, Link, Titre}
+export {StyledHeader, StyledFooter, HeaderImg, Link, Titre, ImgLink}

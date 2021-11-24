@@ -5,6 +5,7 @@ import {
     Redirect
   } from "react-router-dom";
 import Header from "../components/header";
+import Footer from "../components/footer";
 import Home from "../components/screens/home";
 import LoadGame from "../components/screens/loadGame";
 import Login from "../components/screens/login";
@@ -36,6 +37,7 @@ const Routes = () => {
             </Route>
             <Redirect to="/"/>
         </Switch>
+        <Footer/>
     </Router>
     )
 }
