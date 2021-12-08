@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { DivBackground, FormCreatePerso, DivForm, Hr, TextareaStyled, TitleForm, SubtitleForm, LabelForm, InputStyled, Btn } from '../../config/styled';
 
-const Createperso = props => {
+const CreatePerso = props => {
     
     const [CaracterName, setCaracterName] = useState('')
     const [CaracterClasse, setCaracterClass] = useState('')
@@ -185,4 +185,4 @@ const Createperso = props => {
     )
 };
 
-export default Createperso;
+export default CreatePerso;
