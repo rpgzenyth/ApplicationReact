@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {StyledHeader,Titre, BlurBackground} from '../../config/styled'
 import {MdOutlineKeyboardArrowLeft} from 'react-icons/md'
+import {FiMenu} from 'react-icons/fi'
 import {AiFillCloseCircle} from 'react-icons/ai'
 import { useHistory } from 'react-router';
 import {Link, FondPopUp, ContainerPopUp} from '../../config/styled'
@@ -20,7 +21,7 @@ const Header = () => {
         <StyledHeader>
           <MdOutlineKeyboardArrowLeft onClick={ () => history.goBack() } size="30px" style= { {position: "absolute", left: "1em", top: "50%", transform: "translateY(-50%)", color: 'white' } }/>
           <Titre onClick={ () => history.push(`/`) }>Zenyth rpg</Titre>
-          <p onClick={() => menuBurger()}>test ca mere</p>
+          <FiMenu onClick={() => menuBurger()} size="30px" style= { { position: "absolute", right: "1em", top: "50%", transform: "translateY(-50%)", color: 'white' } }/>
           { afficher === true ?
           <FondPopUp>
             <ContainerPopUp>
