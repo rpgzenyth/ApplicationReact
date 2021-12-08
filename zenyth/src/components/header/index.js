@@ -4,7 +4,7 @@ import {MdOutlineKeyboardArrowLeft, MdSettings} from 'react-icons/md'
 import {FiMenu} from 'react-icons/fi'
 import {AiFillCloseCircle} from 'react-icons/ai'
 import { useHistory } from 'react-router';
-import {Link, FondPopUp, ContainerPopUp} from '../../config/styled'
+import {BigBtn, FondPopUp, ContainerPopUp} from '../../config/styled'
 
 const Header = () => {
 
@@ -33,10 +33,10 @@ const Header = () => {
           <FondPopUp>
             <ContainerPopUp>
               <AiFillCloseCircle onClick={() => menuBurger()} size="30px" style= { {position: "absolute", right: "-0.8em", top: "-0.8em", color: '#c4c4c4' } }/>
-              <Link onClick={ () => history.push(`/`)}>Lancé de dés</Link>
-              <Link onClick={ () => history.push(`/`)}>Black board</Link>
-              <Link onClick={ () => history.push(`/`)}>Banque d'objets</Link>
-              <Link onClick={ () => history.push(`/`)}>Bestiaire de l'univers</Link>
+              <BigBtn onClick={ () => history.push(`/`)}>Lancé de dés</BigBtn>
+              <BigBtn onClick={ () => history.push(`/`)}>Black board</BigBtn>
+              <BigBtn onClick={ () => history.push(`/`)}>Banque d'objets</BigBtn>
+              <BigBtn onClick={ () => history.push(`/`)}>Bestiaire de l'univers</BigBtn>
             </ContainerPopUp>
             <BlurBackground></BlurBackground>
           </FondPopUp>
@@ -45,9 +45,9 @@ const Header = () => {
           <FondPopUp>
             <ContainerPopUp>
               <AiFillCloseCircle onClick={() => menuParam()} size="30px" style= { {position: "absolute", right: "-0.8em", top: "-0.8em", color: '#c4c4c4' } }/>
-              <Link onClick={ () => history.push(`/`)}>Sauvegarder</Link>
-              <Link onClick={ () => history.push(`/`)}>Tutoriel</Link>
-              <Link onClick={ () => history.push(`/`)}>Retour au menu</Link>
+              <BigBtn onClick={ () => history.push(`/`)}>Sauvegarder</BigBtn>
+              <BigBtn onClick={ () => history.push(`/`)}>Tutoriel</BigBtn>
+              <BigBtn onClick={ () => history.push(`/`)}>Retour au menu</BigBtn>
             </ContainerPopUp>
             <BlurBackground></BlurBackground>
           </FondPopUp>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyledFooter, ImgLink, FooterDiv } from '../../config/styled'
+import {StyledFooter, ImgBigBtn, FooterDiv } from '../../config/styled'
 import { useHistory } from 'react-router';
 import dice from '../../images/dice.png';
 import bag from '../../images/bag.png';
@@ -16,22 +16,22 @@ const Footer = () => {
       <div>
         <StyledFooter>
             <FooterDiv onClick={ () => history.push(`/`)}>
-                <ImgLink src={dice}></ImgLink>
+                <ImgBigBtn src={dice}></ImgBigBtn>
             </FooterDiv>
             <FooterDiv onClick={ () => history.push(`/`)}>
-                <ImgLink src={bag}></ImgLink>
+                <ImgBigBtn src={bag}></ImgBigBtn>
             </FooterDiv>
             <FooterDiv onClick={ () => history.push(`/`)}>
-                <ImgLink src={tools}></ImgLink>
+                <ImgBigBtn src={tools}></ImgBigBtn>
             </FooterDiv>
             <FooterDiv onClick={ () => history.push(`/`)}>
-                <ImgLink src={potion}></ImgLink>
+                <ImgBigBtn src={potion}></ImgBigBtn>
             </FooterDiv>
             <FooterDiv onClick={ () => history.push(`/`)}>
-                <ImgLink src={sword}></ImgLink>
+                <ImgBigBtn src={sword}></ImgBigBtn>
             </FooterDiv>
             <FooterDiv onClick={ () => history.push(`/`)}>
-                <ImgLink src={description}></ImgLink>
+                <ImgBigBtn src={description}></ImgBigBtn>
             </FooterDiv>
         </StyledFooter>
       </div>

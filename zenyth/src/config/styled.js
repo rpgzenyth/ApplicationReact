@@ -43,7 +43,7 @@ export const HeaderImg = styled.img`
         margin-top: 1em;
     }
 `
-export const Link = styled.p`
+export const BigBtn = styled.p`
     background-color: #BFBFBF;
     border: 1px solid black;
     border-radius: 5px;
@@ -58,7 +58,7 @@ export const Link = styled.p`
     margin-bottom: 1em;
     font-family: "Metal Mania";
 `
-export const ImgLink = styled.img`
+export const ImgBigBtn = styled.img`
     max-width: 2em;
     padding: 0.5em;
 `
@@ -108,13 +108,89 @@ export const BlurBackground = styled.div`
 export const FormCreatePerso = styled.form`
 `
 
+export const TitleForm = styled.h1`
+    color: white;
+    font-size: 1.2em;
+    font-family: "Lucida";
+`
+
+export const SubtitleForm = styled.h2`
+    color: white;
+    font-size: 1.1em;
+    font-family: "Lucida";
+`
+
+export const DivForm = styled.div`
+    margin-bottom: 2em;
+`
+
+export const LabelForm = styled.h3`
+    color: #9D9C9D;
+    font-size: 1em;
+    font-family: "Lucida";
+    display: inline-block;
+    width: 40%;
+    margin-right: 5%;
+`
+
+export const Hr = styled.p`
+    border-bottom: 1px solid #9D9C9D;
+    margin-top: 2em;
+    margin-bottom: 1em;
+`
+
 export const InputStyled = styled.input`
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid white;
+    background: none;
+    display: inline-block;
+    width: 55%;
+    color: white;
+    outline: none;
+    text-align: center;
+`
+
+export const TextareaStyled = styled.textarea`
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid white;
+    background: none;
+    display: inline-block;
+    width: 55%;
+    color: white;
+    outline: none;
+    text-align: center;
 `
 
 export const DivBackground = styled.div`
     background: url(${props => props.background});
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
-    width: 100vw;
+    padding: 1em;
+    padding-bottom: 4em;
+`
+
+
+export const Btn = styled.p`
+    background-color: #50080A;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 0.3em;
+    font-size: 20px;
+    display: block;
+    max-width: 7em;
+    margin: auto;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 1em;
+    font-family: "Metal Mania";
+    color: white;
+    letter-spacing: 1px;
 `

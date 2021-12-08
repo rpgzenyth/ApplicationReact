@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { DivBackground, FormCreatePerso, InputStyled, Link } from '../../config/styled';
+import { DivBackground, FormCreatePerso, DivForm, Hr, TextareaStyled, TitleForm, SubtitleForm, LabelForm, InputStyled, Btn } from '../../config/styled';
 
 const Createperso = props => {
     
@@ -9,7 +9,7 @@ const Createperso = props => {
     const [CaracterTrait, setCaracterTrait] = useState('')
     const [CaracterDefects, setCaracterDefects] = useState('')
     const [CaracterIdeaux, setCaracterIdeaux] = useState('')
-    const [CaracterLinks, setCaracterLinks] = useState('')
+    const [CaracterBigBtns, setCaracterBigBtns] = useState('')
     const [CaracterAge, setCaracterAge] = useState('')
     const [CaracterHeight, setCaracterHeight] = useState('')
     const [CaracterWeight, setCaracterWeight] = useState('')
@@ -23,161 +23,163 @@ const Createperso = props => {
         <DivBackground background= {props.background}>
             <FormCreatePerso onSubmit={onsubmit}>
 
-                <div className='subtitleForm'>
-                    <h1>Nom du personnage</h1>
+                <TitleForm>Création de personnage</TitleForm>
+
+                <SubtitleForm>Informations globales :</SubtitleForm>
+
+                <div>
+                    <LabelForm>Nom du personnage</LabelForm>
 
                     <InputStyled
                         value={CaracterName}
                         onChange={e => setCaracterName(e.target.value)}
-                        name='CaracterName'
-                        placeholder='Nom du personnage'> 
+                        name='CaracterName'> 
                     </InputStyled>
                 </div>
 
-                <div className='subtitleForm'>
-                    <h1>Race</h1>
+                <div>
+                    <LabelForm>Race</LabelForm>
 
                     <InputStyled
                         value={CaracterRace}
                         onChange={e => setCaracterRace(e.target.value)}
-                        name='CaracterRace'
-                        placeholder='Race'>
+                        name='CaracterRace'>
                     </InputStyled>
                 </div>
 
-                <div className='subtitleForm'>
-                    <h1>Classe</h1>
+                <div>
+                    <LabelForm>Classe</LabelForm>
 
                     <InputStyled
                         value={CaracterClasse}
                         onChange={e => setCaracterClass(e.target.value)}
-                        name='CaracterClass'
-                        placeholder='Classe'>
+                        name='CaracterClass'>
                     </InputStyled>
                 </div>
 
-                <div className='subtitleForm'>
-                    <h1>Trait de personnalité</h1>
+                <Hr></Hr>
 
-                    <InputStyled
-                        value={CaracterTrait}
-                        onChange={e => setCaracterTrait(e.target.value)}
-                        name='CaracterTrait'
-                        placeholder='Trait de personnalité'>
-                    </InputStyled>
-                </div>
+                <SubtitleForm>Apparence du personnage :</SubtitleForm>
 
-                <div className='subtitleForm'>
-                    <h1>Idéaux</h1>
-
-                    <InputStyled
-                        value={CaracterIdeaux}
-                        onChange={e => setCaracterIdeaux(e.target.value)}
-                        name='CaracterIdeaux'
-                        placeholder='Idéaux'>
-                    </InputStyled>
-                </div>
-
-                <div className='subtitleForm'>
-                    <h1>Liens</h1>
-
-                    <InputStyled
-                        value={CaracterLinks}
-                        onChange={e => setCaracterLinks(e.target.value)}
-                        name='CaracterLinks'
-                        placeholder='Liens'>
-                    </InputStyled>
-                </div>
-
-                <div className='subtitleForm'>
-                    <h1>Défauts</h1>
-
-                    <InputStyled
-                        value={CaracterDefects}
-                        onChange={e => setCaracterDefects(e.target.value)}
-                        name='CaracterDefects'
-                        placeholder='Défauts'>
-                    </InputStyled>
-                </div>
-
-                <div className='subtitleForm'>
-                    <h1>Age</h1>
+                <div>
+                    <LabelForm>Age</LabelForm>
 
                     <InputStyled
                         value={CaracterAge}
                         onChange={e => setCaracterAge(e.target.value)}
-                        name='CaracterAge'
-                        placeholder='Age'>
+                        name='CaracterAge'>
                     </InputStyled>
                 </div>
 
-                <div className='subtitleForm'>
-                    <h1>Taille</h1>
+                <div>
+                    <LabelForm>Taille</LabelForm>
 
                     <InputStyled
                         value={CaracterHeight}
                         onChange={e => setCaracterHeight(e.target.value)}
-                        name='CaracterHeight'
-                        placeholder='Taille'>
+                        name='CaracterHeight'>
                     </InputStyled>
                 </div>
 
-                <div className='subtitleForm'>
-                    <h1>Poids</h1>
+                <div>
+                    <LabelForm>Poids</LabelForm>
 
                     <InputStyled
                         value={CaracterWeight}
                         onChange={e => setCaracterWeight(e.target.value)}
-                        name='CaracterWeight'
-                        placeholder='Poids'>
+                        name='CaracterWeight'>
                     </InputStyled>
                 </div>
 
-                <div className='subtitleForm'>
-                    <h1>Yeux</h1>
+                <div>
+                    <LabelForm>Yeux</LabelForm>
 
                     <InputStyled
                         value={CaracterEyes}
                         onChange={e => setCaracterEyes(e.target.value)}
-                        name='CaracterEyes'
-                        placeholder='Yeux'>
+                        name='CaracterEyes'>
                     </InputStyled>
                 </div>
 
-                <div className='subtitleForm'>
-                    <h1>Peau</h1>
+                <div>
+                    <LabelForm>Peau</LabelForm>
 
                     <InputStyled
                         value={CaracterSkin}
                         onChange={e => setCaracterSkin(e.target.value)}
-                        name='CaracterSkin'
-                        placeholder='Peau'>
+                        name='CaracterSkin'>
                     </InputStyled>
                 </div>
 
-                <div className='subtitleForm'>
-                    <h1>Cheveux</h1>
+                <div>
+                    <LabelForm>Cheveux</LabelForm>
 
                     <InputStyled
                         value={CaracterHair}
                         onChange={e => setCaracterHair(e.target.value)}
-                        name='CaracterHair'
-                        placeholder='Cheveux'>
+                        name='CaracterHair'>
                     </InputStyled>
                 </div>
 
-                <div className='subtitleForm'>
-                    <h1>Histoire du personnage</h1>
 
-                    <InputStyled
-                        value={CaracterHistory}
-                        onChange={e => setCaracterHistory(e.target.value)}
-                        name='CaracterHistory'
-                        placeholder='Histoire'>
-                    </InputStyled>
-                </div>
+                <Hr></Hr>
 
-                <Link type='submit' placeholder='Connexion'></Link>
+                <DivForm>
+
+                    <SubtitleForm>Descriptif du personnage :</SubtitleForm>
+
+                    <div>
+                        <LabelForm>Trait de personnalité</LabelForm>
+
+                        <TextareaStyled
+                            value={CaracterTrait}
+                            onChange={e => setCaracterTrait(e.target.value)}
+                            name='CaracterTrait'>
+                        </TextareaStyled>
+                    </div>
+
+                    <div>
+                        <LabelForm>Idéaux</LabelForm>
+
+                        <TextareaStyled
+                            value={CaracterIdeaux}
+                            onChange={e => setCaracterIdeaux(e.target.value)}
+                            name='CaracterIdeaux'>
+                        </TextareaStyled>
+                    </div>
+
+                    <div>
+                        <LabelForm>Liens</LabelForm>
+
+                        <TextareaStyled
+                            value={CaracterBigBtns}
+                            onChange={e => setCaracterBigBtns(e.target.value)}
+                            name='CaracterBigBtns'>
+                        </TextareaStyled>
+                    </div>
+
+                    <div>
+                        <LabelForm>Défauts</LabelForm>
+
+                        <TextareaStyled
+                            value={CaracterDefects}
+                            onChange={e => setCaracterDefects(e.target.value)}
+                            name='CaracterDefects'>
+                        </TextareaStyled>
+                    </div>
+
+                    <div>
+                        <LabelForm>Histoire du personnage</LabelForm>
+
+                        <TextareaStyled
+                            value={CaracterHistory}
+                            onChange={e => setCaracterHistory(e.target.value)}
+                            name='CaracterHistory'>
+                        </TextareaStyled>
+                    </div>
+                </DivForm>
+
+                <Btn type='submit'>Enregistrer</Btn>
             </FormCreatePerso>
         </DivBackground>
     )

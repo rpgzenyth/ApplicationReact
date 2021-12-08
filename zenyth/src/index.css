@@ -2,3 +2,8 @@
     font-family: "Metal Mania";
     src: url("./fonts/metal_mania.ttf") format("truetype");
 }
+
+@font-face {
+    font-family: "Lucida";
+    src: url("./fonts/lucida_sans.ttf") format("truetype");
+}
