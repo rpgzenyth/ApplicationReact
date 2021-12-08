@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {StyledHeader,Titre, BlurBackground} from '../../config/styled'
-import {MdOutlineKeyboardArrowLeft} from 'react-icons/md'
+import {MdOutlineKeyboardArrowLeft, MdSettings} from 'react-icons/md'
 import {FiMenu} from 'react-icons/fi'
 import {AiFillCloseCircle} from 'react-icons/ai'
 import { useHistory } from 'react-router';
@@ -8,12 +8,18 @@ import {Link, FondPopUp, ContainerPopUp} from '../../config/styled'
 
 const Header = () => {
 
-  const [afficher, setAfficher] = useState(false)
+  const [afficherMenuBurger, setAfficherMenuBurger] = useState(false)
+
+  const [afficherParametres, setAfficherParametres] = useState(false)
 
     const history = useHistory()
 
     const menuBurger = () =>{
-      setAfficher(!afficher)
+      setAfficherMenuBurger(!afficherMenuBurger)
+    }
+
+    const menuParam = () =>{
+      setAfficherParametres(!afficherParametres)
     }
 
     return (
@@ -21,8 +27,9 @@ const Header = () => {
         <StyledHeader>
           <MdOutlineKeyboardArrowLeft onClick={ () => history.goBack() } size="30px" style= { {position: "absolute", left: "1em", top: "50%", transform: "translateY(-50%)", color: 'white' } }/>
           <Titre onClick={ () => history.push(`/`) }>Zenyth rpg</Titre>
-          <FiMenu onClick={() => menuBurger()} size="30px" style= { { position: "absolute", right: "1em", top: "50%", transform: "translateY(-50%)", color: 'white' } }/>
-          { afficher === true ?
+          <FiMenu onClick={() => menuBurger()} size="30px" style= { { position: "absolute", left: "1em", top: "50%", transform: "translateY(-50%)", color: 'white' } }/>
+          <MdSettings onClick={() => menuParam()} size="30px" style= { { position: "absolute", right: "1em", top: "50%", transform: "translateY(-50%)", color: 'white' } }/>
+          { afficherMenuBurger === true ?
           <FondPopUp>
             <ContainerPopUp>
               <AiFillCloseCircle onClick={() => menuBurger()} size="30px" style= { {position: "absolute", right: "-0.8em", top: "-0.8em", color: '#c4c4c4' } }/>
@@ -30,6 +37,17 @@ const Header = () => {
               <Link onClick={ () => history.push(`/`)}>Black board</Link>
               <Link onClick={ () => history.push(`/`)}>Banque d'objets</Link>
               <Link onClick={ () => history.push(`/`)}>Bestiaire de l'univers</Link>
+            </ContainerPopUp>
+            <BlurBackground></BlurBackground>
+          </FondPopUp>
+          : null}
+          { afficherParametres === true ?
+          <FondPopUp>
+            <ContainerPopUp>
+              <AiFillCloseCircle onClick={() => menuParam()} size="30px" style= { {position: "absolute", right: "-0.8em", top: "-0.8em", color: '#c4c4c4' } }/>
+              <Link onClick={ () => history.push(`/`)}>Sauvegarder</Link>
+              <Link onClick={ () => history.push(`/`)}>Tutoriel</Link>
+              <Link onClick={ () => history.push(`/`)}>Retour au menu</Link>
             </ContainerPopUp>
             <BlurBackground></BlurBackground>
           </FondPopUp>
