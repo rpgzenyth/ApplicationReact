@@ -6,10 +6,8 @@ const Createperso = () => {
     const [CaracterName, setCaracterName] = useState('')
     const [CaracterClasse, setCaracterClass] = useState('')
     const [CaracterRace, setCaracterRace] = useState('')
-    const [CaracterExp, setCaracterExp] = useState('')
-    const [CaracterClasse, setCaracterClass] = useState('')
-    const [CaracterClasse, setCaracterClass] = useState('')
-    const [CaracterClasse, setCaracterClass] = useState('')
+    const [CaracterTrait, setCaracterTrait] = useState('')
+    const [CaracterTrait, setCaracterTrait] = useState('')
 
     return (
         <FormCreatePerso onSubmit={onsubmit}>
@@ -24,6 +22,11 @@ const Createperso = () => {
             name='CaracterName'
             placeholder='Nom du personnage'
         ></InputStyled>
+
+        <div className='subtitleForm'>
+            <h1>Nom du personnage</h1>
+        </div>
+
         <InputStyled
             value={CaracterRace}
             onChange={e => setCaracterRace(e.target.value)}
@@ -44,10 +47,10 @@ const Createperso = () => {
             placeholder='Expericence'
         ></InputStyled>
         <InputStyled
-            value={CaracterClasse}
-            onChange={e => setCaracterClass(e.target.value)}
-            name='CaracterClass'
-            placeholder='Classe'
+            value={CaracterTrait}
+            onChange={e => setCaracterTrait(e.target.value)}
+            name='CaracterTrait'
+            placeholder='Trait de personnalité'
         ></InputStyled>
         <InputStyled
             value={CaracterClasse}
