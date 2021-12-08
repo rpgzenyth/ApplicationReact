@@ -20,7 +20,6 @@ const Createperso = props => {
 
 
     return (
-<<<<<<< HEAD
         <DivBackground background= {props.background}>
             <FormCreatePerso onSubmit={onsubmit}>
 
