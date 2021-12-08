@@ -7,7 +7,8 @@ const Createperso = () => {
     const [CaracterClasse, setCaracterClass] = useState('')
     const [CaracterRace, setCaracterRace] = useState('')
     const [CaracterTrait, setCaracterTrait] = useState('')
-    const [CaracterTrait, setCaracterTrait] = useState('')
+    const [CaracterIdeaux, setCaracterIdeaux] = useState('')
+
 
     return (
         <FormCreatePerso onSubmit={onsubmit}>
@@ -41,23 +42,18 @@ const Createperso = () => {
         ></InputStyled>
 
         <InputStyled
-            value={CaracterExp}
-            onChange={e => setCaracterExp(e.target.value)}
-            name='CaracterExp'
-            placeholder='Expericence'
-        ></InputStyled>
-        <InputStyled
             value={CaracterTrait}
             onChange={e => setCaracterTrait(e.target.value)}
             name='CaracterTrait'
             placeholder='Trait de personnalité'
         ></InputStyled>
         <InputStyled
-            value={CaracterClasse}
-            onChange={e => setCaracterClass(e.target.value)}
-            name='CaracterClass'
-            placeholder='Classe'
+            value={CaracterIdeaux}
+            onChange={e => setCaracterIdeaux(e.target.value)}
+            name='CaracterIdeaux'
+            placeholder='Idéaux'
         ></InputStyled>
+
         <Link type='submit' placeholder='Connexion'></Link>
         </FormCreatePerso>
     )
