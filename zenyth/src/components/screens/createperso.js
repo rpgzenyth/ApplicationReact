@@ -7,10 +7,20 @@ const Createperso = props => {
     const [CaracterClasse, setCaracterClass] = useState('')
     const [CaracterRace, setCaracterRace] = useState('')
     const [CaracterTrait, setCaracterTrait] = useState('')
+    const [CaracterDefects, setCaracterDefects] = useState('')
     const [CaracterIdeaux, setCaracterIdeaux] = useState('')
+    const [CaracterLinks, setCaracterLinks] = useState('')
+    const [CaracterAge, setCaracterAge] = useState('')
+    const [CaracterHeight, setCaracterHeight] = useState('')
+    const [CaracterWeight, setCaracterWeight] = useState('')
+    const [CaracterEyes, setCaracterEyes] = useState('')
+    const [CaracterSkin, setCaracterSkin] = useState('')
+    const [CaracterHair, setCaracterHair] = useState('')
+    const [CaracterHistory, setCaracterHistory] = useState('')
 
 
     return (
+<<<<<<< HEAD
         <DivBackground background= {props.background}>
             <FormCreatePerso onSubmit={onsubmit}>
 
