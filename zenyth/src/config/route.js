@@ -13,6 +13,7 @@ import NewGame from "../components/screens/newGame";
 import Parameters from "../components/screens/parameters";
 import GlobalStyle from "./globalStyle";
 import Createperso from "../components/screens/createperso";
+import dark from "../images/background_dark.png"
 
 
 const Routes = () => {
@@ -29,19 +30,23 @@ const Routes = () => {
             </Route>
             <Route exact path="/new-game">
                 <NewGame></NewGame>
+                <Footer/>
             </Route>
             <Route exact path="/load-game">
                 <LoadGame></LoadGame>
+                <Footer/>
             </Route>
             <Route exact path="/parameters">
                 <Parameters></Parameters>
+                <Footer/>
             </Route>
             <Route exact path="/createperso">
-+                <Createperso></Createperso>
-+            </Route>
+                <Createperso background={dark}></Createperso>
+                <Footer/>
+            </Route>
             <Redirect to="/"/>
         </Switch>
-        <Footer/>
+        
     </Router>
     )
 }

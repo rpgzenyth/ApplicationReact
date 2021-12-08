@@ -18,6 +18,11 @@ p {
     margin: 0;
 }
 
+h1, h2, h3 {
+    padding-top: 1em;
+    margin-top: 0;
+}
+
 `
 
 export default GlobalStyle

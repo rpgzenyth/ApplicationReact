@@ -33,8 +33,8 @@ export const Titre = styled.p`
 
 export const HeaderImg = styled.img`
     max-width: 100%;
-    margin-top: 5em;
-    margin-bottom: 3em;
+    padding-top: 5em;
+    padding-bottom: 3em;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -109,4 +109,12 @@ export const FormCreatePerso = styled.form`
 `
 
 export const InputStyled = styled.input`
+`
+
+export const DivBackground = styled.div`
+    background: url(${props => props.background});
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
 `
