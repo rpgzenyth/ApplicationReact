@@ -14,7 +14,7 @@ import NewGame from "../components/screens/newGame";
 import Parameters from "../components/screens/parameters";
 import GlobalStyle from "./globalStyle";
 import CreatePerso from "../components/screens/createPerso";
-import dark from "../images/background_dark.png"
+import dark from "../images/background_dragon_blur.png"
 
 
 const Routes = () => {
@@ -36,7 +36,7 @@ const Routes = () => {
                 <LoadGame></LoadGame>
             </Route>
             <Route exact path="/listing-perso">
-                <ListingPerso></ListingPerso>
+                <ListingPerso background={dark}></ListingPerso>
             </Route>
             <Route exact path="/parameters">
                 <Parameters></Parameters>

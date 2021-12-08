@@ -111,13 +111,11 @@ export const FormCreatePerso = styled.form`
 export const TitleForm = styled.h1`
     color: white;
     font-size: 1.2em;
-    font-family: "Lucida";
 `
 
 export const SubtitleForm = styled.h2`
     color: white;
     font-size: 1.1em;
-    font-family: "Lucida";
 `
 
 export const DivForm = styled.div`
@@ -125,9 +123,8 @@ export const DivForm = styled.div`
 `
 
 export const LabelForm = styled.h3`
-    color: #9D9C9D;
+    color: white;
     font-size: 1em;
-    font-family: "Lucida";
     display: inline-block;
     width: 40%;
     margin-right: 5%;
@@ -152,6 +149,7 @@ export const InputStyled = styled.input`
     color: white;
     outline: none;
     text-align: center;
+    font-size: 1em;
 `
 
 export const TextareaStyled = styled.textarea`
@@ -166,14 +164,18 @@ export const TextareaStyled = styled.textarea`
     color: white;
     outline: none;
     text-align: center;
+    font-size: 1em;
 `
 
 export const DivBackground = styled.div`
     background: url(${props => props.background});
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     padding: 1em;
     padding-bottom: 4em;
+    min-height: 100vh;
 `
 
 
@@ -193,4 +195,21 @@ export const Btn = styled.p`
     font-family: "Metal Mania";
     color: white;
     letter-spacing: 1px;
+`
+
+export const DivLegend = styled.div`
+    position: relative;
+`
+
+export const TitleLegend = styled.h2`
+    color:white;
+    text-align: center;
+    padding-top: 0;
+    margin-bottom: 0.8em;
+    font-size: 1.2em;
+`
+
+export const SubtitleLegend = styled.p`
+    color:white;
+    text-align: center;
 `
