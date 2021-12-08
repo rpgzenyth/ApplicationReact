@@ -104,3 +104,9 @@ export const BlurBackground = styled.div`
     background-color: #C4C4C480;
     z-index: -1;
 `
+
+export const FormCreatePerso = styled.form`
+`
+
+export const InputStyled = styled.input`
+`
