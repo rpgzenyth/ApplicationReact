@@ -13,7 +13,7 @@ import Login from "../components/screens/login";
 import NewGame from "../components/screens/newGame";
 import Parameters from "../components/screens/parameters";
 import GlobalStyle from "./globalStyle";
-import CreatePerso from "../components/screens/createperso";
+import CreatePerso from "../components/screens/createPerso";
 import dark from "../images/background_dark.png"
 
 
