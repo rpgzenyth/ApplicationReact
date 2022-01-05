@@ -1,10 +1,11 @@
 import React from 'react';
+import { ContentDiv } from '../../config/styled';
 
 const Parameters = () => {
     return (
-        <div>
+        <ContentDiv>
             <h1>Parameters</h1>
-        </div>
+        </ContentDiv>
     );
 };
 

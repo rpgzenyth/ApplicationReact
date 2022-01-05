@@ -2,13 +2,13 @@ import React from 'react';
 import {HeaderImg, BigBtn} from '../../config/styled'
 import logo from '../../logo.png';
 import { useHistory } from 'react-router';
-
+import { ContentDiv } from '../../config/styled';
 
 const Home = () => {
     const history = useHistory()
 
     return (
-        <div>
+        <ContentDiv>
             <HeaderImg src={logo}></HeaderImg>
             <div>
                 <BigBtn onClick={ () => history.push(`/new-game`)}>Nouvelle Partie</BigBtn>
@@ -16,7 +16,7 @@ const Home = () => {
                 <BigBtn onClick={ () => history.push(`/listing-perso`)}>Personnages</BigBtn>
                 <BigBtn onClick={ () => history.push(`/parameters`)}>Paramètres</BigBtn>
             </div>
-        </div>
+        </ContentDiv>
     );
 };
 

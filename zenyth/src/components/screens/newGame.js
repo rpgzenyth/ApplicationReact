@@ -1,10 +1,12 @@
 import React from 'react';
+import { ContentDiv } from '../../config/styled';
+
 
 const NewGame = () => {
     return (
-        <div>
+        <ContentDiv>
             <h1>New Game</h1>
-        </div>
+        </ContentDiv>
     );
 };
 

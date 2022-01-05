@@ -6,7 +6,13 @@ export const StyledHeader = styled.header`
     text-align: center;
     background-color: #4D4D4D;
     border-bottom: 2px solid white;
-    position: relative;
+    height: 6vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 
 export const StyledFooter = styled.footer`
@@ -175,9 +181,13 @@ export const DivBackground = styled.div`
     background-position: center;
     padding: 1em;
     padding-bottom: 4em;
-    min-height: 100vh;
+    min-height: 94vh;
+    margin-top: 6vh;
 `
-
+export const ContentDiv = styled.div`
+    min-height: 94vh;
+    margin-top: 6vh;
+`
 
 export const Btn = styled.p`
     background-color: #50080A;

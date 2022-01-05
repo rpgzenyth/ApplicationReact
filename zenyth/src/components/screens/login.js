@@ -1,4 +1,5 @@
 import { useEffect } from "react"
+import { ContentDiv } from '../../config/styled';
 
 const Login = () => {
     
@@ -11,9 +12,9 @@ const Login = () => {
       }, []);
 
     return(
-        <div>
+        <ContentDiv>
             <p>Login</p>
-        </div>
+        </ContentDiv>
     )
 
 }

@@ -1,11 +1,12 @@
 import React from 'react';
+import { ContentDiv } from '../../config/styled';
 
 const LoadGame = () => {
 
     return (
-        <div className='page'>
+        <ContentDiv className='page'>
             <h1>LoadGame</h1>
-        </div>
+        </ContentDiv>
     );
 };
 
