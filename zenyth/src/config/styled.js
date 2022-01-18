@@ -223,3 +223,33 @@ export const SubtitleLegend = styled.p`
     color:white;
     text-align: center;
 `
+export const Buttonde = styled.p`
+    background-color: #FFFFFF;
+    display: inline-block;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 0.3em;
+    font-size: 40px;
+    text-align: center;
+    margin-left: 12.5%;
+    width:40px;
+	height:45px;
+    font-family: "Metal Mania";
+    margin-bottom: 0.75em;
+
+`
+
+export const Buttondetwo = styled.p`
+    background-color: #FFFFFF;
+    display: inline-block;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 0.3em;
+    font-size: 40px;
+    text-align: center;
+    margin-left: 0.6em;
+    width:40px;
+	height:45px;
+    font-family: "Metal Mania";
+
+`

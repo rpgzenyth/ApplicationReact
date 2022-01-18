@@ -14,6 +14,7 @@ import NewGame from "../components/screens/newGame";
 import Parameters from "../components/screens/parameters";
 import GlobalStyle from "./globalStyle";
 import CreatePerso from "../components/screens/createPerso";
+import Lancede from "../components/screens/lancede";
 import dark from "../images/background_dragon_blur.png"
 
 
@@ -45,6 +46,9 @@ const Routes = () => {
             <Route exact path="/create-perso">
                 <CreatePerso background={dark}></CreatePerso>
                 <Footer/>
+            </Route>
+            <Route exact path="/lancede">
+                <Lancede background={dark}></Lancede>
             </Route>
             <Redirect to="/"/>
         </Switch>
