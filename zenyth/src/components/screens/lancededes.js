@@ -1,26 +1,24 @@
 import React from 'react';
-import { useHistory } from 'react-router';
-import {Buttonde, Buttondetwo} from '../../config/styled'
+import {Dice, DivBackground, DiceDiv, TitlePage} from '../../config/styled'
 
-
-const Lancede = () => {
-    const history = useHistory()
+const Lancede = (props) => {
 
     return (
-    <div>
-        <h1><font color="white">Lancé de dés</font></h1>
-        <div>
-        <Buttonde onClick={ () => history.push(`/`)}>4</Buttonde>
-        <Buttonde onClick={ () => history.push(`/`)}>6</Buttonde>
-        <Buttonde onClick={ () => history.push(`/`)}>8</Buttonde>
-        </div>
-        <div>   
-            <Buttondetwo onClick={ () => history.push(`/`)}>10</Buttondetwo>
-            <Buttondetwo onClick={ () => history.push(`/`)}>12</Buttondetwo>
-            <Buttondetwo onClick={ () => history.push(`/`)}>20</Buttondetwo>
-            <Buttondetwo onClick={ () => history.push(`/`)}>100</Buttondetwo>
-        </div>
-    </div>
+        <DivBackground background = {props.background}>
+            <TitlePage>Lancé de dés</TitlePage>
+
+            <DiceDiv>
+                <Dice>4</Dice>
+                <Dice>6</Dice>
+                <Dice>8</Dice>
+            </DiceDiv>
+            <DiceDiv>   
+                <Dice>10</Dice>
+                <Dice>12</Dice>
+                <Dice>20</Dice>
+                <Dice>100</Dice>
+            </DiceDiv>
+        </DivBackground>
     );
 };
 

@@ -41,7 +41,6 @@ const Routes = () => {
             </Route>
             <Route exact path="/parameters">
                 <Parameters></Parameters>
-                <Footer/>
             </Route>
             <Route exact path="/create-perso">
                 <CreatePerso background={dark}></CreatePerso>
