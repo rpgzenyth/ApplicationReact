@@ -113,12 +113,12 @@ export const BlurBackground = styled.div`
 `
 
 export const FormCreatePerso = styled.form`
-    padding-bottom: 8vh;
+    padding-bottom: 5vh;
 `
 
 export const TitleForm = styled.h1`
     color: white;
-    font-size: 1.2em;
+    font-size: 1.3em;
 `
 
 export const SubtitleForm = styled.h2`
@@ -189,6 +189,8 @@ export const DivBackground = styled.div`
 export const ContentDiv = styled.div`
     min-height: 94vh;
     padding-top: 6vh;
+    padding-left: 1em;
+    padding-right: 1em;
 `
 
 export const Btn = styled.p`
@@ -250,6 +252,6 @@ export const Dice = styled.p`
 export const TitlePage = styled.h1`
     color:white;
     padding-top: 1em;
-    margin-bottom: 0.8em;
+    margin-bottom: 1em;
     font-size: 1.3em;
 `

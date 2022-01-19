@@ -1,7 +1,7 @@
 import React from 'react';
 import {Dice, DivBackground, DiceDiv, TitlePage} from '../../config/styled'
 
-const Lancede = (props) => {
+const RollDice = (props) => {
 
     return (
         <DivBackground background = {props.background}>
@@ -23,4 +23,4 @@ const Lancede = (props) => {
 };
 
 
-export default Lancede;
+export default RollDice;

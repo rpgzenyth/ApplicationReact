@@ -33,7 +33,7 @@ const Header = () => {
           <FondPopUp>
             <ContainerPopUp>
               <AiFillCloseCircle onClick={() => menuBurger()} size="30px" style= { {position: "absolute", right: "-0.8em", top: "-0.8em", color: '#c4c4c4' } }/>
-              <BigBtn onClick={ () => history.push(`/lancede`)}>Lancé de dés</BigBtn>
+              <BigBtn onClick={ () => history.push(`/roll-dice`)}>Lancé de dés</BigBtn>
               <BigBtn onClick={ () => history.push(`/`)}>Black board</BigBtn>
               <BigBtn onClick={ () => history.push(`/`)}>Banque d'objets</BigBtn>
               <BigBtn onClick={ () => history.push(`/`)}>Bestiaire de l'univers</BigBtn>
