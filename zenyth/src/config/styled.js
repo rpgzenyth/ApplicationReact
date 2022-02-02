@@ -285,3 +285,12 @@ export const ClassRace = styled.p`
     position: relative;
     color: white;
 `
+
+export const ResultDice = styled.p`
+    text-align: center;
+    color: white;
+    font-size: 3em;
+`
+
+export const RollHistory = styled.div`
+`
