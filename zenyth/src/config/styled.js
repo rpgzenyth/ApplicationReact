@@ -294,3 +294,7 @@ export const ResultDice = styled.p`
 
 export const RollHistory = styled.div`
 `
+
+export const HistoryResult = styled.p`
+    color: white;
+`
