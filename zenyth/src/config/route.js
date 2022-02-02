@@ -38,7 +38,7 @@ const Routes = () => {
             </Route>
             <Route exact path="/listing-perso">
                 <ListingPerso background={dark}></ListingPerso>
-                <Footer/>
+                {/* <Footer/> */}
             </Route>
             <Route exact path="/parameters">
                 <Parameters></Parameters>

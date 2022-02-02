@@ -10,6 +10,7 @@ export const StyledHeader = styled.header`
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -214,6 +215,7 @@ export const Btn = styled.p`
 export const DivLegend = styled.div`
     position: relative;
     margin-top: 1em;
+    margin-bottom: 2em;
 `
 
 export const TitleLegend = styled.h2`
@@ -254,4 +256,32 @@ export const TitlePage = styled.h1`
     padding-top: 1em;
     margin-bottom: 1em;
     font-size: 1.3em;
+`
+
+export const DivPerso = styled.div`
+    position: relative;
+    margin-top: 1.5em;
+    background: rgba(160, 28, 33, 0.8);
+    border: 2px solid white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 0.4em;
+`
+
+export const Listing = styled.div`
+    padding-bottom: 2em;
+`
+
+export const PersoName = styled.h2`
+    position: relative;
+    color: white;
+    margin: 0;
+    font-size: 1.2em;
+    padding: 0;
+    padding-bottom: 0.5em;
+`
+
+export const ClassRace = styled.p`
+    position: relative;
+    color: white;
 `
