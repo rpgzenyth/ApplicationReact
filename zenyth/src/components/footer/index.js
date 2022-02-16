@@ -10,27 +10,30 @@ import description from '../../images/description.png';
 
 const Footer = () => {
 
-    const history = useHistory()
+    const ChangeBack = () =>{
+        
+    }
+
 
     return (
       <div>
         <StyledFooter>
-            <FooterDiv onClick={ () => history.push(`/`)}>
+            <FooterDiv image={background} onClick={() =>  }>
                 <ImgBigBtn src={dice}></ImgBigBtn>
             </FooterDiv>
-            <FooterDiv onClick={ () => history.push(`/`)}>
+            <FooterDiv>
                 <ImgBigBtn src={bag}></ImgBigBtn>
             </FooterDiv>
-            <FooterDiv onClick={ () => history.push(`/`)}>
+            <FooterDiv>
                 <ImgBigBtn src={tools}></ImgBigBtn>
             </FooterDiv>
-            <FooterDiv onClick={ () => history.push(`/`)}>
+            <FooterDiv>
                 <ImgBigBtn src={potion}></ImgBigBtn>
             </FooterDiv>
-            <FooterDiv onClick={ () => history.push(`/`)}>
+            <FooterDiv>
                 <ImgBigBtn src={sword}></ImgBigBtn>
             </FooterDiv>
-            <FooterDiv onClick={ () => history.push(`/`)}>
+            <FooterDiv>
                 <ImgBigBtn src={description}></ImgBigBtn>
             </FooterDiv>
         </StyledFooter>

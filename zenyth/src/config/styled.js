@@ -71,7 +71,7 @@ export const ImgBigBtn = styled.img`
 
 export const FooterDiv = styled.div`
     display: flex;
-    background: white;
+    background: ${props => props.image};
     border-radius: 50%;
 `
 
