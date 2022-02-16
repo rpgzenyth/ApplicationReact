@@ -10,6 +10,7 @@ export const StyledHeader = styled.header`
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 9;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,6 +64,7 @@ export const BigBtn = styled.p`
     text-decoration: none;
     margin-bottom: 1em;
     font-family: "Metal Mania";
+    cursor: pointer;
 `
 export const ImgBigBtn = styled.img`
     max-width: 2em;
@@ -112,11 +114,12 @@ export const BlurBackground = styled.div`
 `
 
 export const FormCreatePerso = styled.form`
+    padding-bottom: 5vh;
 `
 
 export const TitleForm = styled.h1`
     color: white;
-    font-size: 1.2em;
+    font-size: 1.3em;
 `
 
 export const SubtitleForm = styled.h2`
@@ -179,14 +182,16 @@ export const DivBackground = styled.div`
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    padding: 1em;
-    padding-bottom: 4em;
+    padding-left: 1em;
+    padding-right: 1em;
     min-height: 94vh;
-    margin-top: 6vh;
+    padding-top: 6vh;
 `
 export const ContentDiv = styled.div`
     min-height: 94vh;
-    margin-top: 6vh;
+    padding-top: 6vh;
+    padding-left: 1em;
+    padding-right: 1em;
 `
 
 export const Btn = styled.p`
@@ -209,6 +214,8 @@ export const Btn = styled.p`
 
 export const DivLegend = styled.div`
     position: relative;
+    margin-top: 1em;
+    margin-bottom: 2em;
 `
 
 export const TitleLegend = styled.h2`
@@ -223,33 +230,71 @@ export const SubtitleLegend = styled.p`
     color:white;
     text-align: center;
 `
-export const Buttonde = styled.p`
-    background-color: #FFFFFF;
-    display: inline-block;
-    border: 1px solid;
-    border-radius: 10px;
-    padding: 0.3em;
-    font-size: 40px;
-    text-align: center;
-    margin-left: 12.5%;
-    width:40px;
-	height:45px;
-    font-family: "Metal Mania";
-    margin-bottom: 0.75em;
 
+export const DiceDiv = styled.div`
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2em;
 `
 
-export const Buttondetwo = styled.p`
+export const Dice = styled.p`
     background-color: #FFFFFF;
-    display: inline-block;
     border: 1px solid;
     border-radius: 10px;
     padding: 0.3em;
     font-size: 40px;
-    text-align: center;
-    margin-left: 0.6em;
-    width:40px;
-	height:45px;
+    width: 45px;
+	height: 45px;
     font-family: "Metal Mania";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
 
+export const TitlePage = styled.h1`
+    color:white;
+    padding-top: 1em;
+    margin-bottom: 1em;
+    font-size: 1.3em;
+`
+
+export const DivPerso = styled.div`
+    position: relative;
+    margin-top: 1.5em;
+    background: rgba(160, 28, 33, 0.8);
+    border: 2px solid white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 0.4em;
+`
+
+export const Listing = styled.div`
+    padding-bottom: 2em;
+`
+
+export const PersoName = styled.h2`
+    position: relative;
+    color: white;
+    margin: 0;
+    font-size: 1.2em;
+    padding: 0;
+    padding-bottom: 0.5em;
+`
+
+export const ClassRace = styled.p`
+    position: relative;
+    color: white;
+`
+
+export const ResultDice = styled.p`
+    text-align: center;
+    color: white;
+    font-size: 3em;
+`
+
+export const RollHistory = styled.div`
+`
+
+export const HistoryResult = styled.p`
+    color: white;
 `

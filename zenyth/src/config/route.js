@@ -14,42 +14,50 @@ import NewGame from "../components/screens/newGame";
 import Parameters from "../components/screens/parameters";
 import GlobalStyle from "./globalStyle";
 import CreatePerso from "../components/screens/createPerso";
-import dark from "../images/background_dark.png"
+
+import RollDice from "../components/screens/rollDice";
+import dark from "../images/background_dragon_blur.png"
 
 
 const Routes = () => {
     return(
     <Router>
         <GlobalStyle/>
-        <Header/>
         <Switch>
             <Route exact path="/">
                 <Home></Home>
             </Route>
             <Route exact path="/login">
+                <Header Back="true" />
                 <Login></Login>
             </Route>
             <Route exact path="/new-game">
+                <Header Back="true" />
                 <NewGame></NewGame>
             </Route>
             <Route exact path="/load-game">
+                <Header Back="true" />
                 <LoadGame></LoadGame>
             </Route>
             <Route exact path="/listing-perso">
-                <ListingPerso></ListingPerso>
+                <Header Back="true" />
+
+                <ListingPerso background={dark}></ListingPerso>
+                <Footer/>
+
             </Route>
             <Route exact path="/parameters">
+                <Header Back="true" />
                 <Parameters></Parameters>
-                <Footer/>
             </Route>
             <Route exact path="/create-perso">
+                <Header Param="true" Burger="true" />
                 <CreatePerso background={dark}></CreatePerso>
-                <Footer/>
             </Route>
-            
-            <Route exact path="/create-perso">
-                <CreatePerso background={dark}></CreatePerso>
-                <Footer/>
+            <Route exact path="/roll-dice">
+                <Header Param="true" Burger="true" />
+                <RollDice background={dark}></RollDice>
+
             </Route>
             <Redirect to="/"/>
         </Switch>
