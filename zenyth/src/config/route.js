@@ -41,17 +41,14 @@ const Routes = () => {
             </Route>
             <Route exact path="/listing-perso">
                 <Header Back="true" />
-
                 <ListingPerso background={dark}></ListingPerso>
-                <Footer/>
-
             </Route>
             <Route exact path="/parameters">
                 <Header Back="true" />
                 <Parameters></Parameters>
             </Route>
             <Route exact path="/create-perso">
-                <Header Param="true" Burger="true" />
+                <Header Param="true" Back="true" />
                 <CreatePerso background={dark}></CreatePerso>
             </Route>
             <Route exact path="/roll-dice">
