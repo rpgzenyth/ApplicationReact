@@ -194,7 +194,7 @@ export const ContentDiv = styled.div`
     padding-right: 1em;
 `
 
-export const Btn = styled.p`
+export const Btn = styled.button`
     background-color: #50080A;
     border: 1px solid white;
     border-radius: 10px;
