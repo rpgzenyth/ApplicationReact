@@ -1,10 +1,25 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 import { useHistory } from 'react-router';
 import { DivBackground, DivLegend, TitleLegend, SubtitleLegend, DivPerso, PersoName, ClassRace, Listing } from '../../config/styled';
 import {VscPersonAdd} from 'react-icons/vsc'
 
 const ListingPerso = props => {
     const history = useHistory()
+
+    const [results, setResults] = useState([]);
+
+    useEffect(() => {
+        axios({
+            method: 'GET',
+            url: `http://localhost:3131/api/v1/characters`,
+        }).then(function (response) {
+            setResults(response.data);
+        }).catch(function (error) {
+            console.log(error);
+        })
+    },[])
+
 
     return (
         <DivBackground background = {props.background}>
@@ -16,30 +31,14 @@ const ListingPerso = props => {
 
             {/* Boucle for */}
             <Listing>
-                <DivPerso>
-                    <PersoName>VENOCKA</PersoName>
-                    <ClassRace>Guerrier / Humain</ClassRace>
-                </DivPerso>
-                <DivPerso>
-                    <PersoName>alainproviste</PersoName>
-                    <ClassRace>Guerrier / Humain</ClassRace>
-                </DivPerso>
-                <DivPerso>
-                    <PersoName>Makory</PersoName>
-                    <ClassRace>Guerrier / Humain</ClassRace>
-                </DivPerso>
-                <DivPerso>
-                    <PersoName>Astyez</PersoName>
-                    <ClassRace>Guerrier / Humain</ClassRace>
-                </DivPerso>
-                <DivPerso>
-                    <PersoName>Atypox</PersoName>
-                    <ClassRace>Guerrier / Humain</ClassRace>
-                </DivPerso>
-                <DivPerso>
-                    <PersoName>catwoghost</PersoName>
-                    <ClassRace>Guerrier / Humain</ClassRace>
-                </DivPerso>
+                {
+                    results.map((result) => (
+                        <DivPerso key={result._id}>
+                            <PersoName>{result.name}</PersoName>
+                            <ClassRace>{result.class} / {result.race}</ClassRace>
+                        </DivPerso>
+                    ) )
+                }
             </Listing>
             {/* end for */}
 
