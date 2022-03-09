@@ -13,7 +13,7 @@ const Home = () => {
             <div>
                 <BigBtn onClick={ () => history.push(`/new-game`)}>Nouvelle Partie</BigBtn>
                 <BigBtn onClick={ () => history.push(`/load-game`)}>Charger Parties</BigBtn>
-                <BigBtn onClick={ () => history.push(`/listing-perso`)}>Personnages</BigBtn>
+                <BigBtn onClick={ () => history.push(`/listing-character`)}>Personnages</BigBtn>
                 <BigBtn onClick={ () => history.push(`/parameters`)}>Paramètres</BigBtn>
             </div>
         </ContentDiv>
