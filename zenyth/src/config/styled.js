@@ -268,6 +268,11 @@ export const DivPerso = styled.div`
     padding: 0.4em;
 `
 
+export const Link = styled.a`
+    position: relative;
+`
+
+
 export const Listing = styled.div`
     padding-bottom: 2em;
 `

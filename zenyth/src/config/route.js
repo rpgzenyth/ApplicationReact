@@ -14,6 +14,7 @@ import NewGame from "../components/screens/newGame";
 import Parameters from "../components/screens/parameters";
 import GlobalStyle from "./globalStyle";
 import CreatePerso from "../components/screens/createPerso";
+import UpdatePerso from "../components/screens/updatePerso";
 
 import RollDice from "../components/screens/rollDice";
 import dark from "../images/background_dragon_blur.png"
@@ -54,7 +55,10 @@ const Routes = () => {
             <Route exact path="/roll-dice">
                 <Header Param="true" Burger="true" />
                 <RollDice background={dark}></RollDice>
-
+            </Route>
+            <Route exact path="/update-perso/:id">
+                <Header Param="true" Back="true" />
+                <UpdatePerso background={dark}></UpdatePerso>
             </Route>
             <Redirect to="/"/>
         </Switch>

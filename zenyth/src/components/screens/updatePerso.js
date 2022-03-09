@@ -1,20 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { DivBackground, FormCreatePerso, DivForm, Hr, TextareaStyled, TitleForm, SubtitleForm, LabelForm, InputStyled, Btn } from '../../config/styled';
 import axios from 'axios';
+import { useParams } from "react-router-dom";
+import { useHistory } from 'react-router';
 
-const CreatePerso = props => {
+const UpdatePerso = props => {
     
-    const [character, setCharacter] = useState({})
+    const [character, setCharacter] = useState([]);
+    const history = useHistory()
+
+    let {id} = useParams();
+
+    useEffect(() => {
+        axios({
+            method: 'GET',
+            url: `http://localhost:3131/api/v1/characters/${id}`,
+        }).then(function (response) {
+            setCharacter(response.data);
+        }).catch(function (error) {
+            console.log(error);
+        })
+    },[]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         axios({
-            method: 'POST',
-            url: `http://localhost:3131/api/v1/characters`,
+            method: 'PUT',
+            url: `http://localhost:3131/api/v1/characters/${id}`,
             data: character
         }).then(function (response) {
-            console.log(response);
+            history.push(`/listing-perso`)
         }).catch(function (error) {
             console.log(error);
         })
@@ -24,7 +39,7 @@ const CreatePerso = props => {
         <DivBackground background= {props.background}>
             <FormCreatePerso onSubmit={(e) => handleSubmit(e)}>
 
-                <TitleForm>Création de personnage</TitleForm>
+                <TitleForm>Modification de personnage</TitleForm>
 
                 <SubtitleForm>Informations globales :</SubtitleForm>
 
@@ -33,7 +48,8 @@ const CreatePerso = props => {
 
                     <InputStyled
                         onChange={(e) => { setCharacter({ ...character, name: e.target.value }) }}
-                        name='CaracterName'> 
+                        name='CaracterName'
+                        value={character.name}> 
                     </InputStyled>
                 </div>
 
@@ -42,7 +58,8 @@ const CreatePerso = props => {
 
                     <InputStyled
                         onChange={(e) => { setCharacter({ ...character, race: e.target.value }) }}
-                        name='CaracterRace'>
+                        name='CaracterRace'
+                        value={character.race}>
                     </InputStyled>
                 </div>
 
@@ -51,7 +68,8 @@ const CreatePerso = props => {
 
                     <InputStyled
                         onChange={(e) => { setCharacter({ ...character, class: e.target.value }) }}
-                        name='CaracterClass'>
+                        name='CaracterClass'
+                        value={character.class}>
                     </InputStyled>
                 </div>
 
@@ -64,7 +82,8 @@ const CreatePerso = props => {
 
                     <InputStyled
                         onChange={(e) => { setCharacter({ ...character, age: e.target.value }) }}
-                        name='CaracterAge'>
+                        name='CaracterAge'
+                        value={character.age}>
                     </InputStyled>
                 </div>
 
@@ -73,7 +92,8 @@ const CreatePerso = props => {
 
                     <InputStyled
                         onChange={(e) => { setCharacter({ ...character, waist: e.target.value }) }}
-                        name='CaracterHeight'>
+                        name='CaracterHeight'
+                        value={character.waist}>
                     </InputStyled>
                 </div>
 
@@ -82,7 +102,8 @@ const CreatePerso = props => {
 
                     <InputStyled
                         onChange={(e) => { setCharacter({ ...character, weight: e.target.value }) }}
-                        name='CaracterWeight'>
+                        name='CaracterWeight'
+                        value={character.weight}>
                     </InputStyled>
                 </div>
 
@@ -91,7 +112,8 @@ const CreatePerso = props => {
 
                     <InputStyled
                         onChange={(e) => { setCharacter({ ...character, eyes: e.target.value }) }}
-                        name='CaracterEyes'>
+                        name='CaracterEyes'
+                        value={character.eyes}>
                     </InputStyled>
                 </div>
 
@@ -100,7 +122,8 @@ const CreatePerso = props => {
 
                     <InputStyled
                         onChange={(e) => { setCharacter({ ...character, skin: e.target.value }) }}
-                        name='CaracterSkin'>
+                        name='CaracterSkin'
+                        value={character.skin}>
                     </InputStyled>
                 </div>
 
@@ -109,7 +132,8 @@ const CreatePerso = props => {
 
                     <InputStyled
                         onChange={(e) => { setCharacter({ ...character, hair: e.target.value }) }}
-                        name='CaracterHair'>
+                        name='CaracterHair'
+                        value={character.hair}>
                     </InputStyled>
                 </div>
 
@@ -125,7 +149,8 @@ const CreatePerso = props => {
 
                         <TextareaStyled
                             onChange={(e) => { setCharacter({ ...character, personality: e.target.value }) }}
-                            name='CaracterTrait'>
+                            name='CaracterTrait'
+                            value={character.personality}>
                         </TextareaStyled>
                     </div>
 
@@ -134,7 +159,8 @@ const CreatePerso = props => {
 
                         <TextareaStyled
                             onChange={(e) => { setCharacter({ ...character, ideals: e.target.value }) }}
-                            name='CaracterIdeaux'>
+                            name='CaracterIdeaux'
+                            value={character.ideals}>
                         </TextareaStyled>
                     </div>
 
@@ -143,7 +169,8 @@ const CreatePerso = props => {
 
                         <TextareaStyled
                             onChange={(e) => { setCharacter({ ...character, links: e.target.value }) }}
-                            name='CaracterBigBtns'>
+                            name='CaracterBigBtns'
+                            value={character.links}>
                         </TextareaStyled>
                     </div>
 
@@ -152,7 +179,8 @@ const CreatePerso = props => {
 
                         <TextareaStyled
                             onChange={(e) => { setCharacter({ ...character, defects: e.target.value }) }}
-                            name='CaracterDefects'>
+                            name='CaracterDefects'
+                            value={character.defects}>
                         </TextareaStyled>
                     </div>
 
@@ -161,7 +189,8 @@ const CreatePerso = props => {
 
                         <TextareaStyled
                             onChange={(e) => { setCharacter({ ...character, history: e.target.value }) }}
-                            name='CaracterHistory'>
+                            name='CaracterHistory'
+                            value={character.history}>
                         </TextareaStyled>
                     </div>
                 </DivForm>
@@ -172,4 +201,4 @@ const CreatePerso = props => {
     )
 };
 
-export default CreatePerso;
+export default UpdatePerso;
