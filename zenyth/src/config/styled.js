@@ -266,6 +266,9 @@ export const DivPerso = styled.div`
     border-radius: 5px;
     text-align: center;
     padding: 0.4em;
+    &:hover {
+        background: rgba(160, 28, 33, 0.4);
+    }
 `
 
 export const Link = styled.a`
@@ -301,5 +304,41 @@ export const RollHistory = styled.div`
 `
 
 export const HistoryResult = styled.p`
+    color: white;
+`
+
+export const TitleDiv = styled.div`
+    margin: 5em 0;
+`
+
+export const BtnWhite = styled.div`
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 0.3em;
+    margin: 1em 0;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+        background-color: rgba(22, 17, 17, 0.30);
+    }
+`
+
+export const BtnBlack = styled.div`
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgba(22, 17, 17, 0.35);
+    padding: 0.3em;
+    margin: 1em 0;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+`
+
+export const SmallText = styled.p`
+    font-size: 0.8rem;
     color: white;
 `

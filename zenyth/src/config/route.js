@@ -62,7 +62,6 @@ const Routes = () => {
             </Route>
             <Redirect to="/"/>
         </Switch>
-        
     </Router>
     )
 }
