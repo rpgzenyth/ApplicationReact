@@ -5,7 +5,7 @@ const RollDice = (props) => {
 
     const [randomNumber, setRandomNumber] = useState();
     const [historyRoll, setResultHistory] = useState([]);
-    const [x, setX] = useState(0);
+    const [x, setX] = useState();
 
     const d4 = 4;
     const d6 = 6;
@@ -15,29 +15,62 @@ const RollDice = (props) => {
     const d20 = 20;
     const d100 = 100;
 
+    const [count, setCount] = useState(1);
+    
+    const decrement = () => {
+        if(count > 1) {
+            setCount(count - 1);
+        } else {
+            alert("Min 1")
+        }
+    };
+    
+    const increment = () => {
+        if(count < 10){
+            setCount(count + 1);
+        }else{
+            alert("Max 10")
+        }
+    };
+
     const RollDice = (dice) => {
-        const min = 1;
-        const max = dice + 1;
-        const random = Math.floor(Math.random() * (max - min)) + min;
-        setRandomNumber(random);
-        setX(x+1)
+
+        var y = 0;
         let resultDice = {
             id: x,
-            result: random,
+            result: [],
             dice: dice
+            
         };
-        setResultHistory([resultDice, ...historyRoll]);
-        console.log(resultDice);
-        console.log(historyRoll);
+
+        while(y < count) {
+            y += 1;
+            const min = 1;
+            const max = dice + 1;
+            const random = Math.floor(Math.random() * (max - min)) + min;
+            setRandomNumber(random);
+            setX(x+1)
+            resultDice.result.push(random);
+            setResultHistory([resultDice, ...historyRoll]);
+            console.log(resultDice);
+            console.log(historyRoll);
+            console.log("y = ",y);
+            console.log("result = ",resultDice);
+        }    
     }
 
     useEffect(() => {
         localStorage.setItem("historyRoll", JSON.stringify(historyRoll));
     }, [historyRoll]);
-
+    
     return (
         <DivBackground background = {props.background}>
             <TitlePage>Lancé de dés</TitlePage>
+            <DiceDiv>
+                <Dice onClick={decrement}>-</Dice>
+                <Dice>{count}</Dice>
+                <Dice onClick={increment}>+</Dice>
+            </DiceDiv>
             <ResultDice onChange={e => setRandomNumber(e.target.value)}>{randomNumber ? randomNumber : "0"}</ResultDice>
             <hr></hr>
             <DiceDiv>
@@ -54,7 +87,14 @@ const RollDice = (props) => {
             <RollHistory>
                 {
                     historyRoll.map((history) => (
-                        <HistoryResult key={history.id}>{history.result} (D{history.dice})</HistoryResult>
+                        <HistoryResult key={history.id}>
+                            {
+                                history.result.map((result) => (
+                                    <span key={result}>{result} ,</span>
+                                ))
+                            }
+                            (D{history.dice})
+                        </HistoryResult>
                     ))
                 }
             </RollHistory>

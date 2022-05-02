@@ -1,11 +1,13 @@
 import React from 'react';
-import { ContentDiv, TitlePage } from '../../config/styled';
+import { ContentDiv, TitleLegend, TitleDiv } from '../../config/styled';
 
 const LoadGame = () => {
     
     return (
-        <ContentDiv className='page'>
-            <TitlePage>LoadGame</TitlePage>
+        <ContentDiv>
+            <TitleDiv>
+                <TitleLegend>Vous n'avez aucune partie en cours</TitleLegend>
+            </TitleDiv>
         </ContentDiv>
     );
 };
