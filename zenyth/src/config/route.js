@@ -15,6 +15,7 @@ import Parameters from "../components/screens/parameters";
 import GlobalStyle from "./globalStyle";
 import CreateCharacter from "../components/screens/createCharacter";
 import UpdateCharacter from "../components/screens/updateCharacter";
+import DataCharacter from "../components/screens/dataCharacter";
 
 import RollDice from "../components/screens/rollDice";
 import dark from "../images/background_dragon_blur.png"
@@ -59,6 +60,10 @@ const Routes = () => {
             <Route exact path="/update-character/:id">
                 <Header Param="true" Back="true" />
                 <UpdateCharacter background={dark}></UpdateCharacter>
+            </Route>
+            <Route exact path="/data-character/:id">
+                <Header Param="true" Back="true" />
+                <DataCharacter></DataCharacter>
             </Route>
             <Redirect to="/"/>
         </Switch>
