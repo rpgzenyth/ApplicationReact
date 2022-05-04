@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from "react-router-dom";
-import { ClassRace, DivBackgroundData, DivDataChara, FooterDiv, ImgBigBtn, LabelForm, StyledFooter, TextDataChara } from '../../config/styled';
+import { ClassRace, DataCharaDiv, DivBackgroundData, DivDataChara, FooterDiv, ImgBigBtn, LabelForm, StyledFooter, TextDataChara } from '../../config/styled';
 import dice from '../../images/dice.png';
 import bag from '../../images/bag.png';
 import tools from '../../images/tools.png';
@@ -172,7 +172,7 @@ const DataCharacter = props => {
 
             { chose === "dice" ?
 
-                <div>
+                <DataCharaDiv>
                     <div>
                         <LabelForm>Dés de vie</LabelForm>
                         <DivDataChara>
@@ -260,12 +260,170 @@ const DataCharacter = props => {
                             <ClassRace>{verifData(character.tromperie )}</ClassRace>
                         </DivDataChara>
 
+                        <br/>
+
+                        <LabelForm>Jets de sauvegarde</LabelForm>
+                        <DivDataChara>
+                            <TextDataChara>Force : </TextDataChara>
+                            <ClassRace>{verifData(character.force_save )}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Dextérité : </TextDataChara>
+                            <ClassRace>{verifData(character.dexterite_save)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Constitution : </TextDataChara>
+                            <ClassRace>{verifData(character.constitution_save)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Intelligence : </TextDataChara>
+                            <ClassRace>{verifData(character.intelligence_save)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Sagesse : </TextDataChara>
+                            <ClassRace>{verifData(character.sagesse_save)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Charisme : </TextDataChara>
+                            <ClassRace>{verifData(character.charisme_save)}</ClassRace>
+                        </DivDataChara>
+                        
                     </div>
-                </div>
+                </DataCharaDiv>
 
                 :
                 null
             }
+
+            {chose === "bag" ? 
+
+                <div>
+                    <div>
+                        <LabelForm>Équipement</LabelForm>
+                        
+                    </div>
+                </div>
+            
+            
+            :null}
+
+
+            {chose === "tools" ? 
+
+            <div>
+                <div>
+                    <LabelForm>Autre maitrise et langues</LabelForm>
+                    
+                </div>
+            </div>
+
+
+            :null}
+
+
+            {chose === "potion" ? 
+
+            <div>
+                <div>
+                    <LabelForm>Classe de lanceur de sorts</LabelForm>
+                    
+                </div>
+            </div>
+
+
+            :null}
+
+            {chose === "sword" ? 
+
+            <div>
+                <div>
+                    <LabelForm>Attaque et sorts</LabelForm>
+                    
+                </div>
+            </div>
+
+
+            :null}
+
+            {chose === "description" ? 
+
+            <div>
+                <div>
+                    <LabelForm>Descriptif du personnage</LabelForm>
+                    <DivDataChara>
+                        <TextDataChara>Trait de personnalité : </TextDataChara>
+                        <ClassRace>{verifData(character.personalite)}</ClassRace>
+                    </DivDataChara>
+                    <DivDataChara>
+                        <TextDataChara>Idéaux : </TextDataChara>
+                        <ClassRace>{verifData(character.ideals)}</ClassRace>
+                    </DivDataChara>
+                    <DivDataChara>
+                        <TextDataChara>Liens : </TextDataChara>
+                        <ClassRace>{verifData(character.links)}</ClassRace>
+                    </DivDataChara>
+                    <DivDataChara>
+                        <TextDataChara>Défauts : </TextDataChara>
+                        <ClassRace>{verifData(character.defauts)}</ClassRace>
+                    </DivDataChara>
+
+                    <hr/>
+
+
+                    <DivDataChara>
+                        <TextDataChara>Age : </TextDataChara>
+                        <ClassRace>{verifData(character.age)}</ClassRace>
+                    </DivDataChara>
+                    <DivDataChara>
+                        <TextDataChara>Taille : </TextDataChara>
+                        <ClassRace>{verifData(character.waist)}</ClassRace>
+                    </DivDataChara>
+                    <DivDataChara>
+                        <TextDataChara>Poids : </TextDataChara>
+                        <ClassRace>{verifData(character.weight)}</ClassRace>
+                    </DivDataChara>
+                    <DivDataChara>
+                        <TextDataChara>Yeux : </TextDataChara>
+                        <ClassRace>{verifData(character.eyes)}</ClassRace>
+                    </DivDataChara>
+                    <DivDataChara>
+                        <TextDataChara>Peau : </TextDataChara>
+                        <ClassRace>{verifData(character.skin)}</ClassRace>
+                    </DivDataChara>
+                    <DivDataChara>
+                        <TextDataChara>Cheveux : </TextDataChara>
+                        <ClassRace>{verifData(character.hair)}</ClassRace>
+                    </DivDataChara>
+                    <DivDataChara>
+                        <TextDataChara>Défauts : </TextDataChara>
+                        <ClassRace>{verifData(character.defauts)}</ClassRace>
+                    </DivDataChara>
+
+                    <hr/>
+
+                    <DivDataChara>
+                        <TextDataChara>Apparence du personnage : </TextDataChara>
+                        <ClassRace>{verifData(character.apparence)}</ClassRace>
+                    </DivDataChara>
+                    <DivDataChara>
+                        <TextDataChara>Histoire du personnage : </TextDataChara>
+                        <ClassRace>{verifData(character.histoire)}</ClassRace>
+                    </DivDataChara>
+                    <DivDataChara>
+                        <TextDataChara>Alliés et organisation : </TextDataChara>
+                        <ClassRace>{verifData(character.ally)}, {verifData(character.organisation)}</ClassRace>
+                    </DivDataChara>
+                    <DivDataChara>
+                        <TextDataChara>Trésors : </TextDataChara>
+                        <ClassRace>{verifData(character.tresor)}</ClassRace>
+                    </DivDataChara>
+                </div>
+            </div>
+
+
+            :null}
+
+
 
 
             </DivBackgroundData>

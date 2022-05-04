@@ -391,3 +391,12 @@ export const TempBtn = styled.button`
     color: white;
     letter-spacing: 1px;
 `
+
+export const DataCharaDiv = styled.div`
+    max-height: 85vh;
+    overflow: auto;
+    scrollbar-width: none;
+    ::-webkit-scrollbar {
+        display: none;
+    }
+`
