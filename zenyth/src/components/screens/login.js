@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { ContentDiv, InputStyled, LabelForm, TitleForm, Btn, TitleLegend } from '../../config/styled';
 import axios from "axios";
 import { useHistory } from 'react-router';
@@ -29,10 +29,10 @@ const Login = () => {
   return(
     <ContentDiv>
       <form onSubmit={(e) => handleSubmit(e)}>
-        <TitleForm>Login</TitleForm>
+        <TitleForm>Connexion</TitleForm>
 
         <div>
-          <LabelForm>Email</LabelForm>
+          <LabelForm>Adresse mail</LabelForm>
           <InputStyled
             onChange={(e) => { setPlayer({ ...player, email: e.target.value }) }}
             name='email'
@@ -40,7 +40,7 @@ const Login = () => {
         </div>
 
         <div>
-          <LabelForm>Password</LabelForm>
+          <LabelForm>Mot de passe</LabelForm>
           <InputStyled
             onChange={(e) => { setPlayer({ ...player, password: e.target.value }) }}
             name='password'
@@ -58,7 +58,7 @@ const Login = () => {
         </div>  
       }
 
-        <Btn type='submit'>Login</Btn>
+        <Btn type='submit'>Se connecter</Btn>
       </form>
     </ContentDiv>
   )
