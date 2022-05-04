@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from "react-router-dom";
-import { DivBackground, FooterDiv, ImgBigBtn, StyledFooter } from '../../config/styled';
+import { ClassRace, DivBackgroundData, DivDataChara, FooterDiv, ImgBigBtn, LabelForm, StyledFooter, TextDataChara } from '../../config/styled';
 import dice from '../../images/dice.png';
 import bag from '../../images/bag.png';
 import tools from '../../images/tools.png';
@@ -57,33 +57,182 @@ const DataCharacter = props => {
         }
     }
 
+    const verifData = (data) =>{
+
+        if(data){
+            return data
+        }
+        else{
+            return '-'
+        }
+
+    }
+
 
     return (
         <>
-            <DivBackground>
+        <DivBackgroundData background={props.background}>
 
-                { chose === "none" ?
+            { chose === "none" ?
 
-                    <p>none</p> 
-                    
+                <div>
+                    <div>
+                        <LabelForm>Profil</LabelForm>
+                        <DivDataChara>
+                            <TextDataChara>Nom du personnage : </TextDataChara>
+                            <ClassRace>{verifData(character.name)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Nom du Joueur : </TextDataChara>
+                            <ClassRace>{verifData(character.player)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Classe et Niveau : </TextDataChara>
+                            <ClassRace>{verifData(character.class)}, {verifData(character.level)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Race : </TextDataChara>
+                            <ClassRace>{verifData(character.race)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Experience : </TextDataChara>
+                            <ClassRace>{verifData(character.xp)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Historique : </TextDataChara>
+                            <ClassRace>{verifData(character.history)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Alignement : </TextDataChara>
+                            <ClassRace>{verifData(character.alignement)}</ClassRace>
+                        </DivDataChara>
+
+                        <br/>
+
+                        <LabelForm>Statistique</LabelForm>
+                        <DivDataChara>
+                            <TextDataChara>Classe d'armure : </TextDataChara>
+                            <ClassRace>{verifData(character.CA)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Initiative : </TextDataChara>
+                            <ClassRace>{verifData(character.init)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Vitesse : </TextDataChara>
+                            <ClassRace>{verifData(character.speed)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Point de vie actuel : </TextDataChara>
+                            <ClassRace>{verifData(character.HP_now)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Point de vie temporaires : </TextDataChara>
+                            <ClassRace>{verifData(character.HP_temporary)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Sagesse (Perception) passive : </TextDataChara>
+                            <ClassRace>{verifData(character.perception)}</ClassRace>
+                        </DivDataChara>
 
 
-                    :
-                    null
-                }
+                        <br/>
 
-                { chose === "dice" ?
+                        <LabelForm>Statistique Principale</LabelForm>
+                        <DivDataChara>
+                            <TextDataChara>Force : </TextDataChara>
+                            <ClassRace>{verifData(character.force)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Dextérité : </TextDataChara>
+                            <ClassRace>{verifData(character.dexterite)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Constitution : </TextDataChara>
+                            <ClassRace>{verifData(character.constitution)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Intelligence : </TextDataChara>
+                            <ClassRace>{verifData(character.intelligence)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Sagesse : </TextDataChara>
+                            <ClassRace>{verifData(character.sagesse)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Charisme : </TextDataChara>
+                            <ClassRace>{verifData(character.charisme)}</ClassRace>
+                        </DivDataChara>
+                        
+                    </div>
+                </div>                
+                :
+                null
+            }
 
-                    <p>dice</p> 
-                    :
-                    null
-                }
-                <p>test</p>
+            { chose === "dice" ?
+
+                <div>
+                    <div>
+                        <LabelForm>Dés de vie</LabelForm>
+                        <DivDataChara>
+                            <TextDataChara>Dés de vie : </TextDataChara>
+                            <ClassRace>{verifData(character.des_vie)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Jds contre la mort : </TextDataChara>
+                            <ClassRace>{verifData(character.jds_mort)}</ClassRace>
+                        </DivDataChara>
+
+                        <br/>
+
+                        <LabelForm>Compétences</LabelForm>
+                        <DivDataChara>
+                            <TextDataChara>Acrobaties (DEX) : </TextDataChara>
+                            <ClassRace>{verifData(character.acrobaties)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Arcanes (INT) : </TextDataChara>
+                            <ClassRace>{verifData(character.arcanes)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Athlétisme (FOR) : </TextDataChara>
+                            <ClassRace>{verifData(character.athletisme)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Discrétion (DEX) : </TextDataChara>
+                            <ClassRace>{verifData(character.discretion)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Dressage (SAG) : </TextDataChara>
+                            <ClassRace>{verifData(character.dressage)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Excamotage (DEX) : </TextDataChara>
+                            <ClassRace>{verifData(character.excamotage)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Histoire (INT) : </TextDataChara>
+                            <ClassRace>{verifData(character.histoire)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Intimidation (CHA) : </TextDataChara>
+                            <ClassRace>{verifData(character.intimidation)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Investigation (INT) : </TextDataChara>
+                            <ClassRace>{verifData(character.investigation)}</ClassRace>
+                        </DivDataChara>
+
+                    </div>
+                </div>
+
+                :
+                null
+            }
 
 
-
-
-            </DivBackground>
+            </DivBackgroundData>
             <StyledFooter>
                 <FooterDiv image={background} onClick={() => {setChose("dice"); ChangeBack(background, setbackground)}}>
                     <ImgBigBtn src={dice}></ImgBigBtn>

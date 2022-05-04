@@ -342,3 +342,25 @@ export const SmallText = styled.p`
     font-size: 0.8rem;
     color: white;
 `
+
+export const TextDataChara = styled.p`
+    position: relative;
+    color: grey;
+`
+
+export const DivDataChara = styled.div`
+    display: flex;
+    justify-content: space-between;
+`
+
+export const DivBackgroundData = styled.div`
+    background: url(${props => props.background});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;    
+    padding-left: 1em;
+    padding-right: 1em;
+    min-height: 94vh;
+    padding-top: 6vh;
+`

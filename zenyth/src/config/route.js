@@ -17,6 +17,7 @@ import GlobalStyle from "./globalStyle";
 import CreateCharacter from "../components/screens/createCharacter";
 import UpdateCharacter from "../components/screens/updateCharacter";
 import DataCharacter from "../components/screens/dataCharacter";
+import BackgroundBlack from "../images/background_dark.png"
 
 import RollDice from "../components/screens/rollDice";
 import dark from "../images/background_dragon_blur.png"
@@ -68,7 +69,7 @@ const Routes = () => {
             </Route>
             <Route exact path="/data-character/:id">
                 <Header Param="true" Burger="true" />
-                <DataCharacter></DataCharacter>
+                <DataCharacter background={BackgroundBlack}></DataCharacter>
             </Route>
             <Redirect to="/"/>
         </Switch>
