@@ -28,7 +28,6 @@ export const StyledFooter = styled.footer`
     padding: 3px 0;
 `
 
-
 export const Titre = styled.p`
     font-family: "Metal Mania";
     color: white;
@@ -363,4 +362,32 @@ export const DivBackgroundData = styled.div`
     padding-right: 1em;
     min-height: 94vh;
     padding-top: 6vh;
+`
+
+
+export const TempFooter = styled.footer`
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom 0;
+    padding: 3px 0;
+    background-color: #0d0f1e;
+`
+
+
+export const TempBtn = styled.button`
+    background-color: #50080A;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 0.3em;
+    font-size: 20px;
+    display: block;
+    margin: auto;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 1em;
+    font-family: "Metal Mania";
+    color: white;
+    letter-spacing: 1px;
 `

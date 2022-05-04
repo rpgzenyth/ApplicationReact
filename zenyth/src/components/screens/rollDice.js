@@ -1,7 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {Dice, DivBackground, DiceDiv, TitlePage, ResultDice, RollHistory, HistoryResult} from '../../config/styled'
+import {Dice, DivBackground, DiceDiv, TitlePage, ResultDice, RollHistory, HistoryResult, TempFooter, TempBtn} from '../../config/styled'
+import { useHistory } from 'react-router';
 
 const RollDice = (props) => {
+
+    const history = useHistory()
 
     const [randomNumber, setRandomNumber] = useState();
     const [historyRoll, setResultHistory] = useState([]);
@@ -15,7 +18,6 @@ const RollDice = (props) => {
     const d12 = 12;
     const d20 = 20;
     const d100 = 100;
-
     const [count, setCount] = useState(1);
 
     useEffect(() => {
@@ -72,6 +74,7 @@ const RollDice = (props) => {
     }, [historyRoll]);
     
     return (
+        <>
         <DivBackground background = {props.background}>
             <TitlePage>Lancé de dés</TitlePage>
             <DiceDiv>
@@ -110,6 +113,10 @@ const RollDice = (props) => {
                 }
             </RollHistory>
         </DivBackground>
+        <TempFooter>
+            <TempBtn onClick={ () => history.goBack() }>Revenir sur la page de personnage</TempBtn>
+        </TempFooter>
+        </>
     );
 };
 
