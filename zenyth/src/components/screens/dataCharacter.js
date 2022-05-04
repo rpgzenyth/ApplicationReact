@@ -223,6 +223,42 @@ const DataCharacter = props => {
                             <TextDataChara>Investigation (INT) : </TextDataChara>
                             <ClassRace>{verifData(character.investigation)}</ClassRace>
                         </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Médecine (SAG) : </TextDataChara>
+                            <ClassRace>{verifData(character.medecine)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Nature (INT) : </TextDataChara>
+                            <ClassRace>{verifData(character.nature)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Perception (SAG) : </TextDataChara>
+                            <ClassRace>{verifData(character.perception)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Perspicacité (SAG) : </TextDataChara>
+                            <ClassRace>{verifData(character.perspicacite)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Persuasion (CHA) : </TextDataChara>
+                            <ClassRace>{verifData(character.persuasion)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Religion (INT) : </TextDataChara>
+                            <ClassRace>{verifData(character.investigation)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Représentation (CHA) : </TextDataChara>
+                            <ClassRace>{verifData(character.representation)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Surive (SAG) : </TextDataChara>
+                            <ClassRace>{verifData(character.survie)}</ClassRace>
+                        </DivDataChara>
+                        <DivDataChara>
+                            <TextDataChara>Tromperie (CHA) : </TextDataChara>
+                            <ClassRace>{verifData(character.tromperie )}</ClassRace>
+                        </DivDataChara>
 
                     </div>
                 </div>

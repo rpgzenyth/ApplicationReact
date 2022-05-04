@@ -5,7 +5,7 @@ const RollDice = (props) => {
 
     const [randomNumber, setRandomNumber] = useState();
     const [historyRoll, setResultHistory] = useState([]);
-    const [x, setX] = useState();
+    const [x, setX] = useState(1);
     const [sum, setSum] = useState();
 
     const d4 = 4;
@@ -47,6 +47,9 @@ const RollDice = (props) => {
             dice: dice
             
         };
+        setX(x+1)
+        console.log(x)
+        
 
         while(y < count) {
             y += 1;
@@ -54,7 +57,6 @@ const RollDice = (props) => {
             const max = dice + 1;
             const random = Math.floor(Math.random() * (max - min)) + min;
             setRandomNumber(random);
-            setX(x+1)
             resultDice.result.push(random);
             setResultHistory([resultDice, ...historyRoll]);
             let sum = 0;
@@ -96,7 +98,7 @@ const RollDice = (props) => {
                         <HistoryResult key={history.id}>
                             {
                                 history.result.map((result, i, history) => (
-                                    <span key={result}>
+                                    <span key={history.id}>
                                         { i + 1 === history.length ? <span>{result} </span> : <span>{result} + </span>} 
                                     </span>
                                 ))
