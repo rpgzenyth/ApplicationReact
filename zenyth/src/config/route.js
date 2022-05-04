@@ -11,6 +11,7 @@ import LoadGame from "../components/screens/loadGame";
 import ListingCharacter from "../components/screens/listingCharacter";
 import Login from "../components/screens/login";
 import NewGame from "../components/screens/newGame";
+import SelectCharacter from "../components/screens/selectCharacter";
 import Parameters from "../components/screens/parameters";
 import GlobalStyle from "./globalStyle";
 import CreateCharacter from "../components/screens/createCharacter";
@@ -37,6 +38,10 @@ const Routes = () => {
                 <Header Back="true" />
                 <NewGame></NewGame>
             </Route>
+            <Route exact path="/select-character">
+                <Header Back="true" />
+                <SelectCharacter></SelectCharacter>
+            </Route>
             <Route exact path="/load-game">
                 <Header Back="true" />
                 <LoadGame></LoadGame>
@@ -62,7 +67,7 @@ const Routes = () => {
                 <UpdateCharacter background={dark}></UpdateCharacter>
             </Route>
             <Route exact path="/data-character/:id">
-                <Header Param="true" Back="true" />
+                <Header Param="true" Burger="true" />
                 <DataCharacter></DataCharacter>
             </Route>
             <Redirect to="/"/>

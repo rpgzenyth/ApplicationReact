@@ -59,29 +59,31 @@ const DataCharacter = props => {
 
 
     return (
-        <DivBackground>
+        <>
+            <DivBackground>
 
-            { chose === "none" ?
+                { chose === "none" ?
 
-                <p>none</p> 
-                
-
-
-                :
-                null
-            }
-
-            { chose === "dice" ?
-
-                <p>dice</p> 
-                :
-                null
-            }
-            <p>test</p>
+                    <p>none</p> 
+                    
 
 
+                    :
+                    null
+                }
+
+                { chose === "dice" ?
+
+                    <p>dice</p> 
+                    :
+                    null
+                }
+                <p>test</p>
 
 
+
+
+            </DivBackground>
             <StyledFooter>
                 <FooterDiv image={background} onClick={() => {setChose("dice"); ChangeBack(background, setbackground)}}>
                     <ImgBigBtn src={dice}></ImgBigBtn>
@@ -102,7 +104,7 @@ const DataCharacter = props => {
                     <ImgBigBtn src={description}></ImgBigBtn>
                 </FooterDiv>
             </StyledFooter>
-        </DivBackground>
+        </>
     )
 
 

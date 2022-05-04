@@ -11,7 +11,7 @@ const NewGame = () => {
                 <TitleLegend>Lancer une partie <br /> en tant que</TitleLegend>
             </TitleDiv>
 
-            <BtnWhite onClick={ () => history.push(`/create-character`)}>
+            <BtnWhite onClick={ () => history.push(`/select-character`)}>
                 <Titre>Joueur</Titre>
             </BtnWhite>
             <SubtitleLegend>ou</SubtitleLegend>
