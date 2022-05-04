@@ -16,6 +16,10 @@ const RollDice = (props) => {
     const d100 = 100;
 
     const [count, setCount] = useState(1);
+
+    useEffect(() => {
+        localStorage.removeItem("historyRoll")
+    },[])
     
     const decrement = () => {
         if(count > 1) {
