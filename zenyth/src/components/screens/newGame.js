@@ -1,25 +1,26 @@
 import React from 'react';
-import { TitleDiv, ContentDiv, TitleLegend, BtnWhite, BtnBlack, Titre, SmallText, SubtitleLegend } from '../../config/styled';
 import { useHistory } from 'react-router';
+import { ExportBtnBlack, ExportBtnWhite, ExportTitre, ExportSmallText, ExportSubtitleLegend, ExportTitleLegend, ExportContentDiv, ExportTitleDiv } from '../style/exportedStyle';
+
 
 const NewGame = () => {
     const history = useHistory()
 
     return (
-        <ContentDiv>
-            <TitleDiv>
-                <TitleLegend>Lancer une partie <br /> en tant que</TitleLegend>
-            </TitleDiv>
+        <ExportContentDiv>
+            <ExportTitleDiv>
+                <ExportTitleLegend>Lancer une partie <br /> en tant que</ExportTitleLegend>
+            </ExportTitleDiv>
 
-            <BtnWhite onClick={ () => history.push(`/select-character`)}>
-                <Titre>Joueur</Titre>
-            </BtnWhite>
-            <SubtitleLegend>ou</SubtitleLegend>
-            <BtnBlack>
-                <Titre>Maitre du jeu</Titre>
-                <SmallText>en maintenance...</SmallText>
-            </BtnBlack>
-        </ContentDiv>
+            <ExportBtnWhite onClick={ () => history.push(`/select-character`)}>
+                <ExportTitre>Joueur</ExportTitre>
+            </ExportBtnWhite>
+            <ExportSubtitleLegend>ou</ExportSubtitleLegend>
+            <ExportBtnBlack>
+                <ExportTitre>Maitre du jeu</ExportTitre>
+                <ExportSmallText>en maintenance...</ExportSmallText>
+            </ExportBtnBlack>
+        </ExportContentDiv>
     );
 };
 

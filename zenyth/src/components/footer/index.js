@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {StyledFooter, ImgBigBtn, FooterDiv } from '../../config/styled'
 import dice from '../../images/dice.png';
 import bag from '../../images/bag.png';
 import tools from '../../images/tools.png';
 import potion from '../../images/potion.png';
 import sword from '../../images/sword.png';
 import description from '../../images/description.png';
+import { ExportStyleFooter, ExportImgBigBtn, ExportFooterDiv } from '../style/exportedStyle';
 
 
 
@@ -48,26 +48,26 @@ const FooterChoice = () => {
 
     return (
       <div>
-        <StyledFooter>
-            <FooterDiv image={background} onClick={() => {ChangeBack(background, setbackground); localStorage.setItem("chosen","dice");}}>
-                <ImgBigBtn src={dice}></ImgBigBtn>
-            </FooterDiv>
-            <FooterDiv image={background2} onClick={() => {ChangeBack(background2, setbackground2);localStorage.setItem("chosen","bag");}}>
-                <ImgBigBtn src={bag}></ImgBigBtn>
-            </FooterDiv>
-            <FooterDiv image={background3} onClick={() => {ChangeBack(background3, setbackground3);localStorage.setItem("chosen","tools");}}>
-                <ImgBigBtn src={tools}></ImgBigBtn>
-            </FooterDiv>
-            <FooterDiv image={background4} onClick={() => {ChangeBack(background4, setbackground4);localStorage.setItem("chosen","potion");}}>
-                <ImgBigBtn src={potion}></ImgBigBtn>
-            </FooterDiv>
-            <FooterDiv image={background5} onClick={() => {ChangeBack(background5, setbackground5);localStorage.setItem("chosen","sword");}}>
-                <ImgBigBtn src={sword}></ImgBigBtn>
-            </FooterDiv>
-            <FooterDiv image={background6} onClick={() => {ChangeBack(background6, setbackground6);localStorage.setItem("chosen","description");}}>
-                <ImgBigBtn src={description}></ImgBigBtn>
-            </FooterDiv>
-        </StyledFooter>
+        <ExportStyleFooter>
+            <ExportFooterDiv image={background} onClick={() => {ChangeBack(background, setbackground); localStorage.setItem("chosen","dice");}}>
+                <ExportImgBigBtn src={dice}></ExportImgBigBtn>
+            </ExportFooterDiv>
+            <ExportFooterDiv image={background2} onClick={() => {ChangeBack(background2, setbackground2);localStorage.setItem("chosen","bag");}}>
+                <ExportImgBigBtn src={bag}></ExportImgBigBtn>
+            </ExportFooterDiv>
+            <ExportFooterDiv image={background3} onClick={() => {ChangeBack(background3, setbackground3);localStorage.setItem("chosen","tools");}}>
+                <ExportImgBigBtn src={tools}></ExportImgBigBtn>
+            </ExportFooterDiv>
+            <ExportFooterDiv image={background4} onClick={() => {ChangeBack(background4, setbackground4);localStorage.setItem("chosen","potion");}}>
+                <ExportImgBigBtn src={potion}></ExportImgBigBtn>
+            </ExportFooterDiv>
+            <ExportFooterDiv image={background5} onClick={() => {ChangeBack(background5, setbackground5);localStorage.setItem("chosen","sword");}}>
+                <ExportImgBigBtn src={sword}></ExportImgBigBtn>
+            </ExportFooterDiv>
+            <ExportFooterDiv image={background6} onClick={() => {ChangeBack(background6, setbackground6);localStorage.setItem("chosen","description");}}>
+                <ExportImgBigBtn src={description}></ExportImgBigBtn>
+            </ExportFooterDiv>
+        </ExportStyleFooter>
       </div>
     )
 }

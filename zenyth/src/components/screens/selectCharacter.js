@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import { Listing, ContentDiv, DivPerso, Link, ClassRace, PersoName, BtnWhite, Titre, SubtitleLegend } from '../../config/styled';
 import { useHistory } from 'react-router';
+import { ExportBtnWhite, ExportPersoName, ExportClassRace, ExportDivPerso, ExportTitre, ExportSubtitleLegend, ExportContentDiv, ExportListing, ExportLink } from '../style/exportedStyle';
 
 const NewGame = () => {
     const history = useHistory()
@@ -21,24 +21,24 @@ const NewGame = () => {
 
 
     return (
-        <ContentDiv>
-            <BtnWhite onClick={ () => history.push(`/create-character`)}>
-                <Titre>Créer un personnage</Titre>
-            </BtnWhite>
-            <SubtitleLegend>ou</SubtitleLegend>
-            <Listing>
+        <ExportContentDiv>
+            <ExportBtnWhite onClick={ () => history.push(`/create-character`)}>
+                <ExportTitre>Créer un personnage</ExportTitre>
+            </ExportBtnWhite>
+            <ExportSubtitleLegend>ou</ExportSubtitleLegend>
+            <ExportListing>
                 {
                     results.map((result) => (
-                        <DivPerso key={result._id}>
-                            <Link onClick={ () => history.push(`/data-character/${result._id}`)}>
-                                <PersoName>{result.name}</PersoName>
-                                <ClassRace>{result.class} / {result.race}</ClassRace>
-                            </Link>
-                        </DivPerso>
+                        <ExportDivPerso key={result._id}>
+                            <ExportLink onClick={ () => history.push(`/data-character/${result._id}`)}>
+                                <ExportPersoName>{result.name}</ExportPersoName>
+                                <ExportClassRace>{result.class} / {result.race}</ExportClassRace>
+                            </ExportLink>
+                        </ExportDivPerso>
                     ) )
                 }
-            </Listing>
-        </ContentDiv>
+            </ExportListing>
+        </ExportContentDiv>
     );
 };
 

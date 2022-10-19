@@ -1,22 +1,21 @@
 import React from 'react';
-import {HeaderImg, BigBtn} from '../../config/styled'
 import logo from '../../logo.png';
 import { useHistory } from 'react-router';
-import { ContentDiv } from '../../config/styled';
+import { ExportBigBtn, ExportHeaderImg, ExportContentDiv } from '../style/exportedStyle';
 
 const Home = () => {
     const history = useHistory()
 
     return (
-        <ContentDiv>
-            <HeaderImg src={logo}></HeaderImg>
+        <ExportContentDiv>
+            <ExportHeaderImg src={logo}></ExportHeaderImg>
             <div>
-                <BigBtn onClick={ () => history.push(`/new-game`)}>Nouvelle Partie</BigBtn>
-                <BigBtn onClick={ () => history.push(`/load-game`)}>Charger Parties</BigBtn>
-                <BigBtn onClick={ () => history.push(`/listing-character`)}>Personnages</BigBtn>
-                <BigBtn onClick={ () => history.push(`/parameters`)}>Paramètres</BigBtn>
+                <ExportBigBtn onClick={ () => history.push(`/new-game`)}>Nouvelle Partie</ExportBigBtn>
+                <ExportBigBtn onClick={ () => history.push(`/load-game`)}>Charger Parties</ExportBigBtn>
+                <ExportBigBtn onClick={ () => history.push(`/listing-character`)}>Personnages</ExportBigBtn>
+                <ExportBigBtn onClick={ () => history.push(`/parameters`)}>Paramètres</ExportBigBtn>
             </div>
-        </ContentDiv>
+        </ExportContentDiv>
     );
 };
 

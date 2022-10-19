@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from "react-router-dom";
-import { ClassRace, DataCharaDiv, DivBackgroundData, DivDataChara, FooterDiv, ImgBigBtn, LabelForm, StyledFooter, TextDataChara } from '../../config/styled';
 import dice from '../../images/dice.png';
 import bag from '../../images/bag.png';
 import tools from '../../images/tools.png';
 import potion from '../../images/potion.png';
 import sword from '../../images/sword.png';
 import description from '../../images/description.png';
+import { ExportStyleFooter, ExportImgBigBtn, ExportLabelForm, ExportFooterDiv, ExportDivBackgroundData, ExportClassRace, ExportDataCharaDiv, ExportDivDataChara, ExportTextDataChara } from '../style/exportedStyle';
 
 const DataCharacter = props => {
 
@@ -71,98 +71,98 @@ const DataCharacter = props => {
 
     return (
         <>
-        <DivBackgroundData background={props.background}>
+        <ExportDivBackgroundData background={props.background}>
 
             { chose === "none" ?
 
                 <div>
                     <div>
-                        <LabelForm>Profil</LabelForm>
-                        <DivDataChara>
-                            <TextDataChara>Nom du personnage : </TextDataChara>
-                            <ClassRace>{verifData(character.name)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Nom du Joueur : </TextDataChara>
-                            <ClassRace>{verifData(character.player)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Classe et Niveau : </TextDataChara>
-                            <ClassRace>{verifData(character.class)}, {verifData(character.level)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Race : </TextDataChara>
-                            <ClassRace>{verifData(character.race)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Experience : </TextDataChara>
-                            <ClassRace>{verifData(character.xp)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Historique : </TextDataChara>
-                            <ClassRace>{verifData(character.history)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Alignement : </TextDataChara>
-                            <ClassRace>{verifData(character.alignement)}</ClassRace>
-                        </DivDataChara>
+                        <ExportLabelForm>Profil</ExportLabelForm>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Nom du personnage : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.name)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Nom du Joueur : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.player)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Classe et Niveau : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.class)}, {verifData(character.level)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Race : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.race)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Experience : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.xp)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Historique : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.history)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Alignement : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.alignement)}</ExportClassRace>
+                        </ExportDivDataChara>
 
                         <br/>
 
-                        <LabelForm>Statistique</LabelForm>
-                        <DivDataChara>
-                            <TextDataChara>Classe d'armure : </TextDataChara>
-                            <ClassRace>{verifData(character.CA)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Initiative : </TextDataChara>
-                            <ClassRace>{verifData(character.init)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Vitesse : </TextDataChara>
-                            <ClassRace>{verifData(character.speed)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Point de vie actuel : </TextDataChara>
-                            <ClassRace>{verifData(character.HP_now)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Point de vie temporaires : </TextDataChara>
-                            <ClassRace>{verifData(character.HP_temporary)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Sagesse (Perception) passive : </TextDataChara>
-                            <ClassRace>{verifData(character.perception)}</ClassRace>
-                        </DivDataChara>
+                        <ExportLabelForm>Statistique</ExportLabelForm>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Classe d'armure : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.CA)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Initiative : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.init)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Vitesse : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.speed)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Point de vie actuel : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.HP_now)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Point de vie temporaires : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.HP_temporary)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Sagesse (Perception) passive : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.perception)}</ExportClassRace>
+                        </ExportDivDataChara>
 
 
                         <br/>
 
-                        <LabelForm>Statistique Principale</LabelForm>
-                        <DivDataChara>
-                            <TextDataChara>Force : </TextDataChara>
-                            <ClassRace>{verifData(character.force)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Dextérité : </TextDataChara>
-                            <ClassRace>{verifData(character.dexterite)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Constitution : </TextDataChara>
-                            <ClassRace>{verifData(character.constitution)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Intelligence : </TextDataChara>
-                            <ClassRace>{verifData(character.intelligence)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Sagesse : </TextDataChara>
-                            <ClassRace>{verifData(character.sagesse)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Charisme : </TextDataChara>
-                            <ClassRace>{verifData(character.charisme)}</ClassRace>
-                        </DivDataChara>
+                        <ExportLabelForm>Statistique Principale</ExportLabelForm>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Force : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.force)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Dextérité : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.dexterite)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Constitution : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.constitution)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Intelligence : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.intelligence)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Sagesse : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.sagesse)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Charisme : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.charisme)}</ExportClassRace>
+                        </ExportDivDataChara>
                         
                     </div>
                 </div>                
@@ -172,124 +172,124 @@ const DataCharacter = props => {
 
             { chose === "dice" ?
 
-                <DataCharaDiv>
+                <ExportDataCharaDiv>
                     <div>
-                        <LabelForm>Dés de vie</LabelForm>
-                        <DivDataChara>
-                            <TextDataChara>Dés de vie : </TextDataChara>
-                            <ClassRace>{verifData(character.des_vie)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Jds contre la mort : </TextDataChara>
-                            <ClassRace>{verifData(character.jds_mort)}</ClassRace>
-                        </DivDataChara>
+                        <ExportLabelForm>Dés de vie</ExportLabelForm>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Dés de vie : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.des_vie)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Jds contre la mort : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.jds_mort)}</ExportClassRace>
+                        </ExportDivDataChara>
 
                         <br/>
 
-                        <LabelForm>Compétences</LabelForm>
-                        <DivDataChara>
-                            <TextDataChara>Acrobaties (DEX) : </TextDataChara>
-                            <ClassRace>{verifData(character.acrobaties)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Arcanes (INT) : </TextDataChara>
-                            <ClassRace>{verifData(character.arcanes)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Athlétisme (FOR) : </TextDataChara>
-                            <ClassRace>{verifData(character.athletisme)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Discrétion (DEX) : </TextDataChara>
-                            <ClassRace>{verifData(character.discretion)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Dressage (SAG) : </TextDataChara>
-                            <ClassRace>{verifData(character.dressage)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Excamotage (DEX) : </TextDataChara>
-                            <ClassRace>{verifData(character.excamotage)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Histoire (INT) : </TextDataChara>
-                            <ClassRace>{verifData(character.histoire)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Intimidation (CHA) : </TextDataChara>
-                            <ClassRace>{verifData(character.intimidation)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Investigation (INT) : </TextDataChara>
-                            <ClassRace>{verifData(character.investigation)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Médecine (SAG) : </TextDataChara>
-                            <ClassRace>{verifData(character.medecine)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Nature (INT) : </TextDataChara>
-                            <ClassRace>{verifData(character.nature)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Perception (SAG) : </TextDataChara>
-                            <ClassRace>{verifData(character.perception)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Perspicacité (SAG) : </TextDataChara>
-                            <ClassRace>{verifData(character.perspicacite)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Persuasion (CHA) : </TextDataChara>
-                            <ClassRace>{verifData(character.persuasion)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Religion (INT) : </TextDataChara>
-                            <ClassRace>{verifData(character.investigation)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Représentation (CHA) : </TextDataChara>
-                            <ClassRace>{verifData(character.representation)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Surive (SAG) : </TextDataChara>
-                            <ClassRace>{verifData(character.survie)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Tromperie (CHA) : </TextDataChara>
-                            <ClassRace>{verifData(character.tromperie )}</ClassRace>
-                        </DivDataChara>
+                        <ExportLabelForm>Compétences</ExportLabelForm>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Acrobaties (DEX) : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.acrobaties)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Arcanes (INT) : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.arcanes)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Athlétisme (FOR) : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.athletisme)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Discrétion (DEX) : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.discretion)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Dressage (SAG) : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.dressage)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Excamotage (DEX) : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.excamotage)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Histoire (INT) : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.histoire)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Intimidation (CHA) : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.intimidation)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Investigation (INT) : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.investigation)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Médecine (SAG) : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.medecine)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Nature (INT) : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.nature)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Perception (SAG) : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.perception)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Perspicacité (SAG) : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.perspicacite)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Persuasion (CHA) : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.persuasion)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Religion (INT) : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.investigation)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Représentation (CHA) : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.representation)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Surive (SAG) : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.survie)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Tromperie (CHA) : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.tromperie )}</ExportClassRace>
+                        </ExportDivDataChara>
 
                         <br/>
 
-                        <LabelForm>Jets de sauvegarde</LabelForm>
-                        <DivDataChara>
-                            <TextDataChara>Force : </TextDataChara>
-                            <ClassRace>{verifData(character.force_save )}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Dextérité : </TextDataChara>
-                            <ClassRace>{verifData(character.dexterite_save)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Constitution : </TextDataChara>
-                            <ClassRace>{verifData(character.constitution_save)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Intelligence : </TextDataChara>
-                            <ClassRace>{verifData(character.intelligence_save)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Sagesse : </TextDataChara>
-                            <ClassRace>{verifData(character.sagesse_save)}</ClassRace>
-                        </DivDataChara>
-                        <DivDataChara>
-                            <TextDataChara>Charisme : </TextDataChara>
-                            <ClassRace>{verifData(character.charisme_save)}</ClassRace>
-                        </DivDataChara>
+                        <ExportLabelForm>Jets de sauvegarde</ExportLabelForm>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Force : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.force_save )}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Dextérité : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.dexterite_save)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Constitution : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.constitution_save)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Intelligence : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.intelligence_save)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Sagesse : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.sagesse_save)}</ExportClassRace>
+                        </ExportDivDataChara>
+                        <ExportDivDataChara>
+                            <ExportTextDataChara>Charisme : </ExportTextDataChara>
+                            <ExportClassRace>{verifData(character.charisme_save)}</ExportClassRace>
+                        </ExportDivDataChara>
                         
                     </div>
-                </DataCharaDiv>
+                </ExportDataCharaDiv>
 
                 :
                 null
@@ -299,7 +299,7 @@ const DataCharacter = props => {
 
                 <div>
                     <div>
-                        <LabelForm>Équipement</LabelForm>
+                        <ExportLabelForm>Équipement</ExportLabelForm>
                         
                     </div>
                 </div>
@@ -312,7 +312,7 @@ const DataCharacter = props => {
 
             <div>
                 <div>
-                    <LabelForm>Autre maitrise et langues</LabelForm>
+                    <ExportLabelForm>Autre maitrise et langues</ExportLabelForm>
                     
                 </div>
             </div>
@@ -325,7 +325,7 @@ const DataCharacter = props => {
 
             <div>
                 <div>
-                    <LabelForm>Classe de lanceur de sorts</LabelForm>
+                    <ExportLabelForm>Classe de lanceur de sorts</ExportLabelForm>
                     
                 </div>
             </div>
@@ -337,7 +337,7 @@ const DataCharacter = props => {
 
             <div>
                 <div>
-                    <LabelForm>Attaque et sorts</LabelForm>
+                    <ExportLabelForm>Attaque et sorts</ExportLabelForm>
                     
                 </div>
             </div>
@@ -349,74 +349,74 @@ const DataCharacter = props => {
 
             <div>
                 <div>
-                    <LabelForm>Descriptif du personnage</LabelForm>
-                    <DivDataChara>
-                        <TextDataChara>Trait de personnalité : </TextDataChara>
-                        <ClassRace>{verifData(character.personalite)}</ClassRace>
-                    </DivDataChara>
-                    <DivDataChara>
-                        <TextDataChara>Idéaux : </TextDataChara>
-                        <ClassRace>{verifData(character.ideals)}</ClassRace>
-                    </DivDataChara>
-                    <DivDataChara>
-                        <TextDataChara>Liens : </TextDataChara>
-                        <ClassRace>{verifData(character.links)}</ClassRace>
-                    </DivDataChara>
-                    <DivDataChara>
-                        <TextDataChara>Défauts : </TextDataChara>
-                        <ClassRace>{verifData(character.defauts)}</ClassRace>
-                    </DivDataChara>
+                    <ExportLabelForm>Descriptif du personnage</ExportLabelForm>
+                    <ExportDivDataChara>
+                        <ExportTextDataChara>Trait de personnalité : </ExportTextDataChara>
+                        <ExportClassRace>{verifData(character.personalite)}</ExportClassRace>
+                    </ExportDivDataChara>
+                    <ExportDivDataChara>
+                        <ExportTextDataChara>Idéaux : </ExportTextDataChara>
+                        <ExportClassRace>{verifData(character.ideals)}</ExportClassRace>
+                    </ExportDivDataChara>
+                    <ExportDivDataChara>
+                        <ExportTextDataChara>Liens : </ExportTextDataChara>
+                        <ExportClassRace>{verifData(character.links)}</ExportClassRace>
+                    </ExportDivDataChara>
+                    <ExportDivDataChara>
+                        <ExportTextDataChara>Défauts : </ExportTextDataChara>
+                        <ExportClassRace>{verifData(character.defauts)}</ExportClassRace>
+                    </ExportDivDataChara>
 
                     <hr/>
 
 
-                    <DivDataChara>
-                        <TextDataChara>Age : </TextDataChara>
-                        <ClassRace>{verifData(character.age)}</ClassRace>
-                    </DivDataChara>
-                    <DivDataChara>
-                        <TextDataChara>Taille : </TextDataChara>
-                        <ClassRace>{verifData(character.waist)}</ClassRace>
-                    </DivDataChara>
-                    <DivDataChara>
-                        <TextDataChara>Poids : </TextDataChara>
-                        <ClassRace>{verifData(character.weight)}</ClassRace>
-                    </DivDataChara>
-                    <DivDataChara>
-                        <TextDataChara>Yeux : </TextDataChara>
-                        <ClassRace>{verifData(character.eyes)}</ClassRace>
-                    </DivDataChara>
-                    <DivDataChara>
-                        <TextDataChara>Peau : </TextDataChara>
-                        <ClassRace>{verifData(character.skin)}</ClassRace>
-                    </DivDataChara>
-                    <DivDataChara>
-                        <TextDataChara>Cheveux : </TextDataChara>
-                        <ClassRace>{verifData(character.hair)}</ClassRace>
-                    </DivDataChara>
-                    <DivDataChara>
-                        <TextDataChara>Défauts : </TextDataChara>
-                        <ClassRace>{verifData(character.defauts)}</ClassRace>
-                    </DivDataChara>
+                    <ExportDivDataChara>
+                        <ExportTextDataChara>Age : </ExportTextDataChara>
+                        <ExportClassRace>{verifData(character.age)}</ExportClassRace>
+                    </ExportDivDataChara>
+                    <ExportDivDataChara>
+                        <ExportTextDataChara>Taille : </ExportTextDataChara>
+                        <ExportClassRace>{verifData(character.waist)}</ExportClassRace>
+                    </ExportDivDataChara>
+                    <ExportDivDataChara>
+                        <ExportTextDataChara>Poids : </ExportTextDataChara>
+                        <ExportClassRace>{verifData(character.weight)}</ExportClassRace>
+                    </ExportDivDataChara>
+                    <ExportDivDataChara>
+                        <ExportTextDataChara>Yeux : </ExportTextDataChara>
+                        <ExportClassRace>{verifData(character.eyes)}</ExportClassRace>
+                    </ExportDivDataChara>
+                    <ExportDivDataChara>
+                        <ExportTextDataChara>Peau : </ExportTextDataChara>
+                        <ExportClassRace>{verifData(character.skin)}</ExportClassRace>
+                    </ExportDivDataChara>
+                    <ExportDivDataChara>
+                        <ExportTextDataChara>Cheveux : </ExportTextDataChara>
+                        <ExportClassRace>{verifData(character.hair)}</ExportClassRace>
+                    </ExportDivDataChara>
+                    <ExportDivDataChara>
+                        <ExportTextDataChara>Défauts : </ExportTextDataChara>
+                        <ExportClassRace>{verifData(character.defauts)}</ExportClassRace>
+                    </ExportDivDataChara>
 
                     <hr/>
 
-                    <DivDataChara>
-                        <TextDataChara>Apparence du personnage : </TextDataChara>
-                        <ClassRace>{verifData(character.apparence)}</ClassRace>
-                    </DivDataChara>
-                    <DivDataChara>
-                        <TextDataChara>Histoire du personnage : </TextDataChara>
-                        <ClassRace>{verifData(character.histoire)}</ClassRace>
-                    </DivDataChara>
-                    <DivDataChara>
-                        <TextDataChara>Alliés et organisation : </TextDataChara>
-                        <ClassRace>{verifData(character.ally)}, {verifData(character.organisation)}</ClassRace>
-                    </DivDataChara>
-                    <DivDataChara>
-                        <TextDataChara>Trésors : </TextDataChara>
-                        <ClassRace>{verifData(character.tresor)}</ClassRace>
-                    </DivDataChara>
+                    <ExportDivDataChara>
+                        <ExportTextDataChara>Apparence du personnage : </ExportTextDataChara>
+                        <ExportClassRace>{verifData(character.apparence)}</ExportClassRace>
+                    </ExportDivDataChara>
+                    <ExportDivDataChara>
+                        <ExportTextDataChara>Histoire du personnage : </ExportTextDataChara>
+                        <ExportClassRace>{verifData(character.histoire)}</ExportClassRace>
+                    </ExportDivDataChara>
+                    <ExportDivDataChara>
+                        <ExportTextDataChara>Alliés et organisation : </ExportTextDataChara>
+                        <ExportClassRace>{verifData(character.ally)}, {verifData(character.organisation)}</ExportClassRace>
+                    </ExportDivDataChara>
+                    <ExportDivDataChara>
+                        <ExportTextDataChara>Trésors : </ExportTextDataChara>
+                        <ExportClassRace>{verifData(character.tresor)}</ExportClassRace>
+                    </ExportDivDataChara>
                 </div>
             </div>
 
@@ -426,27 +426,27 @@ const DataCharacter = props => {
 
 
 
-            </DivBackgroundData>
-            <StyledFooter>
-                <FooterDiv image={background} onClick={() => {setChose("dice"); ChangeBack(background, setbackground)}}>
-                    <ImgBigBtn src={dice}></ImgBigBtn>
-                </FooterDiv>
-                <FooterDiv image={background2} onClick={() => {setChose("bag"); ChangeBack(background2, setbackground2)}}>
-                    <ImgBigBtn src={bag}></ImgBigBtn>
-                </FooterDiv>
-                <FooterDiv image={background3} onClick={() => {setChose("tools"); ChangeBack(background3, setbackground3)}}>
-                    <ImgBigBtn src={tools}></ImgBigBtn>
-                </FooterDiv>
-                <FooterDiv image={background4} onClick={() => {setChose("potion"); ChangeBack(background4, setbackground4)}}>
-                    <ImgBigBtn src={potion}></ImgBigBtn>
-                </FooterDiv>
-                <FooterDiv image={background5} onClick={() => {setChose("sword"); ChangeBack(background5, setbackground5)}}>
-                    <ImgBigBtn src={sword}></ImgBigBtn>
-                </FooterDiv>
-                <FooterDiv image={background6} onClick={() => {setChose("description"); ChangeBack(background6, setbackground6)}}>
-                    <ImgBigBtn src={description}></ImgBigBtn>
-                </FooterDiv>
-            </StyledFooter>
+            </ExportDivBackgroundData>
+            <ExportStyleFooter>
+                <ExportFooterDiv image={background} onClick={() => {setChose("dice"); ChangeBack(background, setbackground)}}>
+                    <ExportImgBigBtn src={dice}></ExportImgBigBtn>
+                </ExportFooterDiv>
+                <ExportFooterDiv image={background2} onClick={() => {setChose("bag"); ChangeBack(background2, setbackground2)}}>
+                    <ExportImgBigBtn src={bag}></ExportImgBigBtn>
+                </ExportFooterDiv>
+                <ExportFooterDiv image={background3} onClick={() => {setChose("tools"); ChangeBack(background3, setbackground3)}}>
+                    <ExportImgBigBtn src={tools}></ExportImgBigBtn>
+                </ExportFooterDiv>
+                <ExportFooterDiv image={background4} onClick={() => {setChose("potion"); ChangeBack(background4, setbackground4)}}>
+                    <ExportImgBigBtn src={potion}></ExportImgBigBtn>
+                </ExportFooterDiv>
+                <ExportFooterDiv image={background5} onClick={() => {setChose("sword"); ChangeBack(background5, setbackground5)}}>
+                    <ExportImgBigBtn src={sword}></ExportImgBigBtn>
+                </ExportFooterDiv>
+                <ExportFooterDiv image={background6} onClick={() => {setChose("description"); ChangeBack(background6, setbackground6)}}>
+                    <ExportImgBigBtn src={description}></ExportImgBigBtn>
+                </ExportFooterDiv>
+            </ExportStyleFooter>
         </>
     )
 
