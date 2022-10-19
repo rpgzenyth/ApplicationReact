@@ -1,3 +1,13 @@
+/*
+    Fonctionnement du exported:
+    1- Ajouter le style dans un fichier deja créer ou créer un fichier style
+    2- Exporter dans ce fichier le style créer
+    3- Importer ici le style
+    4- Créer un export avec un nom Export... = ...
+*/
+
+
+
 import { StyledFooter, StyledHeader, HeaderImg, FooterDiv, TempFooter, ContentDiv } from "./layoutStyle"
 import { Btn,BigBtn,BtnBlack,BtnWhite,ImgBigBtn,TempBtn, BtnLinkGame, ShareLink, BtnCopy } from "./buttonStyle"
 import { FormCreatePerso, DivForm, LabelForm, SubtitleForm, TitleForm, InputStyled, FormCreateGame, InputGame } from "./formStyle"
