@@ -1,12 +1,37 @@
-import React from 'react';
-import { ExportTitleLegend, ExportContentDiv, ExportTitleDiv } from '../style/exportedStyle'
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
+import { ExportContentDiv, ExportTitleDiv, ExportBtnWhite, ExportTitre, ExportSmallText } from '../style/exportedStyle'
 
 const LoadGame = () => {
-    
+    const [results, setResults] = useState([]);
+    const token = localStorage.getItem('token');
+
+    useEffect(() => {
+        axios({
+            method: 'GET',
+            url: `http://localhost:3131/api/v1/gameRooms`,
+            headers: {
+                "content-type": "application/json",
+                "authorization": token
+            }
+        }).then(function (response) {
+            setResults(response.data);
+        }).catch(function (error) {
+            console.log(error);
+        })
+    },[])
+
     return (
         <ExportContentDiv>
             <ExportTitleDiv>
-                <ExportTitleLegend>Vous n'avez aucune partie en cours</ExportTitleLegend>
+                {
+                    results.map((result) => (
+                        <ExportBtnWhite key={result._id}>
+                            <ExportTitre>{result.name}</ExportTitre>
+                            <ExportSmallText>{result.updateDate}</ExportSmallText>
+                        </ExportBtnWhite>
+                    ) )
+                }
             </ExportTitleDiv>
         </ExportContentDiv>
     );

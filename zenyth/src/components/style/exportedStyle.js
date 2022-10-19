@@ -3,7 +3,7 @@
     1- Ajouter le style dans un fichier deja créer ou créer un fichier style
     2- Exporter dans ce fichier le style créer
     3- Importer ici le style
-    4- Créer un export avec un nom Export... = ...
+    4- Créer un export avec un nom Export... = ..../characterStyle
 */
 
 
@@ -13,7 +13,7 @@ import { Btn,BigBtn,BtnBlack,BtnWhite,ImgBigBtn,TempBtn, BtnLinkGame, ShareLink,
 import { FormCreatePerso, DivForm, LabelForm, SubtitleForm, TitleForm, InputStyled, FormCreateGame, InputGame } from "./formStyle"
 import { FondPopUp, ContainerPopUp} from './popupStyle'
 import { DivBackground, DivBackgroundData, BlurBackground } from "./backgroundStyled"
-import { PersoName, ClassRace, DataCharaDiv, DivDataChara, DivPerso, TextDataChara, DivLegend} from './charactereStyle'
+import { PersoName, ClassRace, DataCharaDiv, DivDataChara, DivPerso, TextDataChara, DivLegend} from './characterStyle'
 import { Titre, Dice, HistoryResult, Hr, ResultDice, SmallText, SubtitleLegend, TextareaStyled, TitleLegend, TitlePage, TitleDiv, Listing} from "./textStyle"
 import { DiceDiv, Link, RollHistory } from './styled'
 
@@ -66,7 +66,7 @@ export const ExportDivBackgroundData = DivBackgroundData
 export const ExportBlurBackground = BlurBackground
 
 
-// ./charactereStyle
+// ./characterStyle
 export const ExportPersoName = PersoName
 export const ExportClassRace = ClassRace
 export const ExportDataCharaDiv = DataCharaDiv
