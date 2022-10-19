@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { ExportBtn, ExportFormCreatePerso, ExportDivForm, ExportLabelForm, ExportSubtitleForm, ExportTitleForm, ExportDivBackground, ExportHr, ExportTextareaStyled, ExportInputStyle } from '../style/exportedStyle';
+import { Btn, FormCreatePerso, DivForm, LabelForm, SubtitleForm, TitleForm, DivBackground, Hr, TextareaStyled, InputStyled } from '../style/exportedStyle';
 
 const CreateCharacter = props => {
     
@@ -21,154 +21,154 @@ const CreateCharacter = props => {
     }
 
     return (
-        <ExportDivBackground background= {props.background}>
-            <ExportFormCreatePerso onSubmit={(e) => handleSubmit(e)}>
+        <DivBackground background= {props.background}>
+            <FormCreatePerso onSubmit={(e) => handleSubmit(e)}>
 
-                <ExportTitleForm>Création de personnage</ExportTitleForm>
+                <TitleForm>Création de personnage</TitleForm>
 
-                <ExportSubtitleForm>Informations globales :</ExportSubtitleForm>
+                <SubtitleForm>Informations globales :</SubtitleForm>
 
                 <div>
-                    <ExportLabelForm>Nom du personnage</ExportLabelForm>
+                    <LabelForm>Nom du personnage</LabelForm>
 
-                    <ExportInputStyle
+                    <InputStyled
                         onChange={(e) => { setCharacter({ ...character, name: e.target.value }) }}
                         name='CaracterName'> 
-                    </ExportInputStyle>
+                    </InputStyled>
                 </div>
 
                 <div>
-                    <ExportLabelForm>Race</ExportLabelForm>
+                    <LabelForm>Race</LabelForm>
 
-                    <ExportInputStyle
+                    <InputStyled
                         onChange={(e) => { setCharacter({ ...character, race: e.target.value }) }}
                         name='CaracterRace'>
-                    </ExportInputStyle>
+                    </InputStyled>
                 </div>
 
                 <div>
-                    <ExportLabelForm>Classe</ExportLabelForm>
+                    <LabelForm>Classe</LabelForm>
 
-                    <ExportInputStyle
+                    <InputStyled
                         onChange={(e) => { setCharacter({ ...character, class: e.target.value }) }}
                         name='CaracterClass'>
-                    </ExportInputStyle>
+                    </InputStyled>
                 </div>
 
-                <ExportHr></ExportHr>
+                <Hr></Hr>
 
-                <ExportSubtitleForm>Apparence du personnage :</ExportSubtitleForm>
+                <SubtitleForm>Apparence du personnage :</SubtitleForm>
 
                 <div>
-                    <ExportLabelForm>Age</ExportLabelForm>
+                    <LabelForm>Age</LabelForm>
 
-                    <ExportInputStyle
+                    <InputStyled
                         onChange={(e) => { setCharacter({ ...character, age: e.target.value }) }}
                         name='CaracterAge'>
-                    </ExportInputStyle>
+                    </InputStyled>
                 </div>
 
                 <div>
-                    <ExportLabelForm>Taille</ExportLabelForm>
+                    <LabelForm>Taille</LabelForm>
 
-                    <ExportInputStyle
+                    <InputStyled
                         onChange={(e) => { setCharacter({ ...character, waist: e.target.value }) }}
                         name='CaracterHeight'>
-                    </ExportInputStyle>
+                    </InputStyled>
                 </div>
 
                 <div>
-                    <ExportLabelForm>Poids</ExportLabelForm>
+                    <LabelForm>Poids</LabelForm>
 
-                    <ExportInputStyle
+                    <InputStyled
                         onChange={(e) => { setCharacter({ ...character, weight: e.target.value }) }}
                         name='CaracterWeight'>
-                    </ExportInputStyle>
+                    </InputStyled>
                 </div>
 
                 <div>
-                    <ExportLabelForm>Yeux</ExportLabelForm>
+                    <LabelForm>Yeux</LabelForm>
 
-                    <ExportInputStyle
+                    <InputStyled
                         onChange={(e) => { setCharacter({ ...character, eyes: e.target.value }) }}
                         name='CaracterEyes'>
-                    </ExportInputStyle>
+                    </InputStyled>
                 </div>
 
                 <div>
-                    <ExportLabelForm>Peau</ExportLabelForm>
+                    <LabelForm>Peau</LabelForm>
 
-                    <ExportInputStyle
+                    <InputStyled
                         onChange={(e) => { setCharacter({ ...character, skin: e.target.value }) }}
                         name='CaracterSkin'>
-                    </ExportInputStyle>
+                    </InputStyled>
                 </div>
 
                 <div>
-                    <ExportLabelForm>Cheveux</ExportLabelForm>
+                    <LabelForm>Cheveux</LabelForm>
 
-                    <ExportInputStyle
+                    <InputStyled
                         onChange={(e) => { setCharacter({ ...character, hair: e.target.value }) }}
                         name='CaracterHair'>
-                    </ExportInputStyle>
+                    </InputStyled>
                 </div>
 
 
-                <ExportHr></ExportHr>
+                <Hr></Hr>
 
-                <ExportDivForm>
+                <DivForm>
 
-                    <ExportSubtitleForm>Descriptif du personnage :</ExportSubtitleForm>
+                    <SubtitleForm>Descriptif du personnage :</SubtitleForm>
 
                     <div>
-                        <ExportLabelForm>Trait de personnalité</ExportLabelForm>
+                        <LabelForm>Trait de personnalité</LabelForm>
 
-                        <ExportTextareaStyled
+                        <TextareaStyled
                             onChange={(e) => { setCharacter({ ...character, personality: e.target.value }) }}
                             name='CaracterTrait'>
-                        </ExportTextareaStyled>
+                        </TextareaStyled>
                     </div>
 
                     <div>
-                        <ExportLabelForm>Idéaux</ExportLabelForm>
+                        <LabelForm>Idéaux</LabelForm>
 
-                        <ExportTextareaStyled
+                        <TextareaStyled
                             onChange={(e) => { setCharacter({ ...character, ideals: e.target.value }) }}
                             name='CaracterIdeaux'>
-                        </ExportTextareaStyled>
+                        </TextareaStyled>
                     </div>
 
                     <div>
-                        <ExportLabelForm>Liens</ExportLabelForm>
+                        <LabelForm>Liens</LabelForm>
 
-                        <ExportTextareaStyled
+                        <TextareaStyled
                             onChange={(e) => { setCharacter({ ...character, links: e.target.value }) }}
                             name='CaracterBigBtns'>
-                        </ExportTextareaStyled>
+                        </TextareaStyled>
                     </div>
 
                     <div>
-                        <ExportLabelForm>Défauts</ExportLabelForm>
+                        <LabelForm>Défauts</LabelForm>
 
-                        <ExportTextareaStyled
+                        <TextareaStyled
                             onChange={(e) => { setCharacter({ ...character, defects: e.target.value }) }}
                             name='CaracterDefects'>
-                        </ExportTextareaStyled>
+                        </TextareaStyled>
                     </div>
 
                     <div>
-                        <ExportLabelForm>Histoire du personnage</ExportLabelForm>
+                        <LabelForm>Histoire du personnage</LabelForm>
 
-                        <ExportTextareaStyled
+                        <TextareaStyled
                             onChange={(e) => { setCharacter({ ...character, history: e.target.value }) }}
                             name='CaracterHistory'>
-                        </ExportTextareaStyled>
+                        </TextareaStyled>
                     </div>
-                </ExportDivForm>
+                </DivForm>
 
-                <ExportBtn type='submit'>Enregistrer</ExportBtn>
-            </ExportFormCreatePerso>
-        </ExportDivBackground>
+                <Btn type='submit'>Enregistrer</Btn>
+            </FormCreatePerso>
+        </DivBackground>
     )
 };
 

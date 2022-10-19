@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useHistory } from 'react-router';
-import { ExportTempBtn, ExportDivBackground, ExportTempFooter, ExportDice, ExportHistoryResult, ExportResultDice, ExportTitlePage, ExportDiceDiv, ExportRollHistory } from '../style/exportedStyle';
+import { TempBtn, DivBackground, TempFooter, Dice, HistoryResult, ResultDice, TitlePage, DiceDiv, RollHistory } from '../style/exportedStyle';
 
 const RollDice = (props) => {
 
@@ -74,30 +74,30 @@ const RollDice = (props) => {
     
     return (
         <>
-        <ExportDivBackground background = {props.background}>
-            <ExportTitlePage>Lancé de dés</ExportTitlePage>
-            <ExportDiceDiv>
-                <ExportDice onClick={decrement}>-</ExportDice>
-                <ExportDice>{count}</ExportDice>
-                <ExportDice onClick={increment}>+</ExportDice>
-            </ExportDiceDiv>
-            <ExportResultDice onChange={e => setRandomNumber(e.target.value)}>{randomNumber ? randomNumber : "0"}</ExportResultDice>
+        <DivBackground background = {props.background}>
+            <TitlePage>Lancé de dés</TitlePage>
+            <DiceDiv>
+                <Dice onClick={decrement}>-</Dice>
+                <Dice>{count}</Dice>
+                <Dice onClick={increment}>+</Dice>
+            </DiceDiv>
+            <ResultDice onChange={e => setRandomNumber(e.target.value)}>{randomNumber ? randomNumber : "0"}</ResultDice>
             <hr></hr>
-            <ExportDiceDiv>
-                <ExportDice onClick={() => RollDice(d4) }>{d4}</ExportDice>
-                <ExportDice onClick={() => RollDice(d6) }>{d6}</ExportDice>
-                <ExportDice onClick={() => RollDice(d8) }>{d8}</ExportDice>
-            </ExportDiceDiv>
-            <ExportDiceDiv>   
-                <ExportDice onClick={() => RollDice(d10) }>{d10}</ExportDice>
-                <ExportDice onClick={() => RollDice(d12) }>{d12}</ExportDice>
-                <ExportDice onClick={() => RollDice(d20) }>{d20}</ExportDice>
-                <ExportDice onClick={() => RollDice(d100) }>{d100}</ExportDice>
-            </ExportDiceDiv>
-            <ExportRollHistory>
+            <DiceDiv>
+                <Dice onClick={() => RollDice(d4) }>{d4}</Dice>
+                <Dice onClick={() => RollDice(d6) }>{d6}</Dice>
+                <Dice onClick={() => RollDice(d8) }>{d8}</Dice>
+            </DiceDiv>
+            <DiceDiv>   
+                <Dice onClick={() => RollDice(d10) }>{d10}</Dice>
+                <Dice onClick={() => RollDice(d12) }>{d12}</Dice>
+                <Dice onClick={() => RollDice(d20) }>{d20}</Dice>
+                <Dice onClick={() => RollDice(d100) }>{d100}</Dice>
+            </DiceDiv>
+            <RollHistory>
                 {
                     historyRoll.map((history) => (
-                        <ExportHistoryResult key={history.id}>
+                        <HistoryResult key={history.id}>
                             {
                                 history.result.map((result, i, history) => (
                                     <span key={history.id}>
@@ -108,14 +108,14 @@ const RollDice = (props) => {
                             }
                             { history.result[1] ? <span>= {history.sum} </span> : null}
                             (D{history.dice})
-                        </ExportHistoryResult>
+                        </HistoryResult>
                     ))
                 }
-            </ExportRollHistory>
-        </ExportDivBackground>
-        <ExportTempFooter>
-            <ExportTempBtn onClick={ () => history.goBack() }>Revenir sur la page de personnage</ExportTempBtn>
-        </ExportTempFooter>
+            </RollHistory>
+        </DivBackground>
+        <TempFooter>
+            <TempBtn onClick={ () => history.goBack() }>Revenir sur la page de personnage</TempBtn>
+        </TempFooter>
         </>
     );
 };

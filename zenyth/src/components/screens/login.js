@@ -1,7 +1,7 @@
 import { useState } from "react"
 import axios from "axios";
 import { useHistory } from 'react-router';
-import { ExportBtn, ExportLabelForm, ExportTitleForm, ExportTitleLegend, ExportInputStyle, ExportContentDiv } from "../style/exportedStyle";
+import { Btn, LabelForm, TitleForm, TitleLegend, InputStyled, ContentDiv } from "../style/exportedStyle";
 
 const Login = () => {
     
@@ -27,40 +27,40 @@ const Login = () => {
   }
 
   return(
-    <ExportContentDiv>
+    <ContentDiv>
       <form onSubmit={(e) => handleSubmit(e)}>
-        <ExportTitleForm>Connexion</ExportTitleForm>
+        <TitleForm>Connexion</TitleForm>
 
         <div>
-          <ExportLabelForm>Adresse mail</ExportLabelForm>
-          <ExportInputStyle
+          <LabelForm>Adresse mail</LabelForm>
+          <InputStyled
             onChange={(e) => { setPlayer({ ...player, email: e.target.value }) }}
             name='email'
-          ></ExportInputStyle>
+          ></InputStyled>
         </div>
 
         <div>
-          <ExportLabelForm>Mot de passe</ExportLabelForm>
-          <ExportInputStyle
+          <LabelForm>Mot de passe</LabelForm>
+          <InputStyled
             onChange={(e) => { setPlayer({ ...player, password: e.target.value }) }}
             name='password'
             type='password'
-          ></ExportInputStyle>
+          ></InputStyled>
         </div>
 
         { !errorMessage ?
         ""
         :
         <div>
-          <ExportTitleLegend>
+          <TitleLegend>
             {errorMessage}
-          </ExportTitleLegend>
+          </TitleLegend>
         </div>  
       }
 
-        <ExportBtn type='submit'>Se connecter</ExportBtn>
+        <Btn type='submit'>Se connecter</Btn>
       </form>
-    </ExportContentDiv>
+    </ContentDiv>
   )
 
 }

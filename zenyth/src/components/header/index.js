@@ -3,7 +3,7 @@ import {MdOutlineKeyboardArrowLeft, MdSettings} from 'react-icons/md'
 import {FiMenu} from 'react-icons/fi'
 import {AiFillCloseCircle} from 'react-icons/ai'
 import { useHistory } from 'react-router';
-import { ExportStyleHeader,ExportBigBtn, ExportFondPopUp, ExportContainerPopUp, ExportBlurBackground, ExportTitre } from '../style/exportedStyle';
+import { StyledHeader,BigBtn, FondPopUp, ContainerPopUp, BlurBackground, Titre } from '../style/exportedStyle';
 
 const Header = (props) => {
 
@@ -23,35 +23,35 @@ const Header = (props) => {
 
   return (
     <div>
-      <ExportStyleHeader>
+      <StyledHeader>
         { props.Back ? <MdOutlineKeyboardArrowLeft onClick={ () => history.goBack() } size="30px" style= { {position: "absolute", left: "1em", top: "50%", transform: "translateY(-50%)", color: 'white' } }/> : null }
-        <ExportTitre onClick={ () => history.push(`/`) }>Zenyth rpg</ExportTitre>
+        <Titre onClick={ () => history.push(`/`) }>Zenyth rpg</Titre>
         { props.Burger ? <FiMenu onClick={() => menuBurger()} size="30px" style= { { position: "absolute", left: "1em", top: "50%", transform: "translateY(-50%)", color: 'white' } }/> : null }
         { props.Param ? <MdSettings onClick={() => menuParam()} size="30px" style= { { position: "absolute", right: "1em", top: "50%", transform: "translateY(-50%)", color: 'white' } }/> : null }
         { afficherMenuBurger === true ?
-        <ExportFondPopUp>
-          <ExportContainerPopUp>
+        <FondPopUp>
+          <ContainerPopUp>
             <AiFillCloseCircle onClick={() => menuBurger()} size="30px" style= { {position: "absolute", right: "-0.8em", top: "-0.8em", color: '#c4c4c4' } }/>
-            <ExportBigBtn onClick={ () => history.push(`/roll-dice`)}>Lancé de dés</ExportBigBtn>
-            <ExportBigBtn onClick={ () => history.push(`/`)}>Black board</ExportBigBtn>
-            <ExportBigBtn onClick={ () => history.push(`/`)}>Banque d'objets</ExportBigBtn>
-            <ExportBigBtn onClick={ () => history.push(`/`)}>Bestiaire de l'univers</ExportBigBtn>
-          </ExportContainerPopUp>
-          <ExportBlurBackground></ExportBlurBackground>
-        </ExportFondPopUp>
+            <BigBtn onClick={ () => history.push(`/roll-dice`)}>Lancé de dés</BigBtn>
+            <BigBtn onClick={ () => history.push(`/`)}>Black board</BigBtn>
+            <BigBtn onClick={ () => history.push(`/`)}>Banque d'objets</BigBtn>
+            <BigBtn onClick={ () => history.push(`/`)}>Bestiaire de l'univers</BigBtn>
+          </ContainerPopUp>
+          <BlurBackground></BlurBackground>
+        </FondPopUp>
         : null}
         { afficherParametres === true ?
-        <ExportFondPopUp>
-          <ExportContainerPopUp>
+        <FondPopUp>
+          <ContainerPopUp>
             <AiFillCloseCircle onClick={() => menuParam()} size="30px" style= { {position: "absolute", right: "-0.8em", top: "-0.8em", color: '#c4c4c4' } }/>
-            <ExportBigBtn onClick={ () => history.push(`/`)}>Sauvegarder</ExportBigBtn>
-            <ExportBigBtn onClick={ () => history.push(`/`)}>Tutoriel</ExportBigBtn>
-            <ExportBigBtn onClick={ () => history.push(`/`)}>Retour au menu</ExportBigBtn>
-          </ExportContainerPopUp>
-          <ExportBlurBackground></ExportBlurBackground>
-        </ExportFondPopUp>
+            <BigBtn onClick={ () => history.push(`/`)}>Sauvegarder</BigBtn>
+            <BigBtn onClick={ () => history.push(`/`)}>Tutoriel</BigBtn>
+            <BigBtn onClick={ () => history.push(`/`)}>Retour au menu</BigBtn>
+          </ContainerPopUp>
+          <BlurBackground></BlurBackground>
+        </FondPopUp>
         : null}
-      </ExportStyleHeader>
+      </StyledHeader>
     </div>
   )
 }

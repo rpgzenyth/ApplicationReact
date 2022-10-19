@@ -16,7 +16,7 @@ export const StyledHeader = styled.header`
     align-items: center;
 `
 
-export const StyledFooter = styled.footer`
+export const StyleFooter = styled.footer`
     width: 100%;
     text-align: center;
     background-color: #9D9C9D;

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router';
 import {VscPersonAdd} from 'react-icons/vsc'
-import { ExportDivBackground, ExportPersoName, ExportClassRace, ExportDivPerso, ExportSubtitleLegend, ExportTitleLegend, ExportListing, ExportDivLegend, ExportLink } from '../style/exportedStyle';
+import { DivBackground, PersoName, ClassRace, DivPerso, SubtitleLegend, TitleLegend, Listing, DivLegend, Link } from '../style/exportedStyle';
 
 const ListingCharacter = props => {
     const history = useHistory()
@@ -22,27 +22,27 @@ const ListingCharacter = props => {
 
 
     return (
-        <ExportDivBackground background = {props.background}>
-            <ExportDivLegend>
-                <ExportTitleLegend>Nom du personnage</ExportTitleLegend>
-                <ExportSubtitleLegend>Classe / Race</ExportSubtitleLegend>
+        <DivBackground background = {props.background}>
+            <DivLegend>
+                <TitleLegend>Nom du personnage</TitleLegend>
+                <SubtitleLegend>Classe / Race</SubtitleLegend>
                 <VscPersonAdd onClick={ () => history.push(`/create-character`)} size="35px" style= { {position: "absolute", right: "0", top: "50%", transform: "translateY(-50%)" , color: 'white' } }></VscPersonAdd>
-            </ExportDivLegend>
+            </DivLegend>
 
-            <ExportListing>
+            <Listing>
                 {
                     results.map((result) => (
-                        <ExportDivPerso key={result._id}>
-                            <ExportLink onClick={ () => history.push(`/update-character/${result._id}`)}>
-                                <ExportPersoName>{result.name}</ExportPersoName>
-                                <ExportClassRace>{result.class} / {result.race}</ExportClassRace>
-                            </ExportLink>
-                        </ExportDivPerso>
+                        <DivPerso key={result._id}>
+                            <Link onClick={ () => history.push(`/update-character/${result._id}`)}>
+                                <PersoName>{result.name}</PersoName>
+                                <ClassRace>{result.class} / {result.race}</ClassRace>
+                            </Link>
+                        </DivPerso>
                     ) )
                 }
-            </ExportListing>
+            </Listing>
 
-        </ExportDivBackground>
+        </DivBackground>
     );
 };
 

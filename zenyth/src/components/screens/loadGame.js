@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import { ExportContentDiv, ExportTitleDiv, ExportBtnWhite, ExportTitre, ExportSmallText } from '../style/exportedStyle'
+import { ContentDiv, TitleDiv, BtnWhite, Titre, SmallText } from '../style/exportedStyle'
 
 const LoadGame = () => {
     const [results, setResults] = useState([]);
@@ -22,18 +22,18 @@ const LoadGame = () => {
     },[])
 
     return (
-        <ExportContentDiv>
-            <ExportTitleDiv>
+        <ContentDiv>
+            <TitleDiv>
                 {
                     results.map((result) => (
-                        <ExportBtnWhite key={result._id}>
-                            <ExportTitre>{result.name}</ExportTitre>
-                            <ExportSmallText>{result.updateDate}</ExportSmallText>
-                        </ExportBtnWhite>
+                        <BtnWhite key={result._id}>
+                            <Titre>{result.name}</Titre>
+                            <SmallText>{result.updateDate}</SmallText>
+                        </BtnWhite>
                     ) )
                 }
-            </ExportTitleDiv>
-        </ExportContentDiv>
+            </TitleDiv>
+        </ContentDiv>
     );
 };
 

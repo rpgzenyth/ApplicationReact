@@ -1,11 +1,11 @@
 import React from 'react';
-import { ExportContentDiv } from '../style/exportedStyle';
+import { ContentDiv } from '../style/exportedStyle';
 
 const Parameters = () => {
     return (
-        <ExportContentDiv>
+        <ContentDiv>
             <h1>Parameters</h1>
-        </ExportContentDiv>
+        </ContentDiv>
     );
 };
 

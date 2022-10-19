@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExportContentDiv, ExportFormCreateGame, ExportInputGame, ExportBtn, ExportBtnLinkGame, ExportShareLink, ExportBtnCopy } from '../style/exportedStyle';
+import { ContentDiv, FormCreateGame, InputGame, Btn, BtnLinkGame, ShareLink, BtnCopy } from '../style/exportedStyle';
 import axios from 'axios';
 
 const NewGame = () => {
@@ -35,25 +35,25 @@ const NewGame = () => {
     }
 
     return (
-        <ExportContentDiv>
+        <ContentDiv>
 
-            <ExportFormCreateGame onSubmit={(e) => handleSubmit(e)}>
-                <ExportInputGame
+            <FormCreateGame onSubmit={(e) => handleSubmit(e)}>
+                <InputGame
                     onChange={(e) => { setGameName({ ...gameName, name: e.target.value }) }}
                     name='GameName'
                     placeholder='Nom de la partie'
                     disabled={isActive ? true : false}>
-                </ExportInputGame>
-                <ExportBtn type='submit' style={isActive ? {display: "none"} : { display: "block" }}>Enregistrer</ExportBtn>
-            </ExportFormCreateGame>
+                </InputGame>
+                <Btn type='submit' style={isActive ? {display: "none"} : { display: "block" }}>Enregistrer</Btn>
+            </FormCreateGame>
 
-            <ExportBtnLinkGame style={isActive ? {display: "flex"} : { display: "none" }}>
-                <ExportShareLink>https://rpgzenyth/{shareLink}</ExportShareLink>
-                <ExportBtnCopy onClick={copy}>Copier</ExportBtnCopy>
-            </ExportBtnLinkGame>
+            <BtnLinkGame style={isActive ? {display: "flex"} : { display: "none" }}>
+                <ShareLink>https://rpgzenyth/{shareLink}</ShareLink>
+                <BtnCopy onClick={copy}>Copier</BtnCopy>
+            </BtnLinkGame>
 
 
-        </ExportContentDiv>
+        </ContentDiv>
     );
 };
 
