@@ -1,6 +1,6 @@
 import { StyledFooter, StyledHeader, HeaderImg, FooterDiv, TempFooter, ContentDiv } from "./layoutStyle"
-import { Btn,BigBtn,BtnBlack,BtnWhite,ImgBigBtn,TempBtn } from "./bouttonStyle"
-import { FormCreatePerso, DivForm, LabelForm, SubtitleForm, TitleForm, InputStyled } from "./formStyle"
+import { Btn,BigBtn,BtnBlack,BtnWhite,ImgBigBtn,TempBtn, BtnLinkGame, ShareLink, BtnCopy } from "./buttonStyle"
+import { FormCreatePerso, DivForm, LabelForm, SubtitleForm, TitleForm, InputStyled, FormCreateGame, InputGame } from "./formStyle"
 import { FondPopUp, ContainerPopUp} from './popupStyle'
 import { DivBackground, DivBackgroundData, BlurBackground } from "./backgroundStyled"
 import { PersoName, ClassRace, DataCharaDiv, DivDataChara, DivPerso, TextDataChara, DivLegend} from './charactereStyle'
@@ -26,6 +26,9 @@ export const ExportBtnBlack = BtnBlack
 export const ExportBtnWhite = BtnWhite
 export const ExportImgBigBtn = ImgBigBtn
 export const ExportTempBtn = TempBtn
+export const ExportBtnLinkGame = BtnLinkGame
+export const ExportShareLink = ShareLink
+export const ExportBtnCopy = BtnCopy
 
 
 // ./formStyle
@@ -36,6 +39,9 @@ export const ExportLabelForm = LabelForm
 export const ExportSubtitleForm = SubtitleForm
 export const ExportTitleForm = TitleForm
 export const ExportInputStyle = InputStyled
+export const ExportFormCreateGame = FormCreateGame
+export const ExportInputGame = InputGame
+
 
 
 // ./popupStyle

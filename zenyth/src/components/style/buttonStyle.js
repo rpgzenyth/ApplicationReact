@@ -84,3 +84,38 @@ export const TempBtn = styled.button`
     color: white;
     letter-spacing: 1px;
 `
+
+export const BtnLinkGame = styled.div`
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 0.3em;
+    margin: 1em 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    &:hover {
+        background-color: rgba(22, 17, 17, 0.30);
+    }
+`
+
+export const ShareLink = styled.p`
+    color: white;
+    margin: 0 0.5rem;
+    max-width: 75%;
+    overflow: scroll;
+    white-space: nowrap;
+`
+
+export const BtnCopy = styled.div`
+    background-color: white;
+    border-radius: 5px;
+    padding: 0.3em;
+    display: block;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 1em;
+    cursor: pointer;
+    margin: 0;
+`

@@ -41,3 +41,27 @@ export const InputStyled = styled.input`
     text-align: center;
     font-size: 1em;
 `
+
+export const FormCreateGame = styled.form`  
+    margin: 4rem 0;
+    text-align: center;
+`
+
+export const InputGame = styled.input`
+    padding: 5px 20px;
+    margin-bottom: 3rem;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid white;
+    background: none;
+    display: inline-block;
+    width: 70%;
+    color: white;
+    outline: none;
+    text-align: center;
+    font-size: 1.4rem;
+    &::placeholder {
+        color: white;
+        font-style: italic;
+    }
+`
