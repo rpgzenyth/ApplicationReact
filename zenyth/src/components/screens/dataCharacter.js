@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { useParams } from "react-router-dom";
 import dice from '../../images/dice.png';
 import bag from '../../images/bag.png';
@@ -8,6 +7,7 @@ import potion from '../../images/potion.png';
 import sword from '../../images/sword.png';
 import description from '../../images/description.png';
 import { StyleFooter, ImgBigBtn, LabelForm, FooterDiv, DivBackgroundData, ClassRace, DataCharaDiv, DivDataChara, TextDataChara } from '../style/exportedStyle';
+import { getCharacter } from '../../hooks/useCharacterData';
 
 const DataCharacter = props => {
 
@@ -22,19 +22,12 @@ const DataCharacter = props => {
     const [background5, setbackground5] = useState('none');
     const [background6, setbackground6] = useState('none');
     const [chose, setChose] = useState("none");
-    
 
     useEffect(() => {
-        axios({
-            method: 'GET',
-            url: `http://localhost:3131/api/v1/characters/${id}`,
-        }).then(function (response) {
-            setCharacter(response.data);
-            console.log(response);
-        }).catch(function (error) {
-            console.log(error);
-        })
-    },[])
+        getCharacter(id).then((data) => {
+            setCharacter(data);
+        });
+    }, [id]);
 
 
     const ChangeBack = (name, fonction) =>{

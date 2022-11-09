@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import { useParams } from "react-router-dom";
 import { useHistory } from 'react-router';
-import { BigBtn, FormCreatePerso, DivForm, LabelForm, SubtitleForm, TitleForm, DivBackground, Hr, TextareaStyled, InputStyled } from '../style/exportedStyle';
+import { Btn, FormCreatePerso, DivForm, LabelForm, SubtitleForm, TitleForm, DivBackground, Hr, TextareaStyled, InputStyled } from '../style/exportedStyle';
+import { getCharacter, updateCharacter } from '../../hooks/useCharacterData';
 
 const UpdateCharacter = props => {
     
@@ -12,27 +12,18 @@ const UpdateCharacter = props => {
     let {id} = useParams();
 
     useEffect(() => {
-        axios({
-            method: 'GET',
-            url: `http://localhost:3131/api/v1/characters/${id}`,
-        }).then(function (response) {
-            setCharacter(response.data);
-        }).catch(function (error) {
-            console.log(error);
-        })
-    },[]);
+    
+        getCharacter(id).then((data) => {
+            setCharacter(data);
+        });
+    }, [id]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios({
-            method: 'PUT',
-            url: `http://localhost:3131/api/v1/characters/${id}`,
-            data: character
-        }).then(function (response) {
-            history.push(`/listing-character`)
-        }).catch(function (error) {
-            console.log(error);
-        })
+
+        updateCharacter(character, character).then((data) => {
+            history.push(`/listing-character`);
+        });
     }
 
     return (
@@ -195,7 +186,7 @@ const UpdateCharacter = props => {
                     </div>
                 </DivForm>
 
-                <BigBtn type='submit'>Enregistrer</BigBtn>
+                <Btn type='submit'>Enregistrer</Btn>
             </FormCreatePerso>
         </DivBackground>
     )

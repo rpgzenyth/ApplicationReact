@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { Btn, FormCreatePerso, DivForm, LabelForm, SubtitleForm, TitleForm, DivBackground, Hr, TextareaStyled, InputStyled } from '../style/exportedStyle';
+import { createCharacter } from '../../hooks/useCharacterData';
+import { getToken } from '../../utils/token';
 
 const CreateCharacter = props => {
     
@@ -9,15 +10,11 @@ const CreateCharacter = props => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios({
-            method: 'POST',
-            url: `http://localhost:3131/api/v1/characters`,
-            data: character
-        }).then(function (response) {
-            console.log(response);
-        }).catch(function (error) {
-            console.log(error);
-        })
+        const token = getToken();
+
+        createCharacter(character, token).then((data) => {
+            console.log(data);
+        });
     }
 
     return (

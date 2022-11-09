@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ContentDiv, FormCreateGame, InputGame, Btn, BtnLinkGame, ShareLink, BtnCopy } from '../style/exportedStyle';
-import axios from 'axios';
+import { createGameroom } from '../../hooks/useGameroomData';
+import { getToken } from '../../utils/token';
 
 const NewGame = () => {
 
@@ -11,27 +12,17 @@ const NewGame = () => {
     const [gameName, setGameName] = useState("");
     const [isActive, setIsActive] = useState(false);
     const [shareLink, setShareLink] = useState("");
-    const token = localStorage.getItem('token');
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        axios({
-            method: 'POST',
-            url: `http://localhost:3131/api/v1/gameRoom`,
-            data: gameName,
-            headers: {
-                "content-type": "application/json",
-                "authorization": token
-            }
-        }).then(function (response) {
-            console.log(response);
-            setGameName(response.data.data.name);
+        const token = getToken();
+
+        createGameroom(gameName, token).then((response) => {
+            setGameName(response.data.name);
             setIsActive(true);
-            setShareLink(response.data.data.token);
-        }).catch(function (error) {
-            console.log(error);
-        })
+            setShareLink(response.data.token);
+        });
     }
 
     return (

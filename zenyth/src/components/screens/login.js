@@ -1,7 +1,8 @@
 import { useState } from "react"
-import axios from "axios";
 import { useHistory } from 'react-router';
 import { Btn, LabelForm, TitleForm, TitleLegend, InputStyled, ContentDiv } from "../style/exportedStyle";
+import { login } from "../../hooks/usePlayerData";
+import { setToken } from "../../utils/token";
 
 const Login = () => {
     
@@ -13,17 +14,12 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios({
-      method: 'POST',
-      url: `http://localhost:3131/api/v1/login`,
-      data: player
-    }).then(function (response) {
-        localStorage.setItem('token', response.data.token);
-        history.push('/menu');
-    }).catch(function (error) {
-        setErrorMessage(error.response.data.message);
-        console.log(errorMessage);
-    })
+    login(player).then((data) => {
+      setToken(data.token);
+      history.push('/menu');
+    }).catch((error) => {
+      setErrorMessage(error.response.data.message);
+    });
   }
 
   return(

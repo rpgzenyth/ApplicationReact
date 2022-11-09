@@ -1,23 +1,21 @@
 import React, {useEffect, useState} from 'react';
-import axios from 'axios';
 import { useHistory } from 'react-router';
 import {VscPersonAdd} from 'react-icons/vsc'
 import { DivBackground, PersoName, ClassRace, DivPerso, SubtitleLegend, TitleLegend, Listing, DivLegend, Link } from '../style/exportedStyle';
+import { getToken } from '../../utils/token';
+import { getCharactersByUser } from '../../hooks/useCharacterData';
 
 const ListingCharacter = props => {
     const history = useHistory()
 
     const [results, setResults] = useState([]);
-
+    
     useEffect(() => {
-        axios({
-            method: 'GET',
-            url: `http://localhost:3131/api/v1/characters`,
-        }).then(function (response) {
-            setResults(response.data);
-        }).catch(function (error) {
-            console.log(error);
-        })
+        const token = getToken();
+
+        getCharactersByUser(token).then((data) => {
+            setResults(data);
+        });
     },[])
 
 
