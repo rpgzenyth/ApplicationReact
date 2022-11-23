@@ -5,7 +5,6 @@ import {
     Redirect
   } from "react-router-dom";
 import Header from "../components/header";
-// import Footer from "../components/footer";
 import Home from "../components/screens/home";
 import LoadGame from "../components/screens/loadGame";
 import ListingCharacter from "../components/screens/listingCharacter";
