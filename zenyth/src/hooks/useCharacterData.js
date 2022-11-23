@@ -1,7 +1,7 @@
 import { get, put, post } from "../utils/api";
 
 export const getCharacter = (id) => {
-    const resp = get(`http://localhost:3131/api/v1/characters/${id}`).then(
+    const resp = get(`${process.env.REACT_APP_API_URL}/characters/${id}`).then(
         (response) => {
             if (response.status !== 200) {
                 console.warn("Request failed. Status code: " + response.status);
@@ -14,7 +14,7 @@ export const getCharacter = (id) => {
 };
 
 export const getCharactersByUser = (token) => {
-    const resp = get(`http://localhost:3131/api/v1/characters/user`, token).then(
+    const resp = get(`${process.env.REACT_APP_API_URL}/characters/user`, token).then(
         (response) => {
             if (response.status !== 200) {
                 console.warn("Request failed. Status code: " + response.status);
@@ -27,7 +27,7 @@ export const getCharactersByUser = (token) => {
 };
 
 export const createCharacter = (data, token) => {
-    const resp = post(`http://localhost:3131/api/v1/characters`, data, token).then(
+    const resp = post(`${process.env.REACT_APP_API_URL}/characters`, data, token).then(
         (response) => {
             if (response.status !== 200) {
                 console.warn("Request failed. Status code: " + response.status);
@@ -40,7 +40,7 @@ export const createCharacter = (data, token) => {
 };
 
 export const updateCharacter = (id, data) => {
-    const resp = put(`http://localhost:3131/api/v1/characters/${id}`, data).then(
+    const resp = put(`${process.env.REACT_APP_API_URL}/characters/${id}`, data).then(
         (response) => {
             if (response.status !== 200) {
                 console.warn("Request failed. Status code: " + response.status);
