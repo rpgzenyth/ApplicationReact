@@ -18,6 +18,7 @@ import CreateCharacter from "../components/screens/createCharacter";
 import UpdateCharacter from "../components/screens/updateCharacter";
 import DataCharacter from "../components/screens/dataCharacter";
 import BackgroundBlack from "../images/background_dark.png"
+import JoinRoom from "../components/screens/joinRoom";
 
 import RollDice from "../components/screens/rollDice";
 import dark from "../images/background_dragon_blur.png"
@@ -46,6 +47,10 @@ const Routes = () => {
             <Route exact path="/load-game">
                 <Header Back="true" />
                 <LoadGame></LoadGame>
+            </Route>
+            <Route exact path="/join-room">
+                <Header Back="true" />
+                <JoinRoom></JoinRoom>
             </Route>
             <Route exact path="/listing-character">
                 <Header Back="true" />
