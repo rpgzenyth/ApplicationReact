@@ -16,6 +16,8 @@ const JoinRoom = () => {
             joinGameroom({token: params.get("token")}, token).then((data) => {
                 history.push(`/load-game`);
             });
+        } else {
+            history.goBack();
         }
     })
 
