@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {MdOutlineKeyboardArrowLeft, MdSettings} from 'react-icons/md'
 import {FiMenu} from 'react-icons/fi'
 import {AiFillCloseCircle} from 'react-icons/ai'
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import { StyledHeader,BigBtn, FondPopUp, ContainerPopUp, BlurBackground, Titre } from '../style/exportedStyle';
 
 const Header = (props) => {
@@ -11,7 +11,7 @@ const Header = (props) => {
 
   const [afficherParametres, setAfficherParametres] = useState(false)
 
-  const history = useHistory()
+  const history = useNavigate()
 
   const menuBurger = () =>{
     setAfficherMenuBurger(!afficherMenuBurger)

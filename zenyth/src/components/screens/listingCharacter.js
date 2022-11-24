@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import {VscPersonAdd} from 'react-icons/vsc'
 import { DivBackground, PersoName, ClassRace, DivPerso, SubtitleLegend, TitleLegend, Listing, DivLegend, Link } from '../style/exportedStyle';
 import { getToken } from '../../utils/token';
 import { getCharactersByUser } from '../../hooks/useCharacterData';
 
 const ListingCharacter = props => {
-    const history = useHistory()
+    const history = useNavigate()
 
     const [results, setResults] = useState([]);
     

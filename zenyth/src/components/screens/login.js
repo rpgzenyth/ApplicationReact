@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import { Btn, LabelForm, TitleForm, TitleLegend, InputStyled, ContentDiv } from "../style/exportedStyle";
 import { login } from "../../hooks/usePlayerData";
 import { setToken } from "../../utils/token";
@@ -9,7 +9,7 @@ const Login = () => {
   const [player, setPlayer] = useState();
   const [errorMessage, setErrorMessage] = useState();
 
-  const history = useHistory();
+  const history = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();

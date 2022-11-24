@@ -1,10 +1,10 @@
 import React from 'react';
 import logo from '../../logo.png';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import { BigBtn, HeaderImg, ContentDiv } from '../style/exportedStyle';
 
 const Home = () => {
-    const history = useHistory()
+    const history = useNavigate()
 
     return (
         <ContentDiv>

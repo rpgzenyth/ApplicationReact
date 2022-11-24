@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import { Btn, FormCreatePerso, DivForm, LabelForm, SubtitleForm, TitleForm, DivBackground, Hr, TextareaStyled, InputStyled } from '../style/exportedStyle';
 import { getCharacter, updateCharacter } from '../../hooks/useCharacterData';
 
 const UpdateCharacter = props => {
     
     const [character, setCharacter] = useState([]);
-    const history = useHistory()
+    const history = useNavigate()
 
     let {id} = useParams();
 
