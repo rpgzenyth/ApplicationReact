@@ -1,11 +1,4 @@
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Redirect
-  } from "react-router-dom";
 import Header from "../components/header";
-// import Footer from "../components/footer";
 import Home from "../components/screens/home";
 import LoadGame from "../components/screens/loadGame";
 import ListingCharacter from "../components/screens/listingCharacter";
@@ -21,65 +14,120 @@ import JoinRoom from "../components/screens/joinRoom";
 
 import RollDice from "../components/screens/rollDice";
 import dark from "../images/background_dragon_blur.png"
+import { Navigate } from "react-router";
+import { createBrowserRouter } from "react-router-dom";
 
+const Routes = createBrowserRouter([
+    {
+        path: "/",
+        element: <Home />
+    },
+    {
+        path: '/login',
+        element:(
+        <>
+            <Header Back="true"/>
+            <Login/>
+        </>
+        )
+    },
+    {
+        path: "/new-game",
+        element: (
+            <>
+                <Header Back="true" />
+                <NewGame/>
+            </>
+        )
 
-const Routes = () => {
-    return(
-    <Router>
-        
-        <Switch>
-            <Route exact path="/">
-                <Home></Home>
-            </Route>
-            <Route exact path="/login">
+    },
+    {
+        path: "/select-character",
+        element: (
+            <>
                 <Header Back="true" />
-                <Login></Login>
-            </Route>
-            <Route exact path="/new-game">
+                <SelectCharacter/>
+            </>
+        )
+    },
+    {
+        path: "/load-game",
+        element: (
+            <>
                 <Header Back="true" />
-                <NewGame></NewGame>
-            </Route>
-            <Route exact path="/select-character">
+                <LoadGame/>
+            </>
+        )
+    },
+    {
+        path: "/listing-character",
+        element: (
+            <>
                 <Header Back="true" />
-                <SelectCharacter></SelectCharacter>
-            </Route>
-            <Route exact path="/load-game">
+                <ListingCharacter background={dark} />
+            </>
+        )
+    },
+    {
+        path: "/parameters",
+        element: (
+            <>
                 <Header Back="true" />
-                <LoadGame></LoadGame>
-            </Route>
-            <Route exact path="/join-room">
-                <Header Back="true" />
-                <JoinRoom></JoinRoom>
-            </Route>
-            <Route exact path="/listing-character">
-                <Header Back="true" />
-                <ListingCharacter background={dark}></ListingCharacter>
-            </Route>
-            <Route exact path="/parameters">
-                <Header Back="true" />
-                <Parameters></Parameters>
-            </Route>
-            <Route exact path="/create-character">
+                <Parameters/>
+            </>
+        )
+    },
+    {
+        path: "/create-character",
+        element: (
+            <>
                 <Header Param="true" Back="true" />
-                <CreateCharacter background={dark}></CreateCharacter>
-            </Route>
-            <Route exact path="/roll-dice">
+                <CreateCharacter background={dark} />
+            </>
+        )
+    },
+    {
+        path: "/roll-dice",
+        element: (
+            <>
                 <Header Param="true" Burger="true" />
-                <RollDice background={dark}></RollDice>
-            </Route>
-            <Route exact path="/update-character/:id">
+                <RollDice background={dark}/>
+            </>
+        )
+    },
+    {
+        path: "/update-character/:id",
+        element: (
+            <>
                 <Header Param="true" Back="true" />
-                <UpdateCharacter background={dark}></UpdateCharacter>
-            </Route>
-            <Route exact path="/data-character/:id">
+                <UpdateCharacter background={dark}/>
+            </>
+        )
+    },
+    {
+        path: '/data-character/:id',
+        element: (
+            <>
                 <Header Param="true" Burger="true" />
-                <DataCharacter background={BackgroundBlack}></DataCharacter>
-            </Route>
-            <Redirect to="/"/>
-        </Switch>
-    </Router>
-    )
-}
+                <DataCharacter background={BackgroundBlack}/>
+            </>
+        )
+    },
+    {
+        path: 'join-room',
+        element: (
+            <>
+                <Header Back="true" />
+                <JoinRoom />
+            </>
+        )
+    }
+    {
+        path: "*",
+        element: <Navigate to="/" replace />
+    }
+])
+            
 
 
 export default Routes

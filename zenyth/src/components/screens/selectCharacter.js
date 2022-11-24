@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import { BtnWhite, PersoName, ClassRace, DivPerso, Titre, SubtitleLegend, ContentDiv, Listing, Link } from '../style/exportedStyle';
 import { getToken } from '../../utils/token';
 import { getCharactersByUser } from '../../hooks/useCharacterData';
 
 const NewGame = () => {
-    const history = useHistory()
+    const history = useNavigate()
 
     const [results, setResults] = useState([]);
 
