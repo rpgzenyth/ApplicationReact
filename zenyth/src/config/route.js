@@ -13,7 +13,6 @@ import Login from "../components/screens/login";
 import NewGame from "../components/screens/newGame";
 import SelectCharacter from "../components/screens/selectCharacter";
 import Parameters from "../components/screens/parameters";
-import GlobalStyle from "./globalStyle";
 import CreateCharacter from "../components/screens/createCharacter";
 import UpdateCharacter from "../components/screens/updateCharacter";
 import DataCharacter from "../components/screens/dataCharacter";
@@ -27,7 +26,7 @@ import dark from "../images/background_dragon_blur.png"
 const Routes = () => {
     return(
     <Router>
-        <GlobalStyle/>
+        
         <Switch>
             <Route exact path="/">
                 <Home></Home>
