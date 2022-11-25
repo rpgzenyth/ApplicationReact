@@ -16,8 +16,6 @@ import RollDice from "../components/screens/rollDice";
 import dark from "../images/background_dragon_blur.png"
 import { Navigate } from "react-router";
 import { createBrowserRouter } from "react-router-dom";
-import { Navigate } from "react-router";
-import { createBrowserRouter } from "react-router-dom";
 
 const Routes = createBrowserRouter([
     {
@@ -188,7 +186,7 @@ const Routes = createBrowserRouter([
                 <JoinRoom />
             </>
         )
-    }
+    },
     {
         path: "*",
         element: <Navigate to="/" replace />
