@@ -10,10 +10,10 @@ const Home = () => {
         <ContentDiv>
             <HeaderImg src={logo}></HeaderImg>
             <div>
-                <BigBtn onClick={ () => history.push(`/new-game`)}>Nouvelle Partie</BigBtn>
-                <BigBtn onClick={ () => history.push(`/load-game`)}>Charger Parties</BigBtn>
-                <BigBtn onClick={ () => history.push(`/listing-character`)}>Personnages</BigBtn>
-                <BigBtn onClick={ () => history.push(`/parameters`)}>Paramètres</BigBtn>
+                <BigBtn onClick={ () => history(`/new-game`)}>Nouvelle Partie</BigBtn>
+                <BigBtn onClick={ () => history(`/load-game`)}>Charger Parties</BigBtn>
+                <BigBtn onClick={ () => history(`/listing-character`)}>Personnages</BigBtn>
+                <BigBtn onClick={ () => history(`/parameters`)}>Paramètres</BigBtn>
             </div>
         </ContentDiv>
     );

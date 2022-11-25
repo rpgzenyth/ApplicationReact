@@ -22,7 +22,7 @@ const UpdateCharacter = props => {
         e.preventDefault();
 
         updateCharacter(character, character).then((data) => {
-            history.push(`/listing-character`);
+            history(`/listing-character`);
         });
     }
 

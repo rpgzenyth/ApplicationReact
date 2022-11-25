@@ -20,7 +20,7 @@ const NewGame = () => {
 
     return (
         <ContentDiv>
-            <BtnWhite onClick={ () => history.push(`/create-character`)}>
+            <BtnWhite onClick={ () => history(`/create-character`)}>
                 <Titre>Créer un personnage</Titre>
             </BtnWhite>
             <SubtitleLegend>ou</SubtitleLegend>
@@ -28,7 +28,7 @@ const NewGame = () => {
                 {
                     results.map((result) => (
                         <DivPerso key={result._id}>
-                            <Link onClick={ () => history.push(`/data-character/${result._id}`)}>
+                            <Link onClick={ () => history(`/data-character/${result._id}`)}>
                                 <PersoName>{result.name}</PersoName>
                                 <ClassRace>{result.class} / {result.race}</ClassRace>
                             </Link>
