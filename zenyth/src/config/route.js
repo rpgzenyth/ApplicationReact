@@ -16,6 +16,8 @@ import RollDice from "../components/screens/rollDice";
 import dark from "../images/background_dragon_blur.png"
 import { Navigate } from "react-router";
 import { createBrowserRouter } from "react-router-dom";
+import { Navigate } from "react-router";
+import { createBrowserRouter } from "react-router-dom";
 
 const Routes = createBrowserRouter([
     {
@@ -45,7 +47,24 @@ const Routes = createBrowserRouter([
         path: "/select-character",
         element: (
             <>
+                <NewGame/>
+            </>
+        )
+
+    },
+    {
+        path: "/select-character",
+        element: (
+            <>
                 <Header Back="true" />
+                <SelectCharacter/>
+            </>
+        )
+    },
+    {
+        path: "/load-game",
+        element: (
+            <>
                 <SelectCharacter/>
             </>
         )
@@ -63,7 +82,23 @@ const Routes = createBrowserRouter([
         path: "/listing-character",
         element: (
             <>
+                <LoadGame/>
+            </>
+        )
+    },
+    {
+        path: "/listing-character",
+        element: (
+            <>
                 <Header Back="true" />
+                <ListingCharacter background={dark} />
+            </>
+        )
+    },
+    {
+        path: "/parameters",
+        element: (
+            <>
                 <ListingCharacter background={dark} />
             </>
         )
@@ -81,7 +116,23 @@ const Routes = createBrowserRouter([
         path: "/create-character",
         element: (
             <>
+                <Parameters/>
+            </>
+        )
+    },
+    {
+        path: "/create-character",
+        element: (
+            <>
                 <Header Param="true" Back="true" />
+                <CreateCharacter background={dark} />
+            </>
+        )
+    },
+    {
+        path: "/roll-dice",
+        element: (
+            <>
                 <CreateCharacter background={dark} />
             </>
         )
@@ -99,7 +150,23 @@ const Routes = createBrowserRouter([
         path: "/update-character/:id",
         element: (
             <>
+                <RollDice background={dark}/>
+            </>
+        )
+    },
+    {
+        path: "/update-character/:id",
+        element: (
+            <>
                 <Header Param="true" Back="true" />
+                <UpdateCharacter background={dark}/>
+            </>
+        )
+    },
+    {
+        path: '/data-character/:id',
+        element: (
+            <>
                 <UpdateCharacter background={dark}/>
             </>
         )
@@ -128,6 +195,7 @@ const Routes = createBrowserRouter([
     }
 ])
             
+
 
 
 export default Routes
