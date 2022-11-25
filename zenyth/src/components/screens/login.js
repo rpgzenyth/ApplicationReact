@@ -12,11 +12,9 @@ const Login = () => {
   const history = useNavigate();
 
   const handleSubmit = (e) => {
-    console.log(player)
     e.preventDefault();
 
     login(player).then((data) => {
-      console.log(data)
       setToken(data.token);
       history('/menu');
     }).catch((error) => {
