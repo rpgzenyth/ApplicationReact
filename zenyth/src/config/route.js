@@ -81,14 +81,6 @@ const Routes = createBrowserRouter([
         path: "/create-character",
         element: (
             <>
-                <Parameters/>
-            </>
-        )
-    },
-    {
-        path: "/create-character",
-        element: (
-            <>
                 <Header Param="true" Back="true" />
                 <CreateCharacter background={dark} />
             </>
