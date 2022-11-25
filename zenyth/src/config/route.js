@@ -90,14 +90,6 @@ const Routes = createBrowserRouter([
         path: "/roll-dice",
         element: (
             <>
-                <CreateCharacter background={dark} />
-            </>
-        )
-    },
-    {
-        path: "/roll-dice",
-        element: (
-            <>
                 <Header Param="true" Burger="true" />
                 <RollDice background={dark}/>
             </>
