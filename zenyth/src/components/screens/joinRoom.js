@@ -17,7 +17,7 @@ const JoinRoom = () => {
                 history.push(`/load-game`);
             });
         } else {
-            history.goBack();
+            history(-1);
         }
     })
 

@@ -114,7 +114,7 @@ const RollDice = (props) => {
             </RollHistory>
         </DivBackground>
         <TempFooter>
-            <TempBtn onClick={ () => history.goBack() }>Revenir sur la page de personnage</TempBtn>
+            <TempBtn onClick={ () => history(-1) }>Revenir sur la page de personnage</TempBtn>
         </TempFooter>
         </>
     );

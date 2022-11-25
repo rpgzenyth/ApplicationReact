@@ -24,7 +24,7 @@ const Header = (props) => {
   return (
     <div>
       <StyledHeader>
-        { props.Back ? <MdOutlineKeyboardArrowLeft onClick={ () => history.goBack() } size="30px" style= { {position: "absolute", left: "1em", top: "50%", transform: "translateY(-50%)", color: 'white' } }/> : null }
+        { props.Back ? <MdOutlineKeyboardArrowLeft onClick={ () => history(-1) } size="30px" style= { {position: "absolute", left: "1em", top: "50%", transform: "translateY(-50%)", color: 'white' } }/> : null }
         <Titre onClick={ () => history(`/`) }>Zenyth rpg</Titre>
         { props.Burger ? <FiMenu onClick={() => menuBurger()} size="30px" style= { { position: "absolute", left: "1em", top: "50%", transform: "translateY(-50%)", color: 'white' } }/> : null }
         { props.Param ? <MdSettings onClick={() => menuParam()} size="30px" style= { { position: "absolute", right: "1em", top: "50%", transform: "translateY(-50%)", color: 'white' } }/> : null }
