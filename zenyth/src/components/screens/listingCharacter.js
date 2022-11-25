@@ -24,14 +24,14 @@ const ListingCharacter = props => {
             <DivLegend>
                 <TitleLegend>Nom du personnage</TitleLegend>
                 <SubtitleLegend>Classe / Race</SubtitleLegend>
-                <VscPersonAdd onClick={ () => history.push(`/create-character`)} size="35px" style= { {position: "absolute", right: "0", top: "50%", transform: "translateY(-50%)" , color: 'white' } }></VscPersonAdd>
+                <VscPersonAdd onClick={ () => history(`/create-character`)} size="35px" style= { {position: "absolute", right: "0", top: "50%", transform: "translateY(-50%)" , color: 'white' } }></VscPersonAdd>
             </DivLegend>
 
             <Listing>
                 {
                     results.map((result) => (
                         <DivPerso key={result._id}>
-                            <Link onClick={ () => history.push(`/update-character/${result._id}`)}>
+                            <Link onClick={ () => history(`/update-character/${result._id}`)}>
                                 <PersoName>{result.name}</PersoName>
                                 <ClassRace>{result.class} / {result.race}</ClassRace>
                             </Link>
