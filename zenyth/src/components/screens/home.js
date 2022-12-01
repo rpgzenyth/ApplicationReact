@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from '../../logo.png';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import { BigBtn, HeaderImg, ContentDiv } from '../style/exportedStyle';
+import { getToken } from '../../utils/token';
 
 const Home = () => {
-    const history = useHistory()
+    const history = useNavigate()
+
+    useEffect(() =>{
+        const token = getToken()
+        if(!token){
+            history('/login')
+        }
+    })
 
     return (
         <ContentDiv>
             <HeaderImg src={logo}></HeaderImg>
             <div>
-                <BigBtn onClick={ () => history.push(`/new-game`)}>Nouvelle Partie</BigBtn>
-                <BigBtn onClick={ () => history.push(`/load-game`)}>Charger Parties</BigBtn>
-                <BigBtn onClick={ () => history.push(`/listing-character`)}>Personnages</BigBtn>
-                <BigBtn onClick={ () => history.push(`/parameters`)}>Paramètres</BigBtn>
+                <BigBtn onClick={ () => history(`/new-game`)}>Nouvelle Partie</BigBtn>
+                <BigBtn onClick={ () => history(`/load-game`)}>Charger Parties</BigBtn>
+                <BigBtn onClick={ () => history(`/listing-character`)}>Personnages</BigBtn>
+                <BigBtn onClick={ () => history(`/parameters`)}>Paramètres</BigBtn>
             </div>
         </ContentDiv>
     );
