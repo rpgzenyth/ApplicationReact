@@ -4,7 +4,6 @@ import { createGameroom } from '../../hooks/useGameroomData';
 import { getToken } from '../../utils/token';
 
 const NewGame = () => {
-
     const copy = async () => {
         await navigator.clipboard.writeText(shareLink);
     }
@@ -17,7 +16,7 @@ const NewGame = () => {
         e.preventDefault();
 
         const token = getToken();
-
+        console.log(token)
         createGameroom(gameName, token).then((response) => {
             setGameName(response.data.name);
             setIsActive(true);

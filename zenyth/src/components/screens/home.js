@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from '../../logo.png';
 import { useNavigate } from 'react-router';
 import { BigBtn, HeaderImg, ContentDiv } from '../style/exportedStyle';
+import { getToken } from '../../utils/token';
 
 const Home = () => {
     const history = useNavigate()
+
+    useEffect(() =>{
+        const token = getToken()
+        if(!token){
+            history('/login')
+        }
+    })
 
     return (
         <ContentDiv>

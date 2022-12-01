@@ -15,11 +15,12 @@ const LoadGame = () => {
         });
     },[])
 
+
     return (
         <ContentDiv>
             <TitleDiv>
                 {
-                    results.map((result) => (
+                    results?.map((result) => (
                         <BtnWhite key={result._id}>
                             <Titre>{result.name}</Titre>
                             <SmallText>{result.updateDate}</SmallText>
