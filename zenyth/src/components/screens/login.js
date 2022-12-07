@@ -55,6 +55,7 @@ const Login = () => {
       }
 
         <Btn type='submit'>Se connecter</Btn>
+        <Btn type='submit' onClick={ () => history('/register')}>Créer un compte</Btn>
       </form>
     </ContentDiv>
   )

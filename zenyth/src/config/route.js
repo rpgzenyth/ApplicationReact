@@ -16,6 +16,7 @@ import RollDice from "../components/screens/rollDice";
 import dark from "../images/background_dragon_blur.png"
 import { Navigate } from "react-router";
 import { createBrowserRouter } from "react-router-dom";
+import Register from "../components/screens/register";
 
 const Routes = createBrowserRouter([
     {
@@ -119,6 +120,15 @@ const Routes = createBrowserRouter([
             <>
                 <Header Back="true" />
                 <JoinRoom />
+            </>
+        )
+    },
+    {
+        path: '/register',
+        element: (
+            <>
+                <Header Back="true"/>
+                <Register />
             </>
         )
     },

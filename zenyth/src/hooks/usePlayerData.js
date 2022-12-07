@@ -13,3 +13,15 @@ export const login = (token) => {
     return resp;
 };
 
+export const register = (token) => {
+    const resp = post(`${process.env.REACT_APP_API_URL}/players`, token).then(
+        (response) => {
+            if (response.status !== 200) {
+                console.warn("Request failed. Status code: " + response.status);
+                return;
+            }
+            return response.json();
+        }
+    );
+    return resp;
+};
