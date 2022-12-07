@@ -24,7 +24,11 @@ const Register = () => {
       .then((data) => {
         if(!data){
             setErrorMessage("Une erreur est survenue lors de la création du compte !")
-        }else {
+        }
+        else if(data.error) {
+          setErrorMessage("Le mot de passe doit contenir une majuscule, une miniscule, un chiffre et un caractère spécial et doit comporter 6 caractères minimum.");
+        }
+        else {
             setToken(data.token);
             history("/menu");
         }
