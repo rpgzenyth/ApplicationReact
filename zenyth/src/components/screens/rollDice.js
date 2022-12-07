@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import { TempBtn, DivBackground, TempFooter, Dice, HistoryResult, ResultDice, TitlePage, DiceDiv, RollHistory } from '../style/exportedStyle';
 
 const RollDice = (props) => {
 
-    const history = useHistory()
+    const history = useNavigate()
 
     const [randomNumber, setRandomNumber] = useState();
     const [historyRoll, setResultHistory] = useState([]);
@@ -114,7 +114,7 @@ const RollDice = (props) => {
             </RollHistory>
         </DivBackground>
         <TempFooter>
-            <TempBtn onClick={ () => history.goBack() }>Revenir sur la page de personnage</TempBtn>
+            <TempBtn onClick={ () => history(-1) }>Revenir sur la page de personnage</TempBtn>
         </TempFooter>
         </>
     );

@@ -4,17 +4,18 @@ import { joinGameroom } from '../../hooks/useGameroomData';
 import { getToken } from '../../utils/token';
 import { DivBackground, PersoName, ClassRace, DivPerso, SubtitleLegend, TitleLegend, Listing, DivLegend, Link } from '../style/exportedStyle';
 import {VscPersonAdd} from 'react-icons/vsc'
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import { getCharactersByUser } from '../../hooks/useCharacterData';
+
 
 const JoinRoom = props => {
 
     const params = new URLSearchParams(window.location.search);
     const token = getToken();
-    const history = useHistory();
+
+    const history = useNavigate();
     const [results, setResults] = useState([]);
     const [room, setRoom] = useState();
-
 
     useEffect(() => {
         if (params.get("token")) {
@@ -22,7 +23,7 @@ const JoinRoom = props => {
                 setRoom(data.data[0]);
             });
         } else {
-            history.goBack();
+            history(-1);
         }
         getCharactersByUser(token).then((data) => {
             setResults(data);

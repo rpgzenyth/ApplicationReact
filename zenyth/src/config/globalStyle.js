@@ -5,7 +5,7 @@ const GlobalStyle = createGlobalStyle`
 
 body {
     height: 100vh;
-    width: 100vw;
+    width: auto;
     background-image: url(${background});
     background-size: cover;
     background-repeat: no-repeat;
