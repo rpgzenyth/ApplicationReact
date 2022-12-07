@@ -114,7 +114,7 @@ const Routes = createBrowserRouter([
         )
     },
     {
-        path: 'join-room',
+        path: '/join-room',
         element: (
             <>
                 <Header Back="true" />
