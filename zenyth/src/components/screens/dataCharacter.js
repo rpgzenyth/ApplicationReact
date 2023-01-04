@@ -6,8 +6,10 @@ import tools from '../../images/tools.png';
 import potion from '../../images/potion.png';
 import sword from '../../images/sword.png';
 import description from '../../images/description.png';
-import { StyleFooter, ImgBigBtn, LabelForm, FooterDiv, DivBackgroundData, ClassRace, DataCharaDiv, DivDataChara, TextDataChara } from '../style/exportedStyle';
+import { StyleFooter, ImgBigBtn, LabelForm, FooterDiv, DivBackgroundData, ClassRace, DataCharaDiv, DivDataChara, TextDataChara, HeaderTop } from '../style/exportedStyle';
 import { getCharacter } from '../../hooks/useCharacterData';
+import { GiTreasureMap } from 'react-icons/gi';
+import { BsChatDots } from 'react-icons/bs';
 
 const DataCharacter = props => {
 
@@ -66,6 +68,10 @@ const DataCharacter = props => {
         <>
             { character?.player ?
                 <DivBackgroundData background={props.background}>
+                    <HeaderTop>
+                        <BsChatDots size="20px" style={{ color: "white" }} />
+                        <GiTreasureMap size="26px" style={{ color: "white" }} />
+                    </HeaderTop>
                     { chose === "none" ?
 
                         <div>

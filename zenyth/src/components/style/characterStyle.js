@@ -51,3 +51,10 @@ export const DivLegend = styled.div`
     margin-top: 1em;
     margin-bottom: 2em;
 `
+
+export const HeaderTop = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+`
