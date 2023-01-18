@@ -22,7 +22,6 @@ const JoinRoom = props => {
     useEffect(() => {
         if (params.get("token")) {
             joinGameroom({token: params.get("token")}, token).then((data) => {
-                console.log(data);
                 setRoom(data.data[0]);
             }).catch((error) => {
                 setErrorMessage("Le token n'est pas correct");
