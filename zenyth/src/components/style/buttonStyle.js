@@ -1,8 +1,8 @@
 import styled from "styled-components"
 
 export const ImgBigBtn = styled.img`
-max-width: 2em;
-padding: 0.5em;
+    max-width: 2em;
+    padding: 0.5em;
 `
 
 export const BigBtn = styled.p`

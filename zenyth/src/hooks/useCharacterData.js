@@ -39,8 +39,8 @@ export const createCharacter = (data, token) => {
     return resp;
 };
 
-export const updateCharacter = (id, data) => {
-    const resp = put(`${process.env.REACT_APP_API_URL}/characters/${id}`, data).then(
+export const updateCharacter = (data) => {
+    const resp = put(`${process.env.REACT_APP_API_URL}/characters/${data._id}`, data).then(
         (response) => {
             if (response.status !== 200) {
                 console.warn("Request failed. Status code: " + response.status);

@@ -16,11 +16,15 @@ const JoinRoom = props => {
     const history = useNavigate();
     const [results, setResults] = useState([]);
     const [room, setRoom] = useState();
+    const [errorMessage, setErrorMessage] = useState();
+
 
     useEffect(() => {
         if (params.get("token")) {
             joinGameroom({token: params.get("token")}, token).then((data) => {
                 setRoom(data.data[0]);
+            }).catch((error) => {
+                setErrorMessage("Le token n'est pas correct");
             });
         } else {
             history(-1);
@@ -40,21 +44,29 @@ const JoinRoom = props => {
                 </DivLegend>
             : ""}
             
-
-            <Listing>
-                {
-                    results.map((result) => (
-                        <DivPerso key={result._id}>
-                            <Link
-                                // onClick={ () => history.push(`/data-character/${result._id}`)}
-                            >
-                                <PersoName>{result.name}</PersoName>
-                                <ClassRace>{result.class} / {result.race}</ClassRace>
-                            </Link>
-                        </DivPerso>
-                    ) )
-                }
-            </Listing>
+            { !errorMessage ?
+                <Listing>
+                    {
+                        results.map((result) => (
+                            <DivPerso key={result._id}>
+                                <Link
+                                    // onClick={ () => history.push(`/data-character/${result._id}`)}
+                                >
+                                    <PersoName>{result.name}</PersoName>
+                                    <ClassRace>{result.class} / {result.race}</ClassRace>
+                                </Link>
+                            </DivPerso>
+                        ) )
+                    }
+                </Listing>
+                :
+                <div>
+                    <TitleLegend style={{marginTop: "2rem"}}>
+                        {errorMessage}
+                    </TitleLegend>
+                </div>  
+            }
+            
 
         </DivBackground>
     );
