@@ -21,7 +21,7 @@ const UpdateCharacter = props => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        updateCharacter(character, character).then((data) => {
+        updateCharacter(character).then((data) => {
             history(`/listing-character`);
         });
     }

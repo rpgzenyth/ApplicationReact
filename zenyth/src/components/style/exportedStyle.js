@@ -10,6 +10,6 @@ export { Btn,BigBtn,BtnBlack,BtnWhite,ImgBigBtn,TempBtn, BtnLinkGame, ShareLink,
 export { FormCreatePerso, DivForm, LabelForm, SubtitleForm, TitleForm, InputStyled, FormCreateGame, InputGame } from "./formStyle"
 export { FondPopUp, ContainerPopUp} from './popupStyle'
 export { DivBackground, DivBackgroundData, BlurBackground } from "./backgroundStyled"
-export { PersoName, ClassRace, DataCharaDiv, DivDataChara, DivPerso, TextDataChara, DivLegend, HeaderTop} from './characterStyle'
+export { PersoName, ClassRace, DataCharaDiv, DivDataChara, DivPerso, TextDataChara, DivLegend, HeaderTop, ListingImg, ImgOverview, Item } from './characterStyle'
 export { Titre, Dice, HistoryResult, Hr, ResultDice, SmallText, SubtitleLegend, TextareaStyled, TitleLegend, TitlePage, TitleDiv, Listing} from "./textStyle"
 export { DiceDiv, Link, RollHistory } from './styled'
