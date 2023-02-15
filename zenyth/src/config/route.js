@@ -17,6 +17,7 @@ import dark from "../images/background_dragon_blur.png"
 import { Navigate } from "react-router";
 import { createBrowserRouter } from "react-router-dom";
 import Register from "../components/screens/register";
+import Room from "../components/screens/room";
 
 const Routes = createBrowserRouter([
     {
@@ -135,6 +136,15 @@ const Routes = createBrowserRouter([
     {
         path: "*",
         element: <Navigate to="/" replace />
+    },
+    {
+        path: '/room',
+        element:(
+        <>
+            <Header Back="true"/>
+            <Room background={BackgroundBlack}/>
+        </>
+        )
     }
 ])
             
