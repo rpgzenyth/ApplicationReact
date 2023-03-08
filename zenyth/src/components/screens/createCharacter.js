@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import { Btn, FormCreatePerso, DivForm, LabelForm, SubtitleForm, TitleForm, DivBackground, Hr, TextareaStyled, InputStyled } from '../style/exportedStyle';
 import { createCharacter } from '../../hooks/useCharacterData';
 import { getToken } from '../../utils/token';
+import { useNavigate } from 'react-router';
 
 const CreateCharacter = props => {
+    
+    const history = useNavigate();
+    const params = new URLSearchParams(window.location.search);
     
     const [character, setCharacter] = useState({})
 
@@ -13,8 +17,16 @@ const CreateCharacter = props => {
         const token = getToken();
 
         createCharacter(character, token).then((data) => {
-            console.log(data);
+            if(params.get("redirect") === "room") {
+                history(`/room`);
+            } else {
+                history(`/listing-character`);
+            }
+        }).catch((error) => {
+            console.log(error);
         });
+
+        
     }
 
     return (

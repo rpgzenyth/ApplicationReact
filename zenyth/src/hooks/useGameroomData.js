@@ -40,3 +40,17 @@ export const joinGameroom = (data, token) => {
     );
     return resp;
 };
+
+
+export const getGameroom = (id, token) => {
+    const resp = get(`${process.env.REACT_APP_API_URL}/gameroom/${id}`, token).then(
+        (response) => {
+            if (response.status !== 200) {
+                console.warn("Request failed. Status code: " + response.status);
+                return;
+            }
+            return response.json();
+        }
+    );
+    return resp;
+};

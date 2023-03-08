@@ -20,7 +20,7 @@ const NewGame = () => {
         createGameroom(gameName, token).then((response) => {
             setGameName(response.data.name);
             setIsActive(true);
-            setShareLink(window.location.origin+"/join-room?token="+response.data.token);
+            setShareLink(window.location.origin+"/join-room?token="+response.data.token+"&id="+response.data._id);
         });
     }
 

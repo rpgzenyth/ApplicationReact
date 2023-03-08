@@ -1,12 +1,11 @@
 import React, { useEffect, useState} from 'react';
 
-import { joinGameroom } from '../../hooks/useGameroomData';
+import { joinGameroom, getGameroom } from '../../hooks/useGameroomData';
 import { getToken } from '../../utils/token';
 import { DivBackground, PersoName, ClassRace, DivPerso, SubtitleLegend, TitleLegend, Listing, DivLegend, Link } from '../style/exportedStyle';
-import {VscPersonAdd} from 'react-icons/vsc'
+import { VscPersonAdd } from 'react-icons/vsc'
 import { useNavigate } from 'react-router';
 import { getCharactersByUser } from '../../hooks/useCharacterData';
-
 
 const JoinRoom = props => {
 
@@ -18,13 +17,24 @@ const JoinRoom = props => {
     const [room, setRoom] = useState();
     const [errorMessage, setErrorMessage] = useState();
 
+    const chooseCharacter = () => {
+        if (params.get("token") && token) {
+            // Character join room
+        }
+    }
+
 
     useEffect(() => {
-        if (params.get("token")) {
+        if (params.get("token") && token && params.get("id")) {
+            // Player join room
             joinGameroom({token: params.get("token")}, token).then((data) => {
-                setRoom(data.data[0]);
+                setRoom(data.data);
             }).catch((error) => {
                 setErrorMessage("Le token n'est pas correct");
+            });
+            // Get room data
+            getGameroom(params.get("id"), token).then((data) => {
+                setRoom(data[0]);
             });
         } else {
             history(-1);
@@ -37,28 +47,29 @@ const JoinRoom = props => {
     return (
         <DivBackground background = {props.background}>
             { room ?
-                <DivLegend>
-                    <TitleLegend>{ room.name }</TitleLegend>
-                    <SubtitleLegend>Choisi ton personnage</SubtitleLegend>
-                    <VscPersonAdd onClick={ () => history.push(`/create-character`)} size="35px" style= { {position: "absolute", right: "0", top: "50%", transform: "translateY(-50%)" , color: 'white' } }></VscPersonAdd>
-                </DivLegend>
-            : ""}
-            
-            { !errorMessage ?
-                <Listing>
-                    {
-                        results.map((result) => (
-                            <DivPerso key={result._id}>
-                                <Link
-                                    // onClick={ () => history.push(`/data-character/${result._id}`)}
-                                >
-                                    <PersoName>{result.name}</PersoName>
-                                    <ClassRace>{result.class} / {result.race}</ClassRace>
-                                </Link>
-                            </DivPerso>
-                        ) )
-                    }
-                </Listing>
+                <>
+                    <DivLegend>
+                        <TitleLegend>{ room.name }</TitleLegend>
+                        <SubtitleLegend>Vous avez rejoint la room !</SubtitleLegend>
+                        <SubtitleLegend>Choisissez un personnage</SubtitleLegend>
+                        <VscPersonAdd onClick={ () => history(`/create-character?redirect=room`)} size="35px" style= { {position: "absolute", right: "0", top: "50%", transform: "translateY(-50%)" , color: 'white' } }></VscPersonAdd>
+                    </DivLegend>
+                    
+                    <Listing>
+                        {
+                            results.map((result) => (
+                                <DivPerso key={result._id}>
+                                    <Link
+                                        onClick={ chooseCharacter }
+                                    >
+                                        <PersoName>{result.name}</PersoName>
+                                        <ClassRace>{result.class} / {result.race}</ClassRace>
+                                    </Link>
+                                </DivPerso>
+                            ) )
+                        }
+                    </Listing>
+                </>
                 :
                 <div>
                     <TitleLegend style={{marginTop: "2rem"}}>

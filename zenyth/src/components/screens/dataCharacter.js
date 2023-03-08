@@ -26,7 +26,7 @@ const DataCharacter = props => {
     const [background4, setbackground4] = useState('none');
     const [background5, setbackground5] = useState('none');
     const [background6, setbackground6] = useState('none');
-    const [choose, setChoose] = useState("none");
+    const [choice, setChoice] = useState("none");
 
     useEffect(() => {
         getCharacter(id).then((data) => {
@@ -48,7 +48,7 @@ const DataCharacter = props => {
                 break
             case 'white':
                 fonction('none')
-                setChoose("none")
+                setChoice("none")
                 break
             default:
                 break
@@ -75,7 +75,7 @@ const DataCharacter = props => {
                         <GiRollingDices onClick={() => history("/roll-dice")} size="26px" style={{ color: "white" }} />
                         <BsChatDots size="20px" style={{ color: "white" }} />
                     </HeaderTop>
-                    { choose === "none" ?
+                    { choice === "none" ?
 
                         <div>
                             <div>
@@ -172,7 +172,7 @@ const DataCharacter = props => {
                         null
                     }
 
-                    { choose === "dice" ?
+                    { choice === "dice" ?
 
                         <DataCharaDiv>
                             <div>
@@ -297,7 +297,7 @@ const DataCharacter = props => {
                         null
                     }
 
-                    {choose === "bag" ? 
+                    {choice === "bag" ? 
 
                         <div>
                             <div>
@@ -310,7 +310,7 @@ const DataCharacter = props => {
                     :null}
 
 
-                    {choose === "tools" ? 
+                    {choice === "tools" ? 
 
                     <div>
                         <div>
@@ -323,7 +323,7 @@ const DataCharacter = props => {
                     :null}
 
 
-                    {choose === "potion" ? 
+                    {choice === "potion" ? 
 
                     <div>
                         <div>
@@ -335,7 +335,7 @@ const DataCharacter = props => {
 
                     :null}
 
-                    {choose === "sword" ? 
+                    {choice === "sword" ? 
 
                     <div>
                         <div>
@@ -347,7 +347,7 @@ const DataCharacter = props => {
 
                     :null}
 
-                    {choose === "description" ? 
+                    {choice === "description" ? 
 
                     <div>
                         <div>
@@ -433,22 +433,22 @@ const DataCharacter = props => {
             : "Loading..."}
             
             <StyleFooter>
-                <FooterDiv image={background} onClick={() => {setChoose("dice"); ChangeBack(background, setbackground)}}>
+                <FooterDiv image={background} onClick={() => {setChoice("dice"); ChangeBack(background, setbackground)}}>
                     <ImgBigBtn src={dice}></ImgBigBtn>
                 </FooterDiv>
-                <FooterDiv image={background2} onClick={() => {setChoose("bag"); ChangeBack(background2, setbackground2)}}>
+                <FooterDiv image={background2} onClick={() => {setChoice("bag"); ChangeBack(background2, setbackground2)}}>
                     <ImgBigBtn src={bag}></ImgBigBtn>
                 </FooterDiv>
-                <FooterDiv image={background3} onClick={() => {setChoose("tools"); ChangeBack(background3, setbackground3)}}>
+                <FooterDiv image={background3} onClick={() => {setChoice("tools"); ChangeBack(background3, setbackground3)}}>
                     <ImgBigBtn src={tools}></ImgBigBtn>
                 </FooterDiv>
-                <FooterDiv image={background4} onClick={() => {setChoose("potion"); ChangeBack(background4, setbackground4)}}>
+                <FooterDiv image={background4} onClick={() => {setChoice("potion"); ChangeBack(background4, setbackground4)}}>
                     <ImgBigBtn src={potion}></ImgBigBtn>
                 </FooterDiv>
-                <FooterDiv image={background5} onClick={() => {setChoose("sword"); ChangeBack(background5, setbackground5)}}>
+                <FooterDiv image={background5} onClick={() => {setChoice("sword"); ChangeBack(background5, setbackground5)}}>
                     <ImgBigBtn src={sword}></ImgBigBtn>
                 </FooterDiv>
-                <FooterDiv image={background6} onClick={() => {setChoose("description"); ChangeBack(background6, setbackground6)}}>
+                <FooterDiv image={background6} onClick={() => {setChoice("description"); ChangeBack(background6, setbackground6)}}>
                     <ImgBigBtn src={description}></ImgBigBtn>
                 </FooterDiv>
             </StyleFooter>
