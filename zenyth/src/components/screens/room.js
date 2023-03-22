@@ -1,4 +1,4 @@
-import { ContentDiv, TempBtn, DivBackgroundData } from "../style/exportedStyle";
+import { TempBtn, DivBackgroundData } from "../style/exportedStyle";
 import { TitlePage } from "../style/textStyle"
 import { useNavigate } from 'react-router';
 

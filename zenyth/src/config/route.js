@@ -18,6 +18,7 @@ import { Navigate } from "react-router";
 import { createBrowserRouter } from "react-router-dom";
 import Register from "../components/screens/register";
 import Room from "../components/screens/room";
+import Chat from "../components/screens/chat";
 
 const Routes = createBrowserRouter([
     {
@@ -145,7 +146,17 @@ const Routes = createBrowserRouter([
             <Room background={BackgroundBlack}/>
         </>
         )
+    },
+    {
+        path:'/chat',
+        element:(
+            <>
+                <Header Back="true"/>
+                <Chat background={BackgroundBlack}/>
+            </>
+        )
     }
+
 ])
             
 
