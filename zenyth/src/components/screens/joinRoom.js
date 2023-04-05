@@ -10,7 +10,8 @@ import { getCharactersByUser } from '../../hooks/useCharacterData';
 
 const JoinRoom = props => {
 
-    const params = new URLSearchParams(window.location.search);
+    // eslint-disable-next-line
+    const [params, setParams] = useState(new URLSearchParams(window.location.search));
     const token = getToken();
 
     const history = useNavigate();
