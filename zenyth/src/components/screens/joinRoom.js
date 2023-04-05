@@ -32,7 +32,7 @@ const JoinRoom = props => {
         getCharactersByUser(token).then((data) => {
             setResults(data);
         });
-    }, [])
+    }, [params, history, token])
 
     return (
         <DivBackground background = {props.background}>
