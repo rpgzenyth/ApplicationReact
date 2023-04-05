@@ -141,7 +141,7 @@ const Routes = createBrowserRouter([
         path: '/room',
         element:(
         <>
-            <Header Back="true"/>
+            <Header Param="true" Burger="true" />
             <Room background={BackgroundBlack}/>
         </>
         )

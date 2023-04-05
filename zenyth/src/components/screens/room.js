@@ -1,5 +1,5 @@
 import { TempBtn, DivBackgroundData } from "../style/exportedStyle";
-import { SubtitleLegend, Text, TitlePage } from "../style/textStyle"
+import { SubtitleLegend, Text, TitlePage, Listing } from "../style/textStyle"
 import { useNavigate } from 'react-router';
 import { useEffect, useState } from "react";
 import { getGameroom } from "../../hooks/useGameroomData";
@@ -31,17 +31,17 @@ const Room = props => {
                             year: "numeric",
                         })}</SubtitleLegend>
                         <TitlePage>Personnages</TitlePage>
-                        <div>
+                        <Listing>
                         {
                                 room.characters.map((character) => (
                                     <div key={character._id}>
                                         <Text>
-                                            {character.name}
+                                            - {character.name}
                                         </Text>
                                     </div>
                                 ) )
                             }
-                        </div>
+                        </Listing>
                         <TempBtn type='submit' onClick={ () => history('/data-character/:id')}>Afficher stats character</TempBtn>
                         <TempBtn type='submit' onClick={ () => history('/roll-dice')}>Lancée de dés</TempBtn>
                 </DivBackgroundData>
