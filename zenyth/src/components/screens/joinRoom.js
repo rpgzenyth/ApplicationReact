@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from 'react';
 
-import { joinGameroom, getGameroom } from '../../hooks/useGameroomData';
+import { joinGameroom, getGameroom, joinCharacterGameroom } from '../../hooks/useGameroomData';
 import { getToken } from '../../utils/token';
 import { DivBackground, PersoName, ClassRace, DivPerso, SubtitleLegend, TitleLegend, Listing, DivLegend, Link } from '../style/exportedStyle';
 import { VscPersonAdd } from 'react-icons/vsc'
@@ -17,9 +17,21 @@ const JoinRoom = props => {
     const [room, setRoom] = useState();
     const [errorMessage, setErrorMessage] = useState();
 
-    const chooseCharacter = () => {
-        if (params.get("token") && token) {
-            // Character join room
+    const chooseCharacter = (characterId) => {
+        if (params.get("token") && token && characterId) {
+            const data = {
+                token: params.get("token"),
+                characters: [
+                    characterId
+                ]
+            };
+            // Character join room 
+            joinCharacterGameroom(data, token).then((data) => {
+                // redirect to room page
+                history(`/room?id=${params.get("id")}`);
+            }).catch((error) => {
+                setErrorMessage("Le token n'est pas correct");
+            });
         }
     }
 
@@ -60,7 +72,7 @@ const JoinRoom = props => {
                             results.map((result) => (
                                 <DivPerso key={result._id}>
                                     <Link
-                                        onClick={ chooseCharacter }
+                                        onClick={() => chooseCharacter(result._id) }
                                     >
                                         <PersoName>{result.name}</PersoName>
                                         <ClassRace>{result.class} / {result.race}</ClassRace>

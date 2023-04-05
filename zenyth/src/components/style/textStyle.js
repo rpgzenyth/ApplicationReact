@@ -74,7 +74,7 @@ export const ResultDice = styled.p`
 `
 
 
-export const HistoryResult = styled.p`
+export const Text = styled.p`
     color: white;
 `
 

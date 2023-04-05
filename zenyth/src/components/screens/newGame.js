@@ -16,7 +16,6 @@ const NewGame = () => {
         e.preventDefault();
 
         const token = getToken();
-        console.log(token)
         createGameroom(gameName, token).then((response) => {
             setGameName(response.data.name);
             setIsActive(true);

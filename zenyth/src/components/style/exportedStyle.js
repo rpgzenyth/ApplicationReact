@@ -11,5 +11,5 @@ export { FormCreatePerso, DivForm, LabelForm, SubtitleForm, TitleForm, InputStyl
 export { FondPopUp, ContainerPopUp} from './popupStyle'
 export { DivBackground, DivBackgroundData, BlurBackground } from "./backgroundStyled"
 export { PersoName, ClassRace, DataCharaDiv, DivDataChara, DivPerso, TextDataChara, DivLegend, HeaderTop, ListingImg, ImgOverview, Item } from './characterStyle'
-export { Titre, Dice, HistoryResult, Hr, ResultDice, SmallText, SubtitleLegend, TextareaStyled, TitleLegend, TitlePage, TitleDiv, Listing} from "./textStyle"
+export { Titre, Dice, Text, Hr, ResultDice, SmallText, SubtitleLegend, TextareaStyled, TitleLegend, TitlePage, TitleDiv, Listing} from "./textStyle"
 export { DiceDiv, Link, RollHistory } from './styled'
