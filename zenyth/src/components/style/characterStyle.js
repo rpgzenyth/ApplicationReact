@@ -25,7 +25,7 @@ export const DivDataChara = styled.div`
 `
 
 export const DataCharaDiv = styled.div`
-    max-height: 85vh;
+    max-height: 80vh;
     overflow: auto;
     scrollbar-width: none;
     ::-webkit-scrollbar {
@@ -50,4 +50,36 @@ export const DivLegend = styled.div`
     position: relative;
     margin-top: 1em;
     margin-bottom: 2em;
+`
+
+export const HeaderTop = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+`
+
+export const ListingImg = styled.div`
+    height: auto;
+    overflow: auto;
+    scrollbar-width: none;
+    display: flex;
+    flex-wrap: wrap;
+    ::-webkit-scrollbar {
+        display: none;
+    }
+`
+
+export const Item = styled.div`
+    width: 50%;
+`
+
+export const ImgOverview = styled.img`
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
 `

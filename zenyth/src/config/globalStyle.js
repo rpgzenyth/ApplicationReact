@@ -4,8 +4,8 @@ import background from "../images/background.jpg"
 const GlobalStyle = createGlobalStyle`
 
 body {
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
+    width: auto;
     background-image: url(${background});
     background-size: cover;
     background-repeat: no-repeat;

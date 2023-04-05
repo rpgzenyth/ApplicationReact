@@ -4,9 +4,8 @@ import { createGameroom } from '../../hooks/useGameroomData';
 import { getToken } from '../../utils/token';
 
 const NewGame = () => {
-
     const copy = async () => {
-        await navigator.clipboard.writeText("https://rpgzenyth/"+{shareLink});
+        await navigator.clipboard.writeText(shareLink);
     }
 
     const [gameName, setGameName] = useState("");
@@ -17,11 +16,11 @@ const NewGame = () => {
         e.preventDefault();
 
         const token = getToken();
-
+        console.log(token)
         createGameroom(gameName, token).then((response) => {
             setGameName(response.data.name);
             setIsActive(true);
-            setShareLink(response.data.token);
+            setShareLink(window.location.origin+"/join-room?token="+response.data.token);
         });
     }
 
@@ -39,7 +38,7 @@ const NewGame = () => {
             </FormCreateGame>
 
             <BtnLinkGame style={isActive ? {display: "flex"} : { display: "none" }}>
-                <ShareLink>https://rpgzenyth/{shareLink}</ShareLink>
+                <ShareLink>{shareLink}</ShareLink>
                 <BtnCopy onClick={copy}>Copier</BtnCopy>
             </BtnLinkGame>
 

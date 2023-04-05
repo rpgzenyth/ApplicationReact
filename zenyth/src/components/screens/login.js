@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 import { Btn, LabelForm, TitleForm, TitleLegend, InputStyled, ContentDiv } from "../style/exportedStyle";
 import { login } from "../../hooks/usePlayerData";
 import { setToken } from "../../utils/token";
@@ -9,14 +9,14 @@ const Login = () => {
   const [player, setPlayer] = useState();
   const [errorMessage, setErrorMessage] = useState();
 
-  const history = useHistory();
+  const history = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     login(player).then((data) => {
       setToken(data.token);
-      history.push('/menu');
+      history('/menu');
     }).catch((error) => {
       setErrorMessage(error.response.data.message);
     });
@@ -55,6 +55,7 @@ const Login = () => {
       }
 
         <Btn type='submit'>Se connecter</Btn>
+        <Btn type='submit' onClick={ () => history('/register')}>Créer un compte</Btn>
       </form>
     </ContentDiv>
   )
