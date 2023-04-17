@@ -1,5 +1,5 @@
 import { DivBackgroundData } from "../style/exportedStyle";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Chat = (props) => {
@@ -8,7 +8,7 @@ const Chat = (props) => {
   const [showChat, setShowChat] = useState(false);
   const [showPrivateChat, setShowPrivateChat] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setShowChat(true);
   }, []);
   const handleInputChange = (event) => {
