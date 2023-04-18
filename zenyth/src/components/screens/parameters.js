@@ -1,10 +1,22 @@
 import React from 'react';
-import { ContentDiv } from '../style/exportedStyle';
+import { BigBtn, ContentDiv, DivLegend, TitleLegend } from '../style/exportedStyle';
+import { useNavigate } from 'react-router';
 
 const Parameters = () => {
+
+    const history = useNavigate()
+
+    const logout = () => {
+        localStorage.removeItem("token");
+        history(`/login`);
+    }
+
     return (
         <ContentDiv>
-            <h1>Parameters</h1>
+            <DivLegend>
+                <TitleLegend>Paramètres</TitleLegend>
+            </DivLegend>
+            <BigBtn onClick={() => logout()}>Se déconnecter</BigBtn>
         </ContentDiv>
     );
 };
