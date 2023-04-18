@@ -8,6 +8,7 @@ import { StyledHeader,BigBtn, FondPopUp, ContainerPopUp, BlurBackground, Titre }
 const Header = (props) => {
 
   const params = new URLSearchParams(window.location.search);
+  const pathname = window.location.pathname;
 
   const [afficherMenuBurger, setAfficherMenuBurger] = useState(false)
 
@@ -34,7 +35,11 @@ const Header = (props) => {
         <FondPopUp>
           <ContainerPopUp>
             <AiFillCloseCircle onClick={() => menuBurger()} size="30px" style= { {position: "absolute", right: "-0.8em", top: "-0.8em", color: '#c4c4c4' } }/>
-            <BigBtn onClick={ () => history(`/room?id=${params.get("idRoom")}`)}>Détails room</BigBtn>
+            { pathname === "/room" ? ""
+            : 
+              <BigBtn onClick={ () => history(`/room?id=${params.get("idRoom")}`)}>Détails room</BigBtn>
+            }
+            
             <BigBtn onClick={ () => history(`/`)}>Black board</BigBtn>
             <BigBtn onClick={ () => history(`/`)}>Banque d'objets</BigBtn>
             <BigBtn onClick={ () => history(`/`)}>Bestiaire de l'univers</BigBtn>
