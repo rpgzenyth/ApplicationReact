@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentDiv, FormCreateGame, InputGame, Btn, BtnLinkGame, ShareLink, BtnCopy } from '../style/exportedStyle';
+import { ContentDiv, FormCreateGame, InputGame, Btn, BtnLinkGame, ShareLink, BtnCopy, DivLegend, TitleLegend } from '../style/exportedStyle';
 import { createGameroom } from '../../hooks/useGameroomData';
 import { getToken } from '../../utils/token';
 
@@ -25,7 +25,9 @@ const NewGame = () => {
 
     return (
         <ContentDiv>
-
+            <DivLegend>
+                <TitleLegend>Créer une partie</TitleLegend>
+            </DivLegend>
             <FormCreateGame onSubmit={(e) => handleSubmit(e)}>
                 <InputGame
                     onChange={(e) => { setGameName({ ...gameName, name: e.target.value }) }}

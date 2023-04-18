@@ -6,6 +6,9 @@ const RollDice = (props) => {
 
     const history = useNavigate()
 
+    const params = new URLSearchParams(window.location.search);
+
+
     const [randomNumber, setRandomNumber] = useState();
     const [historyRoll, setResultHistory] = useState([]);
     const [x, setX] = useState(1);
@@ -114,7 +117,9 @@ const RollDice = (props) => {
             </RollHistory>
         </DivBackground>
         <TempFooter>
-            <TempBtn onClick={ () => history(-1) }>Revenir sur la page de personnage</TempBtn>
+            <TempBtn onClick={ () => 
+                params.get("id") ? history(`/data-character/${params.get("id")}?idRoom=${params.get("idRoom")}`) : history(-1) 
+            }>Revenir sur la page de personnage</TempBtn>
         </TempFooter>
         </>
     );
