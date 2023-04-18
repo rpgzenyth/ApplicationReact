@@ -30,7 +30,7 @@ const Room = props => {
                 ))}
             });
         });
-    }, [])
+    }, [token, params])
 
     return (
         <>
