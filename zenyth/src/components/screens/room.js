@@ -8,7 +8,7 @@ import { getPlayer } from "../../hooks/usePlayerData";
 
 const Room = props => {
 
-    const params = new URLSearchParams(window.location.search);
+    const [params, setParams] = useState(new URLSearchParams(window.location.search));
     const token = getToken();
 
     const history = useNavigate();
