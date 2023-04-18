@@ -8,6 +8,7 @@ import { getPlayer } from "../../hooks/usePlayerData";
 
 const Room = props => {
 
+    // eslint-disable-next-line
     const [params, setParams] = useState(new URLSearchParams(window.location.search));
     const token = getToken();
 
@@ -22,14 +23,16 @@ const Room = props => {
             const roomCharacters = data[0].characters;
             // Get player data
             getPlayer(token).then((data) => {
-                const playerCharacters = data.characters;
-                {roomCharacters && playerCharacters && roomCharacters.map(character => (
-                    <>
-                        {playerCharacters.includes(character._id) ? setCharacterId(character._id) : ""}
-                    </>
-                ))}
+                const playerCharacters = data.characters
+                
+                roomCharacters && playerCharacters && roomCharacters.map((character) => {
+                return(
+                <>
+                    {playerCharacters.includes(character._id) ? setCharacterId(character._id) : ""}
+                </>)
+                })
+            })
             });
-        });
     }, [token, params])
 
     return (
