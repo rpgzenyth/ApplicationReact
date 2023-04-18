@@ -46,7 +46,7 @@ const Header = (props) => {
         <FondPopUp>
           <ContainerPopUp>
             <AiFillCloseCircle onClick={() => menuParam()} size="30px" style= { {position: "absolute", right: "-0.8em", top: "-0.8em", color: '#c4c4c4' } }/>
-            <BigBtn onClick={ () => history(`/`)}>Sauvegarder</BigBtn>
+            {/* <BigBtn onClick={ () => history(`/`)}>Sauvegarder</BigBtn> */}
             <BigBtn onClick={ () => history(`/`)}>Tutoriel</BigBtn>
             <BigBtn onClick={ () => history(`/`)}>Retour au menu</BigBtn>
           </ContainerPopUp>
