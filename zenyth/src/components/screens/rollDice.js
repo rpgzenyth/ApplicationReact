@@ -117,9 +117,15 @@ const RollDice = (props) => {
             </RollHistory>
         </DivBackground>
         <TempFooter>
-            <TempBtn onClick={ () => 
-                params.get("id") ? history(`/data-character/${params.get("id")}?idRoom=${params.get("idRoom")}`) : history(-1) 
-            }>Revenir sur la page de personnage</TempBtn>
+            { params.get("id") !== "MJ" ? 
+                <TempBtn onClick={ () => 
+                    params.get("id") ? history(`/data-character/${params.get("id")}?idRoom=${params.get("idRoom")}`) : history(-1) 
+                }>Revenir sur la page de personnage</TempBtn>
+                : 
+                <TempBtn onClick={ () => 
+                    params.get("id") ? history(`/room?id=${params.get("idRoom")}`) : history(-1) 
+                }>Revenir sur les détails de la room</TempBtn>
+            }
         </TempFooter>
         </>
     );
