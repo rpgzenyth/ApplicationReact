@@ -1,10 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import { ContentDiv, TitleDiv, BtnWhite, Titre, SmallText } from '../style/exportedStyle'
+import { ContentDiv, BtnWhite, Titre, SmallText, TitleLegend, DivLegend } from '../style/exportedStyle'
 import { getGamerooms } from '../../hooks/useGameroomData';
 import { getToken } from '../../utils/token';
+import { useNavigate } from 'react-router';
 
 const LoadGame = () => {
     const [results, setResults] = useState([]);
+    const history = useNavigate();
 
     useEffect(() => {
 
@@ -18,16 +20,19 @@ const LoadGame = () => {
 
     return (
         <ContentDiv>
-            <TitleDiv>
+            <DivLegend>
+                <TitleLegend>Liste des parties en cours</TitleLegend>
+            </DivLegend>
+            <DivLegend>
                 {
                     results?.map((result) => (
-                        <BtnWhite key={result._id}>
+                        <BtnWhite key={result._id} onClick={ () => history(`/room?id=${result._id}`)}>
                             <Titre>{result.name}</Titre>
                             <SmallText>{result.updateDate}</SmallText>
                         </BtnWhite>
                     ) )
                 }
-            </TitleDiv>
+            </DivLegend>
         </ContentDiv>
     );
 };

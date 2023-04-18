@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ContentDiv, FormCreateGame, InputGame, Btn, BtnLinkGame, ShareLink, BtnCopy } from '../style/exportedStyle';
+import { ContentDiv, FormCreateGame, InputGame, Btn, BtnLinkGame, ShareLink, BtnCopy, DivLegend, TitleLegend } from '../style/exportedStyle';
 import { createGameroom } from '../../hooks/useGameroomData';
 import { getToken } from '../../utils/token';
 
@@ -16,17 +16,18 @@ const NewGame = () => {
         e.preventDefault();
 
         const token = getToken();
-        console.log(token)
         createGameroom(gameName, token).then((response) => {
             setGameName(response.data.name);
             setIsActive(true);
-            setShareLink(window.location.origin+"/join-room?token="+response.data.token);
+            setShareLink(window.location.origin+"/join-room?token="+response.data.token+"&id="+response.data._id);
         });
     }
 
     return (
         <ContentDiv>
-
+            <DivLegend>
+                <TitleLegend>Créer une partie</TitleLegend>
+            </DivLegend>
             <FormCreateGame onSubmit={(e) => handleSubmit(e)}>
                 <InputGame
                     onChange={(e) => { setGameName({ ...gameName, name: e.target.value }) }}

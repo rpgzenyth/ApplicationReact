@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import { useNavigate } from 'react-router';
-import { TempBtn, DivBackground, TempFooter, Dice, HistoryResult, ResultDice, TitlePage, DiceDiv, RollHistory } from '../style/exportedStyle';
+import { TempBtn, DivBackground, TempFooter, Dice, Text, ResultDice, TitlePage, DiceDiv, RollHistory } from '../style/exportedStyle';
 
 const RollDice = (props) => {
 
     const history = useNavigate()
+
+    const params = new URLSearchParams(window.location.search);
+
 
     const [randomNumber, setRandomNumber] = useState();
     const [historyRoll, setResultHistory] = useState([]);
@@ -97,7 +100,7 @@ const RollDice = (props) => {
             <RollHistory>
                 {
                     historyRoll.map((history) => (
-                        <HistoryResult key={history.id}>
+                        <Text key={history.id}>
                             {
                                 history.result.map((result, i, history) => (
                                     <span key={history.id}>
@@ -108,13 +111,15 @@ const RollDice = (props) => {
                             }
                             { history.result[1] ? <span>= {history.sum} </span> : null}
                             (D{history.dice})
-                        </HistoryResult>
+                        </Text>
                     ))
                 }
             </RollHistory>
         </DivBackground>
         <TempFooter>
-            <TempBtn onClick={ () => history(-1) }>Revenir sur la page de personnage</TempBtn>
+            <TempBtn onClick={ () => 
+                params.get("id") ? history(`/data-character/${params.get("id")}?idRoom=${params.get("idRoom")}`) : history(-1) 
+            }>Revenir sur la page de personnage</TempBtn>
         </TempFooter>
         </>
     );
